@@ -10,7 +10,15 @@ module.exports = {
       body: 'Poppins',
       title: 'Roboto'
     },
-    extend: {},
+    extend: {
+      colors: {
+        smokey: 'rgba(0, 0, 0, 0.75)'
+      },
+      backgroundImage: {
+        'smokey-gradient': 'linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0, transparent);',
+        'sign-in-banner': "url('/assets/sign-in-banner.jpg')"
+      }
+    },
     screens: {
       //All devices
       all: '0px',
@@ -19,10 +27,10 @@ module.exports = {
       xxs: '320px',
 
       //Std phones res
-      xs: '530px',
+      xs: '500px',
 
       //small tablets res
-      sm: '768px',
+      sm: '740px',
 
       //medium tablets res
       md: '890px',
