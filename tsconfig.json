@@ -3,6 +3,16 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
+    "paths": {
+      "@packageJSON": ["./package.json"],
+      "@config/*": ["projects/netflix-portfolio/src/environments/*"],
+      "@core/*": ["projects/netflix-portfolio/src/app/modules/core/*"],
+      "@features/*": ["projects/netflix-portfolio/src/app/modules/features/*"],
+      "@models/*": ["projects/netflix-portfolio/src/app/models"],
+      "@modules/*": ["projects/netflix-portfolio/src/app/modules/*"],
+      "@shared/*": ["projects/netflix-portfolio/src/app/modules/shared/*"],
+      "@assets/*": ["projects/netflix-portfolio/src/assets/*"]
+    },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -18,10 +28,17 @@
     "importHelpers": true,
     "target": "ES2022",
     "module": "es2020",
-    "lib": [
-      "es2020",
-      "dom"
-    ],
+    "lib": ["es2020", "dom"],
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "allowUnreachableCode": true,
+    "allowJs": true,
+    "checkJs": true,
+    "allowUnusedLabels": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": false,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
     "useDefineForClassFields": false
   },
   "angularCompilerOptions": {
