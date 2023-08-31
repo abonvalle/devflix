@@ -8,7 +8,8 @@ module.exports = {
     fontFamily: {
       sans: 'Poppins',
       body: 'Poppins',
-      title: 'Roboto'
+      title: 'Roboto',
+      nucleo: 'Nucleo'
     },
     extend: {
       colors: {

@@ -1,3 +1,5 @@
+/** @type {import("prettier").Config} */
+
 module.exports = {
   bracketSameLine: true,
   bracketSpacing: true,
@@ -36,5 +38,6 @@ module.exports = {
         singleQuote: true
       }
     }
-  ]
+  ],
+  plugins: ['prettier-plugin-tailwindcss']
 };
