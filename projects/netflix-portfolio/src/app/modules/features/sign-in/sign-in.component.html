@@ -15,57 +15,62 @@
               value="hire-me@yourfancycompany.com"></app-input>
             <app-input placeholder="Mot de passe" [disabled]="true" type="password" value="toto123"></app-input>
             <a [routerLink]="'/browse'">
-              <app-button [routerLink]="'/browse'">S'identifier</app-button>
+              <button
+                class="mx-0 mb-[12px] mt-[24px] inline-block min-h-[37px] w-full min-w-[98px] max-w-full rounded bg-[#e50914] p-[16px] text-[16px] font-medium leading-[1em] text-white">
+                S'identifier
+              </button>
             </a>
             <p class="mt-[10px] text-[13px] text-[#8c8c8c]">
               Bienvenue sur mon portfolio, je vous propose de découvrir mon profil avec un parcours et une interface qui
               vous est sûrement familier.
               <br />
-              Pour commencer, cliquez sur
-              <span class="whitespace-nowrap"> « S'identifier » </span>
+              <span [ngClass]="customSizeClass">
+                Pour commencer, cliquez sur
+                <span class="whitespace-nowrap"> « S'identifier » </span>
+              </span>
             </p>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="relative z-10 mt-0 w-full min-w-[190px] bg-smokey pb-5 text-[1em] text-[#757575]">
+  <div *ngIf="!hideFooter" class="relative z-10 mt-0 w-full min-w-[190px] bg-smokey pb-5 text-[1em] text-[#757575]">
     <div class="h-0 w-full border-t border-solid border-t-neutral-500 sm:hidden"></div>
     <div class="mx-auto my-0 w-[90%] max-w-[1000px] px-0 py-[30px] text-neutral-500">
       <p class="mx-0 mb-[30px] mt-0 p-0">Des questions ? Contactez-nous</p>
       <ul class="m-0 max-w-[1000px] p-0 text-[13px]">
         <li class="mb-4 ml-0 box-border inline-block w-3/12 min-w-[100px] list-none py-0 pl-0 pr-3 align-top">
-          <a class="cursor-pointer hover:underline">
+          <a class="cursor-pointer hover:underline" (click)="showTheWay()">
             <span>FAQ</span>
           </a>
         </li>
         <li class="mb-4 ml-0 box-border inline-block w-3/12 min-w-[100px] list-none py-0 pl-0 pr-3 align-top">
-          <a class="cursor-pointer hover:underline">
+          <a class="cursor-pointer hover:underline" (click)="showTheWay()">
             <span>Centre d'aide</span>
           </a>
         </li>
         <li class="mb-4 ml-0 box-border inline-block w-3/12 min-w-[100px] list-none py-0 pl-0 pr-3 align-top">
-          <a class="cursor-pointer hover:underline">
+          <a class="cursor-pointer hover:underline" (click)="showTheWay()">
             <span>Boutique Netflix</span>
           </a>
         </li>
         <li class="mb-4 ml-0 box-border inline-block w-3/12 min-w-[100px] list-none py-0 pl-0 pr-3 align-top">
-          <a class="cursor-pointer hover:underline">
+          <a class="cursor-pointer hover:underline" (click)="showTheWay()">
             <span>Conditions d'utilisation</span>
           </a>
         </li>
         <li class="mb-4 ml-0 box-border inline-block w-3/12 min-w-[100px] list-none py-0 pl-0 pr-3 align-top">
-          <a class="cursor-pointer hover:underline">
+          <a class="cursor-pointer hover:underline" (click)="showTheWay()">
             <span>Confidentialité</span>
           </a>
         </li>
         <li class="mb-4 ml-0 box-border inline-block w-3/12 min-w-[100px] list-none py-0 pl-0 pr-3 align-top">
-          <a class="cursor-pointer hover:underline">
+          <a class="cursor-pointer hover:underline" (click)="showTheWay()">
             <span>Préférences de cookies</span>
           </a>
         </li>
         <li class="mb-4 ml-0 box-border inline-block w-3/12 min-w-[100px] list-none py-0 pl-0 pr-3 align-top">
-          <a class="cursor-pointer hover:underline">
+          <a class="cursor-pointer hover:underline" (click)="showTheWay()">
             <span>Mentions légales</span>
           </a>
         </li>

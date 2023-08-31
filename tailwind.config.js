@@ -18,6 +18,21 @@ module.exports = {
       backgroundImage: {
         'smokey-gradient': 'linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0, transparent);',
         'sign-in-banner': "url('/assets/sign-in-banner.jpg')"
+      },
+      animation: {
+        'zoom-in': "zoomIn 1s linear booth"
+      },
+      keyframes: {
+        zoomIn: {
+          '0%': {
+            opacity: 0,
+            transform: 'scale3d(0.3, 0.3, 0.3)'
+          },
+
+          '50%': {
+            opacity: 1
+          }
+        }
       }
     },
     screens: {
