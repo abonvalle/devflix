@@ -1,0 +1,140 @@
+{
+    "guid": "df03f9f5-c18f-4c18-9874-554b0b2a6543",
+    "name": "Dev",
+    "layouts": [
+        {
+            "guid": "b710b7ec-cb43-4b95-a635-4638a042b6ec",
+            "mainCards": [
+                {
+                    "guid": "83dd6e48-b997-4ef2-9180-18e65f0136b0",
+                    "title": "Développeur TEST",
+                    "tagline": "Disponible en freelance",
+                    "shortDescription": "Fort de 5 ans d’expérience dans des entreprises d’édition de logiciel, mes compétences me permettent de m’adapter aux différentes équipes et missions que je recontre.",
+                    "fullDescription": "",
+                    "year": 2018,
+                    "seasons": 5,
+                    "thumbnailPath": "assets/cards/thumbnails/dev.webp",
+                    "clipPath": "assets/cards/clips/dev.mp4",
+                    "related": []
+                }
+            ],
+            "lists": [
+                {
+                    "guid": "83dd6e48-b997-4ef2-9180-18e65f0136g6",
+                    "name": "Compétences",
+                    "cards": [
+                        {
+                            "guid": "83dd6e48-b997-4ef2-9180-18e65f0136b0",
+                            "title": "Développeur TEST",
+                            "tagline": "Disponible en freelance",
+                            "shortDescription": "Fort de 5 ans d’expérience dans des entreprises d’édition de logiciel, mes compétences me permettent de m’adapter aux différentes équipes et missions que je recontre.",
+                            "fullDescription": "",
+                            "year": 2018,
+                            "seasons": 5,
+                            "thumbnailPath": "assets/cards/thumbnails/team.webp",
+                            "clipPath": "",
+                            "related": []
+                        },
+                        {
+                            "guid": "83dd6e48-b997-4ef2-9180-18e65f0136b2",
+                            "title": "Développeur",
+                            "tagline": "Disponible en freelance",
+                            "shortDescription": "Fort de 5 ans d’expérience dans des entreprises d’édition de logiciel, mes compétences me permettent de m’adapter aux différentes équipes et missions que je recontre.",
+                            "fullDescription": "",
+                            "year": 2018,
+                            "seasons": 5,
+                            "thumbnailPath": "assets/cards/thumbnails/dev.webp",
+                            "clipPath": "",
+                            "related": []
+                        },
+                        {
+                            "guid": "83dd6e48-b997-4ef2-9180-18e65f0136b3",
+                            "title": "Développeur TEST",
+                            "tagline": "Disponible en freelance",
+                            "shortDescription": "Fort de 5 ans d’expérience dans des entreprises d’édition de logiciel, mes compétences me permettent de m’adapter aux différentes équipes et missions que je recontre.",
+                            "fullDescription": "",
+                            "year": 2018,
+                            "seasons": 5,
+                            "thumbnailPath": "assets/cards/thumbnails/team.webp",
+                            "clipPath": "",
+                            "related": []
+                        },
+                        {
+                            "guid": "83dd6e48-b997-4ef2-9180-18e65f0136b4",
+                            "title": "Développeur",
+                            "tagline": "Disponible en freelance",
+                            "shortDescription": "Fort de 5 ans d’expérience dans des entreprises d’édition de logiciel, mes compétences me permettent de m’adapter aux différentes équipes et missions que je recontre.",
+                            "fullDescription": "",
+                            "year": 2018,
+                            "seasons": 5,
+                            "thumbnailPath": "assets/cards/thumbnails/dev.webp",
+                            "clipPath": "",
+                            "related": []
+                        }
+                    ]
+                },
+                {
+                    "guid": "83dd6e48-b997-4ef2-9180-18e65f0136g8",
+                    "name": "Expériences",
+                    "cards": [
+                        {
+                            "guid": "83dd6e48-b997-4ef2-9180-18e65f0136b0",
+                            "title": "Développeur TEST",
+                            "tagline": "Disponible en freelance",
+                            "shortDescription": "Fort de 5 ans d’expérience dans des entreprises d’édition de logiciel, mes compétences me permettent de m’adapter aux différentes équipes et missions que je recontre.",
+                            "fullDescription": "",
+                            "year": 2018,
+                            "seasons": 5,
+                            "thumbnailPath": "assets/cards/thumbnails/team.webp",
+                            "clipPath": "",
+                            "related": []
+                        },
+                        {
+                            "guid": "83dd6e48-b997-4ef2-9180-18e65f0131b8",
+                            "title": "Développeur",
+                            "tagline": "Disponible en freelance",
+                            "shortDescription": "Fort de 5 ans d’expérience dans des entreprises d’édition de logiciel, mes compétences me permettent de m’adapter aux différentes équipes et missions que je recontre.",
+                            "fullDescription": "",
+                            "year": 2018,
+                            "seasons": 5,
+                            "thumbnailPath": "assets/cards/thumbnails/dev.webp",
+                            "clipPath": "",
+                            "related": []
+                        }
+                    ]
+                },
+                {
+                    "guid": "83dd6e48-b997-4ef2-9180-18e65f0136g2",
+                    "name": "Projets",
+                    "cards": [
+                        {
+                            "guid": "83dd6e48-b997-4ef2-9180-18e65f0136b0",
+                            "title": "Développeur TEST",
+                            "tagline": "Disponible en freelance",
+                            "shortDescription": "Fort de 5 ans d’expérience dans des entreprises d’édition de logiciel, mes compétences me permettent de m’adapter aux différentes équipes et missions que je recontre.",
+                            "fullDescription": "",
+                            "year": 2018,
+                            "seasons": 5,
+                            "thumbnailPath": "assets/cards/thumbnails/team.webp",
+                            "clipPath": "",
+                            "related": []
+                        },
+                        {
+                            "guid": "83dd6e48-b997-4ef2-9180-18e65f0131b8",
+                            "title": "Développeur",
+                            "tagline": "Disponible en freelance",
+                            "shortDescription": "Fort de 5 ans d’expérience dans des entreprises d’édition de logiciel, mes compétences me permettent de m’adapter aux différentes équipes et missions que je recontre.",
+                            "fullDescription": "",
+                            "year": 2018,
+                            "seasons": 5,
+                            "thumbnailPath": "assets/cards/thumbnails/dev.webp",
+                            "clipPath": "",
+                            "related": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "thumbnailPath": "assets/images/profiles/dev.svg"
+}

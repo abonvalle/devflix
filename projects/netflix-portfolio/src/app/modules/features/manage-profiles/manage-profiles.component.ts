@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import * as profilesJSON from '@assets/jsons/profiles.json';
+import { Profile } from '../../../models/profile';
 
 @Component({
   selector: 'app-manage-profiles',
@@ -6,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./manage-profiles.component.scss']
 })
 export class ManageProfilesComponent {
-
+  profiles: Profile[];
+  constructor() {
+    const profiles = profilesJSON;
+    this.profiles = profiles.profiles;
+    console.warn(this.profiles);
+  }
 }

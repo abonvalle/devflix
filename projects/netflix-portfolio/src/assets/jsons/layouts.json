@@ -1,0 +1,42 @@
+[
+    {
+        "guid": "b710b7ec-cb43-4b95-a635-4638a042b6ec",
+        "mainCards": [
+            {
+                "guid": "83dd6e48-b997-4ef2-9180-18e65f0136b0",
+                "related": []
+            }
+        ],
+        "lists": [
+            {
+                "name": "Projet TEST",
+                "cards": [
+                    {
+                        "guid": "83dd6e48-b997-4ef2-9180-18e65f0136b0",
+                        "related": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "guid": "6003d1f4-fda1-46fe-9fcb-1f25bcf0eca9",
+        "mainCards": [
+            {
+                "guid": "cdb9f822-1c07-4351-ab24-80cf7f319220",
+                "related": []
+            }
+        ],
+        "lists": [
+            {
+                "name": "Projet TEST",
+                "cards": [
+                    {
+                        "guid": "cdb9f822-1c07-4351-ab24-80cf7f319220",
+                        "related": []
+                    }
+                ]
+            }
+        ]
+    }
+]

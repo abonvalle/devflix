@@ -111,6 +111,10 @@ Generated using nucleoapp.com
   content: "\ea0a";
 }
 
+.icon-devflix::before {
+  content: "\ea0c";
+}
+
 .icon-edit::before {
-  content: "\ea0b";
+  content: "\ea0d";
 }
