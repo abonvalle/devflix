@@ -1,0 +1,15 @@
+<div class="flex h-full animate-profile-gate flex-col items-center justify-center p-8 text-[9.41667px]">
+  <h1 class="font-regular my-[.67em] w-full text-center text-[3.5vw] text-white">Qui est-ce ?</h1>
+  <ul class="mb-[2em] flex gap-4 pl-0 lg:gap-[2vw]">
+    <ng-container *ngFor="let profile of profiles">
+      <app-profile-thumbnail *ngIf="!profile.hidden" [profile]="profile" [editor]="editor"></app-profile-thumbnail>
+    </ng-container>
+    <app-add-profile-trigger></app-add-profile-trigger>
+  </ul>
+  <ng-container *ngIf="!editor; else editorTpl">
+    <app-button variante="primary" [href]="['/ManageProfiles']"> Gérer les profils </app-button>
+  </ng-container>
+  <ng-template #editorTpl>
+    <app-button variante="secondary" [href]="['/browse']"> Terminé </app-button>
+  </ng-template>
+</div>

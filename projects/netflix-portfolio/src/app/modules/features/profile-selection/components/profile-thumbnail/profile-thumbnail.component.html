@@ -1,8 +1,7 @@
 <div
-  class="flex cursor-pointer flex-col items-center justify-center gap-1 [&>div>div:first-child]:hover:border-[3px] [&>div>div:first-child]:hover:border-white [&>p]:hover:text-white">
+  class="flex cursor-pointer flex-col items-center justify-center gap-1 text-[9.41667px] [&>div>div:first-child]:hover:border-[.3em] [&>div>div:first-child]:hover:border-[#e5e5e5] [&>p]:hover:text-[#e5e5e5]">
   <div class="relative h-[10vw] min-h-[90px] w-[10vw] min-w-[90px] rounded">
-    <div
-      class="absolute left-0 top-0 z-0 h-full w-full rounded border-[3px] border-solid border-transparent transition-all duration-200"></div>
+    <div class="absolute left-0 top-0 z-0 h-full w-full rounded border-[3px] border-solid border-transparent"></div>
     <!-- If editor -->
     <ng-container *ngIf="editor">
       <div class="absolute z-10 h-full w-full bg-[#111] opacity-50"></div>
@@ -15,7 +14,7 @@
       [alt]="'thumbnail profile ' + profile.name"
       class="top-0 h-[10vw] min-h-[90px] w-[10vw] min-w-[90px] max-w-[unset] rounded" />
   </div>
-  <p class="mb-4 mt-0 text-lg font-medium text-[#808080] transition-all duration-200 lg:text-[1.3vw]">
+  <p class="font-regular mb-4 mt-0 text-lg text-[#808080] lg:text-[1.3vw]">
     {{ profile.name }}
   </p>
 </div>
