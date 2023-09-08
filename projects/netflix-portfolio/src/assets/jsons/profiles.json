@@ -3,35 +3,35 @@
     {
       "guid": "df03f9f5-c18f-4c18-9874-554b0b2a6543",
       "name": "Dev",
-      "layouts": ["b710b7ec-cb43-4b95-a635-4638a042b6ec"],
+      "layoutsGuids": ["dev"],
       "thumbnailPath": "assets/images/profiles/dev.svg",
       "hidden": false
     },
     {
       "guid": "7bfad4e5-9d8f-426a-8f29-46e22fae3aee",
       "name": "Recruteur",
-      "layouts": ["6003d1f4-fda1-46fe-9fcb-1f25bcf0eca9"],
+      "layoutsGuids": ["recruteur"],
       "thumbnailPath": "assets/images/profiles/recruteur.svg",
       "hidden": false
     },
     {
       "guid": "7bfad4e5-9d8f-426a-8f29-46e22fae3aez",
       "name": "XGamer66",
-      "layouts": ["6003d1f4-fda1-46fe-9fcb-1f25bcf0eca9"],
+      "layoutsGuids": ["6003d1f4-fda1-46fe-9fcb-1f25bcf0eca9"],
       "thumbnailPath": "assets/images/profiles/gamer.svg",
       "hidden": true
     },
     {
       "guid": "7bfad4e5-9d8f-426a-8f29-46e22fae3aer",
       "name": "GOTLover3",
-      "layouts": ["6003d1f4-fda1-46fe-9fcb-1f25bcf0eca9"],
+      "layoutsGuids": ["6003d1f4-fda1-46fe-9fcb-1f25bcf0eca9"],
       "thumbnailPath": "assets/images/profiles/serie.svg",
       "hidden": true
     },
     {
       "guid": "7bfad4e5-9d8f-426a-8f29-46e22fae3aeg",
       "name": "Totoro4ever",
-      "layouts": ["6003d1f4-fda1-46fe-9fcb-1f25bcf0eca9"],
+      "layoutsGuids": ["6003d1f4-fda1-46fe-9fcb-1f25bcf0eca9"],
       "thumbnailPath": "assets/images/profiles/anime.svg",
       "hidden": true
     }

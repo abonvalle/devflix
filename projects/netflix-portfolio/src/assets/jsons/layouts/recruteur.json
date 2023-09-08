@@ -1,0 +1,18 @@
+{
+  "guid": "b710b7ec-cb43-4b95-a635-4638a042b6ec",
+  "headerCardsGuids": [
+    "83dd6e48-b997-4ef2-9180-18e65f0136b0"
+  ],
+  "lists": [
+    {
+      "guid": "83dd6e48-b997-4ef2-9180-18e65f0136s1",
+      "name": "Compétences",
+      "order": 1,
+      "type": "classic",
+      "cardsGuids": [
+        "83dd6e48-b997-4ef2-9180-18e65f0136b0",
+        "83dd6e48-b997-4ef2-9180-18e65f0136b0"
+      ]
+    }
+  ]
+}
