@@ -11,11 +11,11 @@ import { buttonVariant } from './button-variant.interface';
   imports: [CommonModule, RouterModule]
 })
 export class ButtonComponent {
-  @Input() variante: keyof typeof buttonVariant = 'primary';
+  @Input() variant: keyof typeof buttonVariant = 'primary';
   @Input() rounded: boolean = false;
   @Input() href: string[] = [''];
   get variantClasses(): string {
-    return buttonVariant[this.variante];
+    return buttonVariant[this.variant];
   }
   get complementaryClasses() {
     return `${this.variantClasses} ${this.rounded ? 'w-fit rounded-full p-2' : ''}`;

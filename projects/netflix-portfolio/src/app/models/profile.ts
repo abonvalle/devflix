@@ -1,7 +1,7 @@
 export interface Profile {
   guid: string;
   name: string;
-  layouts: string[];
+  layoutsGuids: string[];
   thumbnailPath: string;
-  hidden: boolean;
+  hidden?: boolean;
 }

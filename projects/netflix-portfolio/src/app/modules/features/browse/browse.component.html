@@ -1,1 +1,10 @@
-<app-profile-selection [editor]="false"></app-profile-selection>
+<ng-container *ngIf="(browseServiceCurrentProfile$ | async) !== null; else profileSelectionTpl">
+  <ng-container *ngIf="currentProfileMainCard$ | async; let currentProfileMainCard">
+    <app-header *ngIf="currentProfileMainCard !== null" [card]="currentProfileMainCard"></app-header>
+  </ng-container>
+  <app-cards-list></app-cards-list>
+</ng-container>
+
+<ng-template #profileSelectionTpl>
+  <app-profile-selection [editor]="false"></app-profile-selection>
+</ng-template>
