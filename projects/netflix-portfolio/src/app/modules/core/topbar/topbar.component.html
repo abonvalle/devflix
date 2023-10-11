@@ -1,0 +1,11 @@
+<div
+  [ngClass]="{ 'bg-[#141414]': (isBgDark$ | async) === true }"
+  class="fixed top-0 z-10 flex h-[68px] w-full justify-between bg-gradient-to-b from-[#000000b3] from-[10%] to-transparent to-100% p-4 transition-all duration-700 ease-out">
+  <ng-container *ngIf="(profile$ | async) !== null">
+    <i class="icon icon-devflix h-8"></i>
+    <div class="flex cursor-pointer gap-2">
+      <img [src]="(profile$ | async)?.thumbnailPath" alt="" />
+      <i class="icon icon-down_arrow w-4 font-bold transition-all duration-300 ease-out"></i>
+    </div>
+  </ng-container>
+</div>

@@ -13,7 +13,7 @@ import { buttonVariant } from './button-variant.interface';
 export class ButtonComponent {
   @Input() variant: keyof typeof buttonVariant = 'primary';
   @Input() rounded: boolean = false;
-  @Input() href: string[] = [''];
+  @Input() href: string[] | null = null;
   get variantClasses(): string {
     return buttonVariant[this.variant];
   }
