@@ -1,12 +1,18 @@
 {
   "guid": "83dd6e48-b997-4ef2-9180-18e65f0136b0",
-  "title": "Développeur TEST",
-  "tagline": "Disponible en freelance",
-  "shortDescription": "Fort de 5 ans d’expérience dans des entreprises d’édition de logiciel, mes compétences me permettent de m’adapter aux différentes équipes et missions que je recontre.",
+  "title": "Alexandre Bonvalle",
+  "tagline": "Développeur Front-end",
+  "shortDescription": "Un récit captivant qui suit la vie d'un développeur passionné. Plongez dans son monde créatif et découvrez les défis et triomphes de cette aventure.",
   "fullDescription": "",
   "year": 2018,
   "seasons": 5,
   "thumbnailPath": "assets/cards/thumbnails/dev.webp",
   "clipPath": "assets/cards/clips/dev.mp4",
-  "related": []
+  "related": [],
+  "recommended": 98,
+  "tags": [
+    "Profile"
+  ],
+  "attributes": [],
+  "stack": []
 }

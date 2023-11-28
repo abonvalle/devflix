@@ -5,20 +5,18 @@
   ],
   "lists": [
     {
-      "guid": "83dd6e48-b997-4ef2-9180-18e65f0136g6",
-      "name": "Compétences",
+      "guid": "83dd6e48-b997-4ef2-9180-18e65f0136g8",
+      "name": "Expériences",
       "order": 1,
       "type": "classic",
       "cardsGuids": [
-        "83dd6e48-b997-4ef2-9180-18e65f0136b0",
-        "83dd6e48-b997-4ef2-9180-18e65f0136b0",
-        "83dd6e48-b997-4ef2-9180-18e65f0136b0",
-        "83dd6e48-b997-4ef2-9180-18e65f0136b0"
+        "54dd6e48-b997-4ef2-9180-52e65f0136b0",
+        "20bb6e48-b997-4ef2-9180-52e65f0136b0"
       ]
     },
     {
-      "guid": "83dd6e48-b997-4ef2-9180-18e65f0136g8",
-      "name": "Expériences",
+      "guid": "83dd6e48-b997-4ef2-9180-18e65f0136g6",
+      "name": "Compétences",
       "order": 2,
       "type": "classic",
       "cardsGuids": [

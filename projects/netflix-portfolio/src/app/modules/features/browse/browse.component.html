@@ -2,7 +2,12 @@
   <ng-container *ngIf="currentProfileMainCard$ | async; let currentProfileMainCard">
     <app-header *ngIf="currentProfileMainCard !== null" [card]="currentProfileMainCard"></app-header>
   </ng-container>
-  <app-cards-list></app-cards-list>
+  <ng-container *ngIf="currentProfileCardsLists$ | async; let cardLists">
+    <ng-container *ngFor="let cardList of cardLists">
+      <app-cards-list *ngIf="cardList !== null" [name]="cardList.name" [cards]="cardList.cards"></app-cards-list>
+    </ng-container>
+  </ng-container>
+  <app-modal></app-modal>
 </ng-container>
 
 <ng-template #profileSelectionTpl>

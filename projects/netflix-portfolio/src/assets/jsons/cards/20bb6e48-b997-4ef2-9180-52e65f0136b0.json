@@ -1,0 +1,45 @@
+{
+  "guid": "20bb6e48-b997-4ef2-9180-52e65f0136b0",
+  "title": "Développeur Front-end : Les débuts",
+  "tagline": "Wanao, Bidart",
+  "shortDescription": "Réalisation d'interfaces pour la version Web d’un logiciel. Développement d'une petite app Android native.",
+  "fullDescription": "",
+  "year": 2018,
+  "seasons": 1,
+  "thumbnailPath": "assets/cards/thumbnails/dev.webp",
+  "clipPath": "",
+  "related": [],
+  "recommended": 98,
+  "tags": [
+    "Expériences professionelles"
+  ],
+  "attributes": [
+    {
+      "imgPath": "",
+      "label": "Javascript"
+    },
+    {
+      "imgPath": "",
+      "label": "Edition de logiciel"
+    }
+  ],
+  "stack": [
+    {
+      "name": "HTML",
+      "version": "5"
+    },
+    {
+      "name": "D3.js"
+    },
+    {
+      "name": "JQuery"
+    },
+    {
+      "name": "Bootstrap",
+      "version": "4"
+    },
+    {
+      "name": "Java"
+    }
+  ]
+}

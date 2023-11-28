@@ -1,4 +1,4 @@
-import { Card } from './card';
+import { Card } from './card.interface';
 
 export interface BrowseLayout {
   guid: string;

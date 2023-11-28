@@ -28,6 +28,7 @@
               "projects/netflix-portfolio/src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/deeppurple-amber.css",
               "projects/netflix-portfolio/src/styles.scss"
             ],
             "scripts": []
@@ -96,6 +97,7 @@
               "projects/netflix-portfolio/src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/deeppurple-amber.css",
               "projects/netflix-portfolio/src/styles.scss"
             ],
             "scripts": []

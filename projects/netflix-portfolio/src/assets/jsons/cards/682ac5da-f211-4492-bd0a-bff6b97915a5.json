@@ -1,6 +1,6 @@
 {
   "guid": "682ac5da-f211-4492-bd0a-bff6b97915a5",
-  "title": "Développeur TEST",
+  "title": "Développeur Front-end",
   "tagline": "Disponible en freelance",
   "shortDescription": "Fort de 5 ans d’expérience dans des entreprises d’édition de logiciel, mes compétences me permettent de m’adapter aux différentes équipes et missions que je recontre.",
   "fullDescription": "",
@@ -8,5 +8,6 @@
   "seasons": 5,
   "thumbnailPath": "assets/cards/thumbnails/recruteur.webp",
   "clipPath": "assets/cards/clips/recruteur.mp4",
-  "related": []
+  "related": [],
+  "recommended": 96
 }

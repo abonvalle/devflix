@@ -3,7 +3,7 @@ import axios from 'axios';
 import { BehaviorSubject, Subscription } from 'rxjs';
 import { BrowseLayout, Card } from '../../../models';
 import { APIBrowseLayout } from '../../../models/api';
-import { Profile } from '../../../models/profile';
+import { Profile } from '../../../models/profile.interface';
 
 @Injectable()
 export class BrowseService implements OnDestroy {
@@ -19,6 +19,10 @@ export class BrowseService implements OnDestroy {
       console.warn(profileLayout);
       this.currentProfileLayout$.next(profileLayout);
     });
+    const profile = sessionStorage.getItem('profile');
+    if (profile) {
+      this.setCurrentProfile(JSON.parse(profile));
+    }
   }
   ngOnDestroy(): void {
     this.currentProfileSubscription.unsubscribe();
@@ -26,6 +30,7 @@ export class BrowseService implements OnDestroy {
 
   async setCurrentProfile(profile: Profile): Promise<void> {
     this.currentProfile$.next(profile);
+    sessionStorage.setItem('profile', JSON.stringify(profile));
   }
   async getBrowseLayout(profile: Profile): Promise<BrowseLayout> {
     const APIProfileLayout = (
@@ -55,7 +60,7 @@ export class BrowseService implements OnDestroy {
     let profileLayout: BrowseLayout;
     profileLayout = {
       guid: APIProfileLayout.guid,
-      lists: {
+      lists: [
         ...APIProfileLayout.lists.map((list) => ({
           guid: list.guid,
           name: list.name,
@@ -63,7 +68,7 @@ export class BrowseService implements OnDestroy {
             .map((guid) => cards.find((card) => card.guid === guid))
             .filter((card) => !!card) as Card[]
         }))
-      },
+      ],
       mainCards: APIProfileLayout.headerCardsGuids
         .map((guid) => cards.find((card) => card.guid === guid))
         .filter((card) => !!card) as Card[]

@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import * as profilesJSON from '@assets/jsons/profiles.json';
 import { BrowseService } from '@features/browse/browse.service';
-import { Profile } from '../../../models/profile';
+import { Profile } from '../../../models/profile.interface';
 @Component({
   selector: 'app-profile-selection',
   templateUrl: './profile-selection.component.html',

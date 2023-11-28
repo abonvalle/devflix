@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import * as profilesJSON from '@assets/jsons/profiles.json';
-import { Profile } from '../../../models/profile';
+import { Profile } from '../../../models/profile.interface';
 
 @Component({
   selector: 'app-manage-profiles',

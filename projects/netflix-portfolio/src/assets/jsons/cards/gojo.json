@@ -1,0 +1,23 @@
+{
+  "guid": "gojo",
+  "title": "M. Gojo",
+  "tagline": "",
+  "shortDescription": "Un film captivant mettant en scène un chat charmant et espiègle, dont le seul talent est de miauler, chercher l'attention et savourer de délicieuses portions de pâté. Une comédie adorable qui explore les joies simples de la compagnie féline.",
+  "fullDescription": "",
+  "year": 2023,
+  "seasons": null,
+  "thumbnailPath": "assets/cards/thumbnails/dev.webp",
+  "clipPath": "",
+  "related": [],
+  "recommended": 98,
+  "tags": [
+    "Profile"
+  ],
+  "attributes": [
+    {
+      "imgPath": "",
+      "label": "Kawai"
+    }
+  ],
+  "stack": []
+}
