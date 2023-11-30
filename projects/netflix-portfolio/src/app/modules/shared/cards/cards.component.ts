@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { Card } from '@models/*';
 
@@ -5,9 +6,14 @@ import { Card } from '@models/*';
   selector: 'app-cards',
   templateUrl: './cards.component.html',
   styleUrls: ['./cards.component.scss'],
-  styles: [':host{display:contents}'],
-  standalone: true
+  standalone: true,
+  imports: [CommonModule]
 })
 export class CardsComponent {
   @Input({ required: true }) card!: Card;
+  isHovered: boolean = false;
+
+  setIsHover(state: boolean) {
+    this.isHovered = state;
+  }
 }

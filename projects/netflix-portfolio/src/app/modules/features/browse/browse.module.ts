@@ -8,9 +8,7 @@ import { ButtonComponent } from '@modules/shared/button/button.component';
 import { CardsComponent } from '../../shared/cards/cards.component';
 import { BrowseComponent } from './browse.component';
 import { BrowseService } from './browse.service';
-import { CardDetailsHeaderComponent } from './components/card-details-header/card-details-header.component';
-import { CardDetailsComponent } from './components/card-details/card-details.component';
-import { CardsListComponent } from './components/cards-list/cards-list.component';
+import { CardsList2Component } from './components/cards-list2/cards-list2.component';
 import { HeaderComponent } from './components/header/header.component';
 
 const routes: Routes = [
@@ -21,13 +19,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [
-    BrowseComponent,
-    HeaderComponent,
-    CardsListComponent,
-    CardDetailsComponent,
-    CardDetailsHeaderComponent
-  ],
+  declarations: [BrowseComponent, HeaderComponent, CardsList2Component],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

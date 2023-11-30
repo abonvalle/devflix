@@ -1,0 +1,10 @@
+<div #sliderFrame class="slider-frame">
+  <h2 class="2xl:text-[2rem] ml-14 select-none text-[1.25rem] font-bold uppercase lg:text-[2vw]">{{ name }}</h2>
+  <div class="btn prev select-none" (click)="prev()"></div>
+  <div class="btn next select-none" (click)="next()"></div>
+  <div #sliderContainer class="slider-container select-none">
+    <div #slides class="slide select-none" *ngFor="let card of cards; let index = index">
+      <app-cards [card]="card" class="block h-full w-full" (click)="openCardDetails(card)"></app-cards>
+    </div>
+  </div>
+</div>

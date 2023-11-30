@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { BehaviorSubject, Subject, takeUntil } from 'rxjs';
+import { Card } from '../../../models/card.interface';
+import { ModalService } from './modal.service';
 
 @Component({
   selector: 'app-modal',
@@ -6,5 +9,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./modal.component.scss']
 })
 export class ModalComponent {
+  private _destroy$: Subject<void> = new Subject();
+  card$: BehaviorSubject<Card | null> = new BehaviorSubject<Card | null>(null);
+  constructor(private _modalService: ModalService) {}
+  ngOnInit(): void {
+    this._modalService.currentFocusCard$.pipe(takeUntil(this._destroy$)).subscribe((focusCard) => {
+      // console.warn('card focus change', focusCard, focusCard?.node.getBoundingClientRect());
 
+      this.card$.next(focusCard);
+    });
+  }
+  ngOnDestroy(): void {
+    this._destroy$.next();
+    this._destroy$.unsubscribe();
+  }
 }

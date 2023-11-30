@@ -1,5 +1,17 @@
-<div class="relative inline-block w-[20%] whitespace-normal px-[0.2vw] align-top">
+<div
+  class="relative whitespace-normal px-[0.2vw] align-top"
+  (mouseenter)="setIsHover(true)"
+  (mouseleave)="setIsHover(false)">
   <div class="relative h-0 w-full overflow-hidden rounded-[0.2vw] px-[0] py-[28.125%]">
     <img class="absolute bottom-0 left-0 right-0 top-0 w-full" [src]="card.thumbnailPath" alt="" />
+  </div>
+  <div *ngIf="isHovered" class="absolute left-0 top-0 z-50 w-[350px] whitespace-normal px-[0.2vw] align-top">
+    <div class="relative h-0 w-full overflow-hidden rounded-[0.2vw] px-[0] py-[28.125%]">
+      <img class="absolute bottom-0 left-0 right-0 top-0 w-full" [src]="card.thumbnailPath" alt="" />
+    </div>
+    <div class="flex">
+      <p class="text-recommended text-sm">Recommandé à {{ card.recommended }}%</p>
+      <p class="text-sm text-white">{{ card.year }}</p>
+    </div>
   </div>
 </div>
