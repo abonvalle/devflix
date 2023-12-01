@@ -51,11 +51,16 @@ export class BrowseService implements OnDestroy {
       [...APIProfileLayout.headerCardsGuids]
     );
 
-    const cards = await Promise.all(
+    let cards = await Promise.all(
       cardsGuids.map(
-        (cardGuid) => axios.get(`/assets/jsons/cards/${cardGuid}.json`).then((a) => a.data) as Promise<Card>
+        (cardGuid) =>
+          axios.get(`/assets/jsons/cards/${cardGuid}.json`).then(
+            (a) => a.data,
+            () => null
+          ) as Promise<Card | null>
       )
     );
+    cards = cards.filter((card) => card !== null);
     console.warn('cards', cards);
     let profileLayout: BrowseLayout;
     profileLayout = {
@@ -65,12 +70,12 @@ export class BrowseService implements OnDestroy {
           guid: list.guid,
           name: list.name,
           cards: list.cardsGuids
-            .map((guid) => cards.find((card) => card.guid === guid))
+            .map((guid) => cards.find((card) => card?.guid === guid))
             .filter((card) => !!card) as Card[]
         }))
       ],
       mainCards: APIProfileLayout.headerCardsGuids
-        .map((guid) => cards.find((card) => card.guid === guid))
+        .map((guid) => cards.find((card) => card?.guid === guid))
         .filter((card) => !!card) as Card[]
     };
     return profileLayout;

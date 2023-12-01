@@ -7,7 +7,7 @@
 
   <video
     *ngIf="card.clipPath; else imgTpl"
-    class="h-[56vw] max-h-[703px] w-full max-w-[unset]"
+    class="h-[56vw] max-h-[675px] w-full max-w-[unset]"
     [src]="card.clipPath"
     [autoplay]="true"
     [loop]="true"
@@ -15,7 +15,7 @@
     playsInline
     [muted]="mute"></video>
   <ng-template #imgTpl>
-    <img class="h-[56vw] max-h-[703px] w-full max-w-[unset]" [src]="card.thumbnailPath" />
+    <img class="h-[56vw] max-h-[675px] w-full max-w-[unset]" [src]="card.thumbnailPath" />
   </ng-template>
   <div
     class="fading-bg absolute -bottom-px top-auto z-0 h-[14.7vw] w-full bg-transparent bg-[0_top] bg-repeat-x opacity-100">
@@ -31,7 +31,7 @@
             );
           `} -->
   </div>
-  <div class="absolute left-0 top-0 z-0 flex h-[40.25vw] max-h-screen flex-col justify-end p-16">
+  <div class="absolute bottom-0 left-0 z-0 flex flex-col justify-end p-[55px]">
     <!--  css={css`
             width: calc(100% - 8rem);
           `} -->

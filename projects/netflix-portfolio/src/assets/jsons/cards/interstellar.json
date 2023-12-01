@@ -1,0 +1,24 @@
+{
+  "guid": "interstellar",
+  "title": "Interstellar",
+  "tagline": "Parmis les plus aimés",
+  "shortDescription": "Tandis que l'humanité se meurt sur Terre, un groupe d'astronautes voyage à travers un trou de ver à la recherche d'une autre planète habitable.",
+  "fullDescription": "",
+  "year": 2010,
+  "seasons": 1,
+  "thumbnailPath": "assets/cards/thumbnails/interstellar.jpg",
+  "clipPath": "",
+  "related": [],
+  "recommended": 100,
+  "tags": [
+    "Thrillers",
+    "Intrigues",
+    "Films inspirés de livres"
+  ],
+  "attributes": [],
+  "stack": [
+    "Leonardo DiCaprio",
+    " Mark Ruffalo",
+    " Ben Kingsley"
+  ]
+}

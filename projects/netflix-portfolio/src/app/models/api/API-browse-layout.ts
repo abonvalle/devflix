@@ -5,7 +5,7 @@ export interface APIBrowseLayout {
     guid: string;
     name: string;
     order: number;
-    type: 'classic' | 'top' | 'highlight';
+    type: 'classic' | 'top' | 'highlight' | 'pending';
     cardsGuids: string[];
   }[];
 }

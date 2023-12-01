@@ -29,7 +29,7 @@ export class CardsList2Component implements AfterViewInit {
 
   currentSliderCount = 0;
   showCount = 6;
-  controlsWidth = 40;
+  controlsWidth = 55;
   scollWidth = 0;
 
   constructor(
@@ -90,7 +90,7 @@ export class CardsList2Component implements AfterViewInit {
   next() {
     console.log(this.currentSliderCount, this.cards.length / this.showCount - 1);
     console.log(this.scollWidth);
-    this.scollWidth = this.scollWidth + window.innerWidth - 80;
+    this.scollWidth = this.scollWidth + window.innerWidth - this.controlsWidth * 2;
 
     const nbSlide = this.cards.length / this.showCount;
     if (this.currentSliderCount >= nbSlide - 1) {
@@ -110,10 +110,10 @@ export class CardsList2Component implements AfterViewInit {
     const nbSlide = this.cards.length / this.showCount;
     if (this.currentSliderCount <= 0) {
       this.currentSliderCount = Math.ceil(nbSlide - 1);
-      this.scollWidth = (window.innerWidth - 80) * Math.ceil(nbSlide - 1);
+      this.scollWidth = (window.innerWidth - this.controlsWidth * 2) * Math.ceil(nbSlide - 1);
     } else {
       this.currentSliderCount--;
-      this.scollWidth = this.scollWidth - window.innerWidth + 80;
+      this.scollWidth = this.scollWidth - window.innerWidth + this.controlsWidth * 2;
     }
     this.animate();
     this.hideLeftBtn();

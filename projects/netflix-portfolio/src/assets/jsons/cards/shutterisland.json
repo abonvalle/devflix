@@ -1,0 +1,24 @@
+{
+  "guid": "shutterisland",
+  "title": "Shutter Island",
+  "tagline": "Parmis les plus aimés",
+  "shortDescription": "Alors qu'il enquête sur la disparition d'une patiente d'un hôpital psychiatrique, un marshal commence à remettre en question sa propre compréhension de la réalité.",
+  "fullDescription": "",
+  "year": 2010,
+  "seasons": 1,
+  "thumbnailPath": "assets/cards/thumbnails/team.webp",
+  "clipPath": "",
+  "related": [],
+  "recommended": 97,
+  "tags": [
+    "Thrillers",
+    "Intrigues",
+    "Films inspirés de livres"
+  ],
+  "attributes": [],
+  "stack": [
+    "Leonardo DiCaprio",
+    " Mark Ruffalo",
+    " Ben Kingsley"
+  ]
+}
