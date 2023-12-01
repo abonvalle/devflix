@@ -9,13 +9,13 @@ module.exports = {
       sans: 'Poppins',
       body: 'Poppins',
       title: 'Roboto',
-      nucleo: 'Nucleo'
+      icomoon: 'icomoon'
     },
     extend: {
       colors: {
         smokey: 'rgba(0, 0, 0, 0.75)',
         'dark-gray': '#181818',
-        recommende: '#46d369'
+        recommended: '#46d369'
       },
       backgroundImage: {
         'smokey-gradient': 'linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0, transparent);',

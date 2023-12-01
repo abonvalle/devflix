@@ -18,6 +18,6 @@ export class ButtonComponent {
     return buttonVariant[this.variant];
   }
   get complementaryClasses() {
-    return `${this.variantClasses} ${this.rounded ? 'w-fit rounded-full p-2' : ''}`;
+    return `${this.variantClasses} ${this.rounded ? 'w-fit rounded-full !p-2 !m-[4px]' : ''}`;
   }
 }

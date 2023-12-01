@@ -5,6 +5,7 @@
           ;
         `} -->
   <video
+    *ngIf="card.clipPath; else imgTpl"
     class="h-[66.25vw] max-h-[unset] max-w-[unset]"
     [src]="card.clipPath"
     [autoplay]="true"
@@ -12,6 +13,9 @@
     [controls]="false"
     playsInline
     [muted]="mute"></video>
+  <ng-template #imgTpl>
+    <img class="h-[66.25vw] max-h-[unset] max-w-[unset]" [src]="card.thumbnailPath" />
+  </ng-template>
   <div
     class="fading-bg absolute -bottom-px top-auto z-0 h-[14.7vw] w-full bg-transparent bg-[0_top] bg-repeat-x opacity-100">
     <!--  css={css`

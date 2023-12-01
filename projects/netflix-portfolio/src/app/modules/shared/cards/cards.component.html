@@ -1,17 +1,36 @@
 <div
-  class="relative whitespace-normal px-[0.2vw] align-top"
+  class="relative mx-[0.2vw] h-full cursor-pointer overflow-visible"
   (mouseenter)="setIsHover(true)"
   (mouseleave)="setIsHover(false)">
-  <div class="relative h-0 w-full overflow-hidden rounded-[0.2vw] px-[0] py-[28.125%]">
-    <img class="absolute bottom-0 left-0 right-0 top-0 w-full" [src]="card.thumbnailPath" alt="" />
+  <div class="h-full w-full overflow-hidden rounded-[0.2vw] px-[0]">
+    <img class="bottom-0 left-0 right-0 top-0 w-full" [src]="card.thumbnailPath" alt="" />
   </div>
-  <div *ngIf="isHovered" class="absolute left-0 top-0 z-50 w-[350px] whitespace-normal px-[0.2vw] align-top">
-    <div class="relative h-0 w-full overflow-hidden rounded-[0.2vw] px-[0] py-[28.125%]">
-      <img class="absolute bottom-0 left-0 right-0 top-0 w-full" [src]="card.thumbnailPath" alt="" />
+  <div
+    *ngIf="isHovered$"
+    #cardMiniModal
+    class="absolute left-0 top-0 mx-[0.2vw] hidden h-full w-full overflow-visible whitespace-normal align-top shadow-[0px_3px_10px_0px] shadow-[rgba(0,0,0,0.75)]">
+    <div class="h-full w-full overflow-hidden px-[0]">
+      <img class="bottom-0 left-0 right-0 top-0 w-full rounded-t-[4px]" [src]="card.thumbnailPath" alt="" />
     </div>
-    <div class="flex">
-      <p class="text-recommended text-sm">Recommandé à {{ card.recommended }}%</p>
-      <p class="text-sm text-white">{{ card.year }}</p>
+    <div #cardMiniModalDetails class="absolute z-50 hidden w-full flex-col rounded-b-[4px] bg-[#141414] p-[16px]">
+      <div class="mb-[8px] flex flex-row justify-between">
+        <div class="flex flex-row">
+          <app-button variant="tertiary" [rounded]="true">
+            <i ngClass="icon icon-plus"></i>
+          </app-button>
+          <app-button variant="tertiary" [rounded]="true">
+            <i ngClass="icon icon-like"></i>
+          </app-button>
+        </div>
+        <app-button variant="tertiary" [rounded]="true">
+          <i ngClass="icon icon-chevron"></i>
+        </app-button>
+      </div>
+      <div class="my-[12px] flex flex-col">
+        <p class="text-[16px] font-[500] text-recommended">Recommandé à {{ card.recommended }}%</p>
+        <p class="text-[16px] text-[#BCBCBC]">{{ card.year }}</p>
+      </div>
+      <p class="text-[16px] text-white">{{ card.tags }}</p>
     </div>
   </div>
 </div>
