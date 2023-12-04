@@ -19,6 +19,9 @@ export class CardsComponent implements AfterViewInit, OnDestroy {
   isHovered$: BehaviorSubject<boolean> = new BehaviorSubject(false);
   _destroy$: Subject<void> = new Subject();
   isCurrentOpenedCard$: BehaviorSubject<boolean> = new BehaviorSubject(false);
+  get tags(): string {
+    return this.card?.tags?.join(', ');
+  }
   constructor(
     private _modalService: ModalService,
     private _renderer: Renderer2

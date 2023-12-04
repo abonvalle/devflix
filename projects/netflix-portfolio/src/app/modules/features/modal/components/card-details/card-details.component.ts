@@ -25,7 +25,7 @@ export class CardDetailsComponent implements OnInit {
     return this.isMovieCard ? (this.card as MovieCard).duration : (this.card as SerieCard).seasons;
   }
   get tags(): string {
-    return this.card.tags.join(', ');
+    return this.card?.tags?.join(', ');
   }
   get episods() {
     return this.isSerieCard ? (this.card as SerieCard).episods : null;
@@ -52,7 +52,7 @@ export class CardDetailsComponent implements OnInit {
           ) as Promise<Card | null>
       )
     );
-    cards = cards.filter((card) => card === null);
+    cards = cards.filter((card) => card !== null);
     this.relatedCards$.next(cards as Card[]);
   }
 }

@@ -1,4 +1,4 @@
-<div class="relative h-full w-screen max-w-[1200px] bg-[#141414]">
+<div class="relative w-screen max-w-[900px] bg-[#141414]">
   <button
     class="absolute right-5 top-5 z-50 flex items-center justify-center rounded-full border-none bg-[#181818] p-[8px] outline-none"
     (click)="close()">
@@ -27,7 +27,7 @@
         </p>
       </div>
     </div>
-    <ng-container *ngIf="isSerieCard">
+    <ng-container *ngIf="isSerieCard && (episods?.length ?? 0 > 0)">
       <h2 class="mb-[20px] mt-[48px] text-[24px] font-[500]">Épisodes</h2>
       <div class="flex flex-col">
         <div
@@ -42,15 +42,18 @@
       </div>
     </ng-container>
     <h2 class="mb-[20px] mt-[48px] text-[24px] font-[500]">Titres similaires</h2>
-    <div class="relative" *ngFor="let similarCards of relatedCards$ | async">
-      <p class="absolute text-[16px] text-[#BCBCBC]">{{ durationInfo }}</p>
-      <div class="flex flex-row gap-[32px]">
-        <div class="flex flex-col gap-[8px]">
-          <div class="flex gap-[8px]">
-            <p class="text-[16px] font-[500] text-recommended">Recommandé à {{ similarCards.recommended }}%</p>
-            <p class="text-[16px] text-[#BCBCBC]">{{ similarCards.year }}</p>
+    <div class="grid grid-cols-3 gap-[16px] pb-[50px]">
+      <div class="relative" *ngFor="let similarCards of relatedCards$ | async">
+        <p class="absolute right-[8px] top-[4px] text-[16px] font-[500]">{{ durationInfo }}</p>
+        <div class="flex h-full w-full flex-col rounded-[4px] bg-[#2f2f2f]">
+          <img class="h-[56vw] max-h-[150px] w-full max-w-[unset] rounded-[4px]" [src]="similarCards.thumbnailPath" />
+          <div class="flex flex-col gap-[8px] p-[16px]">
+            <div class="flex gap-[8px]">
+              <p class="text-[16px] font-[500] text-recommended">Recommandé à {{ similarCards?.recommended }}%</p>
+              <p class="text-[16px] text-[#BCBCBC]">{{ similarCards?.year }}</p>
+            </div>
+            <p class="text-[14px] text-white">{{ similarCards?.description }}</p>
           </div>
-          <p class="text-[14px] text-white">{{ similarCards.description }}</p>
         </div>
       </div>
     </div>

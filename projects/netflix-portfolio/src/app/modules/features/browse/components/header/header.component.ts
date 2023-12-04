@@ -14,6 +14,11 @@ export class HeaderComponent {
   constructor(public dialog: MatDialog) {}
   openDetail() {
     this.dialog.closeAll();
-    this.dialog.open(CardDetailsComponent, { data: { card: this.card }, maxWidth: '100vw' });
+    this.dialog.open(CardDetailsComponent, {
+      data: { card: this.card },
+      maxWidth: '100vw',
+      height: '100%',
+      panelClass: '!mt-[28px]'
+    });
   }
 }

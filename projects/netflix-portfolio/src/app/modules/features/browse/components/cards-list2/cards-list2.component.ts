@@ -38,7 +38,12 @@ export class CardsList2Component implements AfterViewInit {
   ) {}
   openCardDetails(card: Card) {
     this.dialog.closeAll();
-    this.dialog.open(CardDetailsComponent, { data: { card }, maxWidth: '100vw' });
+    this.dialog.open(CardDetailsComponent, {
+      data: { card },
+      maxWidth: '100vw',
+      height: '100%',
+      panelClass: '!mt-[28px]'
+    });
   }
 
   ngAfterViewInit(): void {

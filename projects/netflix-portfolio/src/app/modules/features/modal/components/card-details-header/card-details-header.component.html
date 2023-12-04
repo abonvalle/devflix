@@ -7,7 +7,7 @@
 
   <video
     *ngIf="card.clipPath; else imgTpl"
-    class="h-[56vw] max-h-[675px] w-full max-w-[unset]"
+    class="h-[56vw] max-h-[506px] w-full max-w-[unset]"
     [src]="card.clipPath"
     [autoplay]="true"
     [loop]="true"
@@ -15,7 +15,7 @@
     playsInline
     [muted]="mute"></video>
   <ng-template #imgTpl>
-    <img class="h-[56vw] max-h-[675px] w-full max-w-[unset]" [src]="card.thumbnailPath" />
+    <img class="h-[56vw] max-h-[506px] w-full max-w-[unset]" [src]="card.thumbnailPath" />
   </ng-template>
 
   <div
@@ -32,14 +32,14 @@
             );
           `} -->
   </div>
-  <div class="absolute bottom-0 left-0 z-0 -mt-[50px] flex flex-col justify-end p-[55px]">
-    <!--  css={css`
+  <!-- <div class="absolute bottom-0 left-0 z-0 -mt-[50px] flex flex-col justify-end p-[55px]"> -->
+  <!--  css={css`
             width: calc(100% - 8rem);
           `} -->
-    <h1 class="mb-2 text-[2rem] font-bold lg:text-[3vw] 3xl:text-[4rem]">{{ card.title }}</h1>
+  <!-- <h1 class="mb-2 text-[2rem] font-bold lg:text-[3vw] 3xl:text-[4rem]">{{ card.title }}</h1> -->
 
-    <!-- <app-button [variant]="mute ? 'tertiary' : 'tertiary-active'" [rounded]="true">
+  <!-- <app-button [variant]="mute ? 'tertiary' : 'tertiary-active'" [rounded]="true">
       <i [ngClass]="mute ? 'icon icon-mute' : 'icon icon-sound'"></i>
     </app-button> -->
-  </div>
+  <!-- </div> -->
 </div>
