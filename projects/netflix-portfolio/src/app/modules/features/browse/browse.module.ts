@@ -7,7 +7,6 @@ import { ProfileSelectionModule } from '@features/profile-selection/profile-sele
 import { ButtonComponent } from '@modules/shared/button/button.component';
 import { CardsComponent } from '../../shared/cards/cards.component';
 import { BrowseComponent } from './browse.component';
-import { BrowseService } from './browse.service';
 import { CardsList2Component } from './components/cards-list2/cards-list2.component';
 import { HeaderComponent } from './components/header/header.component';
 
@@ -28,7 +27,6 @@ const routes: Routes = [
     MatDialogModule,
     ModalModule,
     CardsComponent
-  ],
-  providers: [BrowseService]
+  ]
 })
 export class BrowseModule {}

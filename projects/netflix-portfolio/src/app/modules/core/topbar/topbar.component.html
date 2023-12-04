@@ -3,9 +3,36 @@
   class="fixed top-0 z-10 flex h-[68px] w-full justify-between bg-gradient-to-b from-[#000000b3] from-[10%] to-transparent to-100% px-[55px] py-4 transition-all duration-700 ease-out">
   <!-- <ng-container *ngIf="(profile$ | async) !== null"> -->
   <img src="assets/devflix.svg" width="100px" />
-  <div class="flex cursor-pointer items-center justify-center gap-2">
-    <img [src]="(profile$ | async)?.thumbnailPath" alt="" width="32" height="32" class="rounded-[4px]" />
-    <i class="icon icon-down_arrow w-4 text-[14px] font-bold transition-all duration-300 ease-out"></i>
-  </div>
+  <app-mat-menu-hover #customMenu *ngIf="(profile$ | async) !== null">
+    <div trigger class="z-[999] flex cursor-pointer items-center justify-center gap-2">
+      <img [src]="(profile$ | async)?.thumbnailPath" alt="" width="32" height="32" class="rounded-[4px]" />
+      <i
+        [ngClass]="{ 'rotate-180': customMenu.isMenuOpen }"
+        class="icon icon-down_arrow w-4 text-[14px] font-bold transition-all duration-300 ease-out"></i>
+    </div>
+    <div content>
+      <button
+        (click)="changeProfil('df03f9f5-c18f-4c18-9874-554b0b2a6543')"
+        mat-menu-item
+        *ngIf="(profile$ | async)?.guid !== 'df03f9f5-c18f-4c18-9874-554b0b2a6543'">
+        <div class="flex flex-row gap-[10px] !text-[13px] !text-white hover:underline">
+          <img src="assets/images/profiles/dev.svg" alt="" width="24" height="24" class="rounded-[4px]" />
+          <span>Dev</span>
+        </div>
+      </button>
+      <button
+        (click)="changeProfil('7bfad4e5-9d8f-426a-8f29-46e22fae3aee')"
+        mat-menu-item
+        *ngIf="(profile$ | async)?.guid !== '7bfad4e5-9d8f-426a-8f29-46e22fae3aee'">
+        <div class="flex flex-row gap-[10px] !text-[13px] !text-white hover:underline">
+          <img src="assets/images/profiles/recruteur.svg" alt="" width="24" height="24" class="rounded-[4px]" />
+          <span>Recruteur</span>
+        </div>
+      </button>
+      <button (click)="disconnect()" class="w-full !border-t-[1px] !border-white/25 py-[8px] !text-center">
+        <span class="!text-[13px] !text-white hover:underline">Se déconnecter</span>
+      </button>
+    </div>
+  </app-mat-menu-hover>
   <!-- </ng-container> -->
 </div>
