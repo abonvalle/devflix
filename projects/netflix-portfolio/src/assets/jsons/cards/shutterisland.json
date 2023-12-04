@@ -2,10 +2,9 @@
   "guid": "shutterisland",
   "title": "Shutter Island",
   "tagline": "Parmis les plus aimés",
-  "shortDescription": "Alors qu'il enquête sur la disparition d'une patiente d'un hôpital psychiatrique, un marshal commence à remettre en question sa propre compréhension de la réalité.",
-  "fullDescription": "",
+  "description": "Alors qu'il enquête sur la disparition d'une patiente d'un hôpital psychiatrique, un marshal commence à remettre en question sa propre compréhension de la réalité.",
   "year": 2010,
-  "seasons": 1,
+  "type": "movie",
   "thumbnailPath": "assets/cards/thumbnails/team.webp",
   "clipPath": "",
   "related": [],
@@ -17,8 +16,14 @@
   ],
   "attributes": [],
   "stack": [
-    "Leonardo DiCaprio",
-    " Mark Ruffalo",
-    " Ben Kingsley"
+    {
+      "name": "Leonardo DiCaprio"
+    },
+    {
+      "name": "Mark Ruffalo"
+    },
+    {
+      "name": "Ben Kingsley"
+    }
   ]
 }

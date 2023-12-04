@@ -2,10 +2,9 @@
   "guid": "memento",
   "title": "Memento",
   "tagline": "Parmis les plus aimés",
-  "shortDescription": "Souffrant d'une perte de mémoire à court terme suite à un traumatisme crânien, Leonard Shelby se lance dans une quête macabre pour retrouver le criminel qui a assassiné sa femme.",
-  "fullDescription": "",
+  "description": "Souffrant d'une perte de mémoire à court terme suite à un traumatisme crânien, Leonard Shelby se lance dans une quête macabre pour retrouver le criminel qui a assassiné sa femme.",
   "year": 2000,
-  "seasons": 1,
+  "type": "movie",
   "thumbnailPath": "assets/cards/thumbnails/team.webp",
   "clipPath": "",
   "related": [],
@@ -17,8 +16,14 @@
   ],
   "attributes": [],
   "stack": [
-    "Guy Pearce",
-    "Carrie-Anne Moss",
-    "Joe Pantoliano"
+    {
+      "name": "Guy Pearce"
+    },
+    {
+      "name": "Carrie-Anne Moss"
+    },
+    {
+      "name": "Joe Pantoliano"
+    }
   ]
 }

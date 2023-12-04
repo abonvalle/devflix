@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, Input, OnDestroy, Renderer2, ViewChild } from '@angular/core';
 import { ModalService } from '@features/modal/modal.service';
 import { Card } from '@models/*';
-import { BehaviorSubject, Subject, debounceTime, distinctUntilChanged, takeUntil } from 'rxjs';
+import { BehaviorSubject, Subject, debounceTime, takeUntil } from 'rxjs';
 import { ButtonComponent } from '../button/button.component';
 
 @Component({
@@ -27,7 +27,7 @@ export class CardsComponent implements AfterViewInit, OnDestroy {
     this.isHovered$.next(state);
   }
   ngAfterViewInit(): void {
-    this.isHovered$.pipe(takeUntil(this._destroy$), debounceTime(25), distinctUntilChanged()).subscribe((state) => {
+    this.isHovered$.pipe(takeUntil(this._destroy$), debounceTime(100)).subscribe((state) => {
       this._modalService.currentFocusCard$.next(state ? this.card : null);
       if (this._modalService.currentOpenedCard$.value === null) {
         this._modalService.currentOpenedCard$.next(state ? this.card : null);
@@ -36,22 +36,18 @@ export class CardsComponent implements AfterViewInit, OnDestroy {
         this.animate(false);
         setTimeout(() => {
           this._modalService.currentOpenedCard$.next(this._modalService.currentFocusCard$.value);
-        }, 200);
+        }, 100);
         //trigger anim out & this._modalService.currentOpenedCard$.next(null);
       }
     });
-    this._modalService.currentOpenedCard$
-      .pipe(takeUntil(this._destroy$), debounceTime(25), distinctUntilChanged())
-      .subscribe((card) => {
-        this.isCurrentOpenedCard$.next(this.isHovered$.value && card?.guid === this.card.guid);
-      });
-    this.isCurrentOpenedCard$
-      .pipe(takeUntil(this._destroy$), debounceTime(25), distinctUntilChanged())
-      .subscribe((state) => {
-        if (state) {
-          this.animate(true);
-        }
-      });
+    this._modalService.currentOpenedCard$.pipe(takeUntil(this._destroy$), debounceTime(100)).subscribe((card) => {
+      this.isCurrentOpenedCard$.next(this.isHovered$.value && card?.guid === this.card.guid);
+    });
+    this.isCurrentOpenedCard$.pipe(takeUntil(this._destroy$), debounceTime(100)).subscribe((state) => {
+      if (state) {
+        this.animate(true);
+      }
+    });
   }
   ngOnDestroy(): void {
     this._destroy$.next();
@@ -84,24 +80,24 @@ export class CardsComponent implements AfterViewInit, OnDestroy {
           state ? 50 : 1
         );
       },
-      state ? 150 : 350
+      state ? 0 : 200
     );
     setTimeout(
       () => {
         this._renderer.setStyle(this.cardMiniModal.nativeElement, 'display', state ? 'block' : 'none');
       },
-      state ? 150 : 330
+      state ? 0 : 180
     );
     setTimeout(
       () => {
         this._renderer.setStyle(this.cardMiniModalDetails.nativeElement, 'display', state ? 'flex' : 'none');
       },
-      state ? 150 : 295
+      state ? 0 : 145
     );
 
     this.cardMiniModal.nativeElement.animate(keyframes, {
       duration: 200,
-      delay: 150,
+      delay: 0,
       iterations: 1,
       fill: 'forwards',
       easing: 'ease-in-out'

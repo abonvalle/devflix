@@ -1,19 +1,25 @@
 import { Attribute } from './attribute.interface';
-import { stack } from './stack';
 
-export interface Card {
+export interface GlobalCard {
   guid: string;
   title: string;
+  type: 'movie' | 'serie';
   tagline: string;
-  shortDescription: string;
-  fullDescription: string;
+  description: string;
   tags: string[];
   attributes: Attribute[];
-  stack: { name: stack; version?: string }[];
+  stack: { name: string; version?: string }[];
   year: number;
-  seasons: number;
   thumbnailPath: string;
   clipPath: string;
   related: string[];
   recommended: number;
+}
+
+export interface MovieCard extends GlobalCard {
+  duration: string;
+}
+export interface SerieCard extends GlobalCard {
+  seasons: string;
+  episods: { title: ''; description: ''; thumbnailPath?: ''; duration?: number }[];
 }

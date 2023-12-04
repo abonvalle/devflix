@@ -1,7 +1,58 @@
-<div class="h-full w-screen max-w-[1200px] bg-dark-gray">
-  <app-card-details-header class="block h-[700px] w-full" [card]="card"></app-card-details-header>
-  <div class="flex">
-    <p class="text-sm text-recommended">Recommandé à {{ card.recommended }}%</p>
-    <p class="text-sm text-white">{{ card.year }}</p>
+<div class="relative h-full w-screen max-w-[1200px] bg-[#141414]">
+  <button
+    class="absolute right-5 top-5 z-50 flex items-center justify-center rounded-full border-none bg-[#181818] p-[8px] outline-none"
+    (click)="close()">
+    <i class="icon icon-close text-[24px]"></i>
+  </button>
+  <app-card-details-header class="block w-full" [card]="card"></app-card-details-header>
+  <div class="flex flex-col px-[48px]">
+    <div class="flex flex-row gap-[32px]">
+      <div class="flex w-2/3 flex-col gap-[8px]">
+        <div class="flex gap-[8px]">
+          <p class="text-[16px] font-[500] text-recommended">Recommandé à {{ card.recommended }}%</p>
+          <p class="text-[16px] text-[#BCBCBC]">{{ card.year }}</p>
+          <p class="text-[16px] text-[#BCBCBC]">{{ durationInfo }}</p>
+        </div>
+        <p class="text-[20px] font-[500] text-white">{{ card.tagline }}</p>
+        <p class="text-[14px] text-white">{{ card.description }}</p>
+      </div>
+      <div class="flex w-1/3 flex-col gap-[14px]">
+        <p class="text-[14px]">
+          <span class="text-[#777777]"> Genre : </span>
+          {{ tags }}
+        </p>
+        <p class="text-[14px]">
+          <span class="text-[#777777]"> Stack : </span>
+          {{ stackToString }}
+        </p>
+      </div>
+    </div>
+    <ng-container *ngIf="isSerieCard">
+      <h2 class="mb-[20px] mt-[48px] text-[24px] font-[500]">Épisodes</h2>
+      <div class="flex flex-col">
+        <div
+          class="flex flex-row items-center justify-start gap-[14px] rounded-[4px] border-b-[1px] border-[#404040] p-[16px]"
+          *ngFor="let episod of episods; let i = index">
+          <span class="basis-[7%] px-[28px] text-[24px] text-[#D2D2D2]">{{ i + 1 }}</span>
+          <div class="flex basis-[70%] flex-col">
+            <p class="text-[16px] font-[500]">{{ episod.title }}</p>
+            <p class="text-[14px] text-[#D2D2D2]">{{ episod.description }}</p>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <h2 class="mb-[20px] mt-[48px] text-[24px] font-[500]">Titres similaires</h2>
+    <div class="relative" *ngFor="let similarCards of relatedCards$ | async">
+      <p class="absolute text-[16px] text-[#BCBCBC]">{{ durationInfo }}</p>
+      <div class="flex flex-row gap-[32px]">
+        <div class="flex flex-col gap-[8px]">
+          <div class="flex gap-[8px]">
+            <p class="text-[16px] font-[500] text-recommended">Recommandé à {{ similarCards.recommended }}%</p>
+            <p class="text-[16px] text-[#BCBCBC]">{{ similarCards.year }}</p>
+          </div>
+          <p class="text-[14px] text-white">{{ similarCards.description }}</p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

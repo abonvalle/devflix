@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { BehaviorSubject, Subject, takeUntil } from 'rxjs';
-import { Card } from '../../../models/card.interface';
+import { Card } from '../../../models/card.type';
 import { ModalService } from './modal.service';
 
 @Component({

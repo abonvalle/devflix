@@ -2,10 +2,9 @@
   "guid": "interstellar",
   "title": "Interstellar",
   "tagline": "Parmis les plus aimés",
-  "shortDescription": "Tandis que l'humanité se meurt sur Terre, un groupe d'astronautes voyage à travers un trou de ver à la recherche d'une autre planète habitable.",
-  "fullDescription": "",
+  "description": "Tandis que l'humanité se meurt sur Terre, un groupe d'astronautes voyage à travers un trou de ver à la recherche d'une autre planète habitable.",
   "year": 2010,
-  "seasons": 1,
+  "type": "movie",
   "thumbnailPath": "assets/cards/thumbnails/interstellar.jpg",
   "clipPath": "",
   "related": [],
@@ -17,8 +16,14 @@
   ],
   "attributes": [],
   "stack": [
-    "Leonardo DiCaprio",
-    " Mark Ruffalo",
-    " Ben Kingsley"
+    {
+      "name": "Leonardo DiCaprio"
+    },
+    {
+      "name": "Mark Ruffalo"
+    },
+    {
+      "name": "Ben Kingsley"
+    }
   ]
 }
