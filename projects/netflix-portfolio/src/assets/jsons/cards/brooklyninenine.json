@@ -1,0 +1,32 @@
+{
+  "guid": "brooklyninenine",
+  "title": "Brookly nine nine",
+  "tagline": "",
+  "description": "L’arrivée au commissariat d'un capitaine très strict force Jake Peralta, jeune flic de Brooklyn brillant mais immature, à enfin obéir aux règles et travailler en équipe.",
+  "year": 2021,
+  "type": "serie",
+  "thumbnailPath": "assets/cards/thumbnails/brooklyninenine.png",
+  "clipPath": "",
+  "related": [
+    "theoffice",
+    "parkrec"
+  ],
+  "seasons": "8 saisons",
+  "recommended": 96,
+  "tags": [
+    "Humour",
+    "Décalé"
+  ],
+  "attributes": [],
+  "stack": [
+    {
+      "name": "Andy Samberg"
+    },
+    {
+      "name": "Andre Braugher"
+    },
+    {
+      "name": "Stephanie Beatriz"
+    }
+  ]
+}

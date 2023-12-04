@@ -1,0 +1,32 @@
+{
+  "guid": "mrrobot",
+  "title": "Mr. Robot",
+  "tagline": "",
+  "description": "Elliot est un jeune programmeur anti-social qui souffre d'un trouble du comportement qui le pousse à croire qu'il ne peut rencontrer des gens qu'en les hackant. Il travaille pour une firme spécialisée dans la cyber-sécurité mais un homme connu sous le nom de Mr Robot l'approche un jour pour faire tomber une compagnie surpuissante qui fait partie de celles qu'il doit justement protéger...",
+  "year": 2015,
+  "type": "serie",
+  "thumbnailPath": "assets/cards/thumbnails/robot.png",
+  "clipPath": "",
+  "related": [
+    "blackmirror",
+    "westworld"
+  ],
+  "seasons": "4 saisons",
+  "recommended": 99,
+  "tags": [
+    "Drame",
+    "Thrillers"
+  ],
+  "attributes": [],
+  "stack": [
+    {
+      "name": "Rami Malek"
+    },
+    {
+      "name": "Christian Slater"
+    },
+    {
+      "name": "Carly Chaikin"
+    }
+  ]
+}

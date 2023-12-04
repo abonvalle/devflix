@@ -1,0 +1,16 @@
+{
+  "guid": "gatsbylemagnifique",
+  "title": "Gatsby le magnifique",
+  "tagline": "",
+  "description": "Nick Carraway, fasciné par son mystérieux et richissime voisin, Jay Gatsby, est témoin de l'amour obsédant qui le consume, jusqu'à la tragédie.",
+  "year": 2013,
+  "type": "movie",
+  "thumbnailPath": "assets/cards/thumbnails/fightclub.png",
+  "clipPath": "",
+  "duration": "2 h 22 min",
+  "related": [],
+  "recommended": 92,
+  "tags": [],
+  "attributes": [],
+  "stack": []
+}

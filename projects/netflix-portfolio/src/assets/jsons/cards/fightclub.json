@@ -1,0 +1,16 @@
+{
+  "guid": "fightclub",
+  "title": "Fight Club",
+  "tagline": "",
+  "description": "Lorsqu'il crée un club clandestin violent avec son mystérieux nouvel ami Tyler Durden, un employé de bureau désabusé trouve un exutoire à ses sentiments refoulés.",
+  "year": 1999,
+  "type": "movie",
+  "thumbnailPath": "assets/cards/thumbnails/fightclub.png",
+  "clipPath": "",
+  "duration": "2 h 19 min",
+  "related": [],
+  "recommended": 90,
+  "tags": [],
+  "attributes": [],
+  "stack": []
+}

@@ -1,0 +1,33 @@
+{
+  "guid": "breakingbad",
+  "title": "Breaking Bad",
+  "tagline": "Parmi les plus vus",
+  "description": "Un professeur de chimie atteint d'un cancer s'associe à un ancien élève pour fabriquer et vendre de la méthamphétamine afin d'assurer l'avenir financier de sa famille.",
+  "year": 2013,
+  "type": "serie",
+  "thumbnailPath": "assets/cards/thumbnails/breakingbad.png",
+  "clipPath": "",
+  "related": [
+    "bettercallsaul",
+    "blackmirror",
+    "elcamino"
+  ],
+  "seasons": "5 saisons",
+  "recommended": 98,
+  "tags": [
+    "Series US",
+    "Thrillers"
+  ],
+  "attributes": [],
+  "stack": [
+    {
+      "name": "Bryan Cranston"
+    },
+    {
+      "name": "Aaron Paul"
+    },
+    {
+      "name": "Anna Gunn"
+    }
+  ]
+}

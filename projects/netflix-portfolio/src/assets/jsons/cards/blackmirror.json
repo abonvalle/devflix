@@ -1,0 +1,32 @@
+{
+  "guid": "blackmirror",
+  "title": "Black Mirror",
+  "tagline": "Parmi les plus aimés",
+  "description": "Les histoires tordues se succèdent dans cette série d'anthologie hallucinante qui révèle les plus grandes innovations de l'humanité, mais aussi ses côtés les plus sombres.",
+  "year": 2023,
+  "type": "serie",
+  "thumbnailPath": "assets/cards/thumbnails/mirror.png",
+  "clipPath": "",
+  "related": [
+    "mrrobot",
+    "westworld"
+  ],
+  "seasons": "6 saisons",
+  "recommended": 96,
+  "tags": [
+    "Violence",
+    "Drame"
+  ],
+  "attributes": [],
+  "stack": [
+    {
+      "name": "Lauren Sophie"
+    },
+    {
+      "name": "Kennedy Clark"
+    },
+    {
+      "name": "Jesse Plemons"
+    }
+  ]
+}

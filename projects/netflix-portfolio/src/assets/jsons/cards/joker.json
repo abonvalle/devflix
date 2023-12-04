@@ -1,0 +1,28 @@
+{
+  "guid": "joker",
+  "title": "Joker",
+  "tagline": "",
+  "description": "En 1981 à Gotham City, un clown atteint de troubles mentaux et en mal de reconnaissance voit sa vie basculer du côté obscur le jour où il se défend contre des agresseurs.",
+  "year": 2019,
+  "type": "movie",
+  "thumbnailPath": "assets/cards/thumbnails/joker.png",
+  "clipPath": "",
+  "duration": "2 h 1 min",
+  "related": [
+    "shutterisland",
+    "fightclub"
+  ],
+  "recommended": 95,
+  "tags": [
+    "Violence"
+  ],
+  "attributes": [],
+  "stack": [
+    {
+      "name": "Joaquin Phoenix"
+    },
+    {
+      "name": "Robert De Niro"
+    }
+  ]
+}

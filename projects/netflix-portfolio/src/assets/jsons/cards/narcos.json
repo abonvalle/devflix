@@ -1,0 +1,29 @@
+{
+  "guid": "narcos",
+  "title": "Narcos",
+  "tagline": "",
+  "description": "Un fabricant de coke chilien propose sa came au contrebandier colombien Pablo Escobar. Steve Murphy, agent de la DEA, rejoint la brigade antidrogue de Bogotá.",
+  "year": 2017,
+  "type": "serie",
+  "thumbnailPath": "assets/cards/thumbnails/narcos.png",
+  "clipPath": "",
+  "related": [
+    "breakingbad",
+    "narcosmexico"
+  ],
+  "seasons": "3 saisons",
+  "recommended": 94,
+  "tags": [
+    "Violence",
+    "Sombre"
+  ],
+  "attributes": [],
+  "stack": [
+    {
+      "name": "Wagner Moura"
+    },
+    {
+      "name": "Pedro Pascal"
+    }
+  ]
+}

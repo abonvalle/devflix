@@ -1,0 +1,26 @@
+{
+  "guid": "levoyagedechihiro",
+  "title": "Le voyage de chihiro",
+  "tagline": "Parmi les plus aimés",
+  "description": "Chihiro, une fillette de 10 ans, est en route vers sa nouvelle demeure en compagnie de ses parents. Au cours du voyage, la famille fait une halte dans un parc à thème qui leur paraît délabré. Lors de la visite, les parents s’arrêtent dans un des bâtiments pour déguster quelques mets très appétissants, apparus comme par enchantement. Hélas cette nourriture les transforme en porcs. Prise de panique, Chihiro s’enfuit et se retrouve seule dans cet univers fantasmagorique ; elle rencontre alors l’énigmatique Haku, son seul allié dans cette terrible épreuve...",
+  "year": 2001,
+  "type": "movie",
+  "thumbnailPath": "assets/cards/thumbnails/chihiro.png",
+  "clipPath": "",
+  "duration": "2 h 5 min",
+  "related": [
+    "princessemononoke",
+    "chateauambulant"
+  ],
+  "recommended": 99,
+  "tags": [
+    "Films pour la famille",
+    "Japonais"
+  ],
+  "attributes": [],
+  "stack": [
+    {
+      "name": "Hayao Miyazaki"
+    }
+  ]
+}
