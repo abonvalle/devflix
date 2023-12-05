@@ -1,0 +1,29 @@
+:host {
+  --lh: 1.4rem;
+  line-height: var(--lh);
+}
+
+.truncate-overflow {
+  --max-lines: 4;
+  position: relative;
+  text-align: justify;
+  max-height: calc(var(--lh) * var(--max-lines));
+  overflow: hidden;
+  // padding-right: 1rem; /* space for ellipsis */
+}
+.truncate-overflow::before {
+  position: absolute;
+  content: "...";
+  z-index: 20;
+  background-color: #2f2f2f;
+  inset-block-end: 0; /* "bottom" */
+  inset-inline-end: 0; /* "right" */
+}
+.truncate-overflow::after {
+  content: "";
+  position: absolute;
+  inset-inline-end: 0; /* "right" */
+  width: 1rem;
+  height: 1rem;
+  background-color: #2f2f2f;
+}
