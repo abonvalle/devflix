@@ -17,14 +17,14 @@
     {
       "guid": "7bfad4e5-9d8f-426a-8f29-46e22fae3aez",
       "name": "XGamer66",
-      "layoutsGuids": ["6003d1f4-fda1-46fe-9fcb-1f25bcf0eca9"],
+      "layoutsGuids": ["gamer"],
       "thumbnailPath": "assets/images/profiles/gamer.svg",
       "hidden": true
     },
     {
       "guid": "7bfad4e5-9d8f-426a-8f29-46e22fae3aer",
       "name": "GOTLover3",
-      "layoutsGuids": ["6003d1f4-fda1-46fe-9fcb-1f25bcf0eca9"],
+      "layoutsGuids": ["serieslover"],
       "thumbnailPath": "assets/images/profiles/serie.svg",
       "hidden": true
     },

@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>Profils cachés</h1>
+<div mat-dialog-content>
+  <p>Quels profils activer ?</p>
+  <div class="flex flex-col">
+    <mat-slide-toggle [(ngModel)]="data['7bfad4e5-9d8f-426a-8f29-46e22fae3aez']">XGamer66 </mat-slide-toggle>
+    <mat-slide-toggle [(ngModel)]="data['7bfad4e5-9d8f-426a-8f29-46e22fae3aer']">GOTLover3</mat-slide-toggle>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button cdkFocusInitial (click)="onNoClick()">Annuler</button>
+  <button mat-button (click)="save()">Sauvegarder</button>
+</div>
