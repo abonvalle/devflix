@@ -1,0 +1,23 @@
+{
+  "guid": "bonvalle-gamer",
+  "title": "Elden lord",
+  "tagline": "Parmis les plus respectés",
+  "description": "Foul tarnished, in search of the Elden Ring. Emboldened by the flame of ambition. Someone must extinguish thy flame.",
+  "year": 1998,
+  "type": "movie",
+  "duration": "25 ans",
+  "thumbnailPath": "assets/cards/thumbnails/gaming.webp",
+  "clipPath": "assets/cards/clips/gaming.mp4",
+  "recommended": 97,
+  "related": [],
+  "tags": [
+    "Sombre",
+    "Violence"
+  ],
+  "attributes": [],
+  "stack": [
+    {
+      "name": "haut, haut, bas, bas, gauche, droite, gauche, droite, B, A"
+    }
+  ]
+}

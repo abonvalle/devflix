@@ -1,0 +1,56 @@
+{
+  "guid": "bonvalle-recruteur",
+  "title": "Alexandre Bonvalle",
+  "tagline": "Développeur Front-end",
+  "description": "Un récit captivant qui suit la vie d'un développeur passionné. Plongez dans son monde créatif et découvrez les défis et triomphes de cette aventure.",
+  "year": 1998,
+  "type": "serie",
+  "seasons": "25 ans",
+  "thumbnailPath": "assets/cards/thumbnails/recruteur.webp",
+  "clipPath": "assets/cards/clips/recruteur.mp4",
+  "recommended": 99,
+  "related": [
+    "wanao",
+    "expateo",
+    "nameguessr",
+    "radiofive"
+  ],
+  "tags": [
+    "Profile",
+    "Tiré d'une histoire vraie"
+  ],
+  "attributes": [],
+  "stack": [
+    {
+      "name": "Angular"
+    },
+    {
+      "name": "Javascript"
+    },
+    {
+      "name": "Node.js"
+    }
+  ],
+  "episods": [
+    {
+      "title": "Episode pilote",
+      "description": "Plongez dans la vie d’Alexandre, un enfant né dans les années 90/2000. Toujours fourré dans son monde de jeux vidéo, de BD et de dessins animés, il se découvre une affinité particulière pour les nouvelles technologies."
+    },
+    {
+      "title": "Les prémices",
+      "description": "Alors qu'il grandit, Alexandre devient l'expert informatique de sa famille en résolvant les problèmes techniques et en domptant les imprimantes. Son appétit insatiable de comprendre le fonctionnement des choses qui l’entourent le mène à une découverte révolutionnaire au lycée : les calculatrices ne sont pas seulement des outils mathématiques, mais des portails vers l’univers de la programmation."
+    },
+    {
+      "title": "Pixels et programmation",
+      "description": "Alexandre commence à créer divers programmes pour sa calculatrice. Entre les cours et les devoirs, il explore ce nouveau monde numérique qui s'ouvre à lui. Son amour pour les pixels et la programmation l'emmène dans des aventures inattendues, et il réalise que sa passion pourrait bien le propulser vers des horizons insoupçonnés."
+    },
+    {
+      "title": "Code du Succès",
+      "description": "Une fois son BTS SIO en poche, Alexandre décroche son premier emploi dans une entreprise de développement logiciel. Son amour pour la programmation ne cesse de grandir et il confirme son penchant pour le développement web front-end."
+    },
+    {
+      "title": "Un nouveau départ",
+      "description": "Alexandre se lance dans un nouveau challenge passionnant en rejoignant une jeune équipe au sein d'une startup. Ses compétences lui permettent désormais de réaliser des 'sides-projects' plus ambitieux."
+    }
+  ]
+}

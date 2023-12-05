@@ -21,9 +21,7 @@ export class CardDetailsComponent implements OnInit {
   get stackToString(): string {
     return this.card.stack.map((stack) => (stack.version ? `${stack.name} ${stack.version}` : stack.name)).join(', ');
   }
-  get durationInfo(): string {
-    return this.isMovieCard ? (this.card as MovieCard).duration : (this.card as SerieCard).seasons;
-  }
+
   get tags(): string {
     return this.card?.tags?.join(', ');
   }
@@ -54,5 +52,8 @@ export class CardDetailsComponent implements OnInit {
     );
     cards = cards.filter((card) => card !== null);
     this.relatedCards$.next(cards as Card[]);
+  }
+  durationInfo(card: Card): string {
+    return this.isMovieCard ? (card as MovieCard).duration : (card as SerieCard).seasons;
   }
 }

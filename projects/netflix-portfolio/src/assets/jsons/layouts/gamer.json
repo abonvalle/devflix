@@ -1,7 +1,7 @@
 {
   "guid": "7bfad4e5-9d8f-426a-8f29-46e22fae3aez",
   "headerCardsGuids": [
-    "83dd6e48-b997-4ef2-9180-18e65f0136b0"
+    "bonvalle-gamer"
   ],
   "lists": [
     {
@@ -23,8 +23,8 @@
       "order": 1,
       "type": "classic",
       "cardsGuids": [
-        "54dd6e48-b997-4ef2-9180-52e65f0136b0",
-        "20bb6e48-b997-4ef2-9180-52e65f0136b0"
+        "expateo",
+        "wanao"
       ]
     },
     {
@@ -33,20 +33,20 @@
       "order": 2,
       "type": "classic",
       "cardsGuids": [
-        "20bb6e48-b997-4ef2-9180-52e65f0136b0",
-        "54dd6e48-b997-4ef2-9180-52e65f0136b0",
-        "83dd6e48-b997-4ef2-9180-18e65f0136b0",
-        "682ac5da-f211-4492-bd0a-bff6b97915a5",
+        "wanao",
+        "expateo",
+        "bonvalle-dev",
+        "bonvalle-recruteur",
         "gojo",
         "gojo",
-        "682ac5da-f211-4492-bd0a-bff6b97915a5",
-        "83dd6e48-b997-4ef2-9180-18e65f0136b0",
-        "54dd6e48-b997-4ef2-9180-52e65f0136b0",
-        "20bb6e48-b997-4ef2-9180-52e65f0136b0",
-        "20bb6e48-b997-4ef2-9180-52e65f0136b0",
-        "54dd6e48-b997-4ef2-9180-52e65f0136b0",
-        "83dd6e48-b997-4ef2-9180-18e65f0136b0",
-        "682ac5da-f211-4492-bd0a-bff6b97915a5",
+        "bonvalle-recruteur",
+        "bonvalle-dev",
+        "expateo",
+        "wanao",
+        "wanao",
+        "expateo",
+        "bonvalle-dev",
+        "bonvalle-recruteur",
         "gojo"
       ]
     },
@@ -56,10 +56,10 @@
       "order": 3,
       "type": "classic",
       "cardsGuids": [
-        "83dd6e48-b997-4ef2-9180-18e65f0136b0",
-        "83dd6e48-b997-4ef2-9180-18e65f0136b0",
-        "83dd6e48-b997-4ef2-9180-18e65f0136b0",
-        "83dd6e48-b997-4ef2-9180-18e65f0136b0"
+        "bonvalle-dev",
+        "bonvalle-dev",
+        "bonvalle-dev",
+        "bonvalle-dev"
       ]
     }
   ]
