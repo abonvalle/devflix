@@ -9,7 +9,12 @@
     </div>
     <div #sliderContainer class="slider-container select-none">
       <div #slides class="slide select-none" *ngFor="let card of cards; let index = index">
-        <app-cards [card]="card" class="block h-full w-full" (click)="openCardDetails(card)"></app-cards>
+        <app-cards
+          [card]="card"
+          [index]="index"
+          [type]="type"
+          class="block h-full w-full"
+          (click)="openCardDetails(card)"></app-cards>
       </div>
     </div>
   </div>

@@ -11,19 +11,20 @@ import {
 } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CardDetailsComponent } from '@features/modal/components/card-details/card-details.component';
-import { Card } from '@models/*';
+import { Card, ListsType } from '@models/*';
 import { BehaviorSubject } from 'rxjs';
 
 @Component({
-  selector: 'app-cards-list2',
-  templateUrl: './cards-list2.component.html',
-  styleUrls: ['./cards-list2.component.scss']
+  selector: 'app-cards-list',
+  templateUrl: './cards-list.component.html',
+  styleUrls: ['./cards-list.component.scss']
 })
-export class CardsList2Component implements AfterViewInit {
+export class CardsListComponent implements AfterViewInit {
   @ViewChildren('slides') slides!: QueryList<ElementRef<HTMLElement>>;
   @ViewChild('sliderFrame') sliderFrame!: ElementRef<HTMLElement>;
   @ViewChild('sliderContainer') sliderContainer!: ElementRef<HTMLElement>;
   @Input({ required: true }) cards: Card[] = [];
+  @Input({ required: true }) type!: ListsType;
   @Input({ required: true }) name: string = '';
   isHover$: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
@@ -31,7 +32,9 @@ export class CardsList2Component implements AfterViewInit {
   showCount = 6;
   controlsWidth = 55;
   scollWidth = 0;
-
+  get isTop() {
+    return this.type === 'top';
+  }
   constructor(
     private renderer: Renderer2,
     public dialog: MatDialog
@@ -73,7 +76,10 @@ export class CardsList2Component implements AfterViewInit {
     this.hideLeftBtn();
 
     let videoWidth = (windowWidth - this.controlsWidth * 2) / this.showCount;
-    let videoHeight = Math.round(videoWidth / (16 / 9));
+    if (this.isTop) {
+      // videoWidth = videoWidth / 2;
+    }
+    let videoHeight = this.isTop ? Math.round(videoWidth / (9 / 16) / 2.6) : Math.round(videoWidth / (16 / 9));
 
     // let videoWidthDiff = videoWidth * this.scaling - videoWidth;
     // let videoHeightDiff = videoHeight * this.scaling - videoHeight;

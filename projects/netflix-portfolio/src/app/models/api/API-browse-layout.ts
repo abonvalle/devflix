@@ -1,3 +1,5 @@
+import { ListsType } from '../lists.type';
+
 export interface APIBrowseLayout {
   guid: string;
   headerCardsGuids: string[];
@@ -5,7 +7,7 @@ export interface APIBrowseLayout {
     guid: string;
     name: string;
     order: number;
-    type: 'classic' | 'top' | 'highlight' | 'pending';
+    type: ListsType;
     cardsGuids: string[];
   }[];
 }

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import * as profilesJSON from '@assets/jsons/profiles.json';
 import axios from 'axios';
@@ -8,7 +8,7 @@ import { APIBrowseLayout } from '../../../models/api';
 import { Profile } from '../../../models/profile.interface';
 
 @Injectable({ providedIn: 'root' })
-export class BrowseService {
+export class BrowseService implements OnDestroy {
   readonly currentProfile$: BehaviorSubject<Profile | null> = new BehaviorSubject<Profile | null>(null);
   readonly currentProfileLayout$: BehaviorSubject<BrowseLayout | null> = new BehaviorSubject<BrowseLayout | null>(null);
   currentProfileSubscription: Subscription;
@@ -71,6 +71,7 @@ export class BrowseService {
         ...APIProfileLayout.lists.map((list) => ({
           guid: list.guid,
           name: list.name,
+          type: list.type,
           cards: list.cardsGuids
             .map((guid) => cards.find((card) => card?.guid === guid))
             .filter((card) => !!card) as Card[]

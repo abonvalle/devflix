@@ -4,7 +4,11 @@
   </ng-container>
   <ng-container *ngIf="currentProfileCardsLists$ | async; let cardLists">
     <ng-container *ngFor="let cardList of cardLists">
-      <app-cards-list2 *ngIf="cardList !== null" [name]="cardList.name" [cards]="cardList.cards"></app-cards-list2>
+      <app-cards-list
+        *ngIf="cardList !== null"
+        [name]="cardList.name"
+        [cards]="cardList.cards"
+        [type]="cardList.type"></app-cards-list>
     </ng-container>
   </ng-container>
 </ng-container>

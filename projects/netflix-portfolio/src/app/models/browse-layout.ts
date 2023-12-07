@@ -1,4 +1,5 @@
 import { Card } from './card.type';
+import { ListsType } from './lists.type';
 
 export interface BrowseLayout {
   guid: string;
@@ -6,6 +7,7 @@ export interface BrowseLayout {
   lists: {
     guid: string;
     name: string;
+    type: ListsType;
     cards: Card[];
   }[];
 }
