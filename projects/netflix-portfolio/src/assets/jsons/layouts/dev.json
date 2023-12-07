@@ -29,9 +29,9 @@
     },
     {
       "guid": "83dd6e48-b997-4ef2-9180-18e65f0136g6",
-      "name": "Compétences",
+      "name": "Top 10 de mes compétences",
       "order": 2,
-      "type": "classic",
+      "type": "top",
       "cardsGuids": [
         "wanao",
         "expateo",
