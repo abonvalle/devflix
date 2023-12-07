@@ -22,6 +22,9 @@ export class TopbarComponent {
   changeProfil(guid: string) {
     this._browseService.updateProfile(guid);
   }
+  editProfiles() {
+    this._browseService.editProfiles();
+  }
   disconnect() {
     this._browseService.disconnect();
   }

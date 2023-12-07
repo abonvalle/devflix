@@ -4,6 +4,8 @@ import {
   ElementRef,
   HostListener,
   Input,
+  OnDestroy,
+  OnInit,
   QueryList,
   Renderer2,
   ViewChild,
@@ -12,14 +14,14 @@ import {
 import { MatDialog } from '@angular/material/dialog';
 import { CardDetailsComponent } from '@features/modal/components/card-details/card-details.component';
 import { Card, ListsType } from '@models/*';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-cards-list',
   templateUrl: './cards-list.component.html',
   styleUrls: ['./cards-list.component.scss']
 })
-export class CardsListComponent implements AfterViewInit {
+export class CardsListComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChildren('slides') slides!: QueryList<ElementRef<HTMLElement>>;
   @ViewChild('sliderFrame') sliderFrame!: ElementRef<HTMLElement>;
   @ViewChild('sliderContainer') sliderContainer!: ElementRef<HTMLElement>;
@@ -32,6 +34,10 @@ export class CardsListComponent implements AfterViewInit {
   showCount = 6;
   controlsWidth = 55;
   scollWidth = 0;
+  hasFullyScroll: boolean = false;
+  nbSlide$ = new BehaviorSubject(0);
+  slides$ = new BehaviorSubject<unknown[]>([]);
+  private _destroy$ = new Subject();
   get isTop() {
     return this.type === 'top';
   }
@@ -39,6 +45,14 @@ export class CardsListComponent implements AfterViewInit {
     private renderer: Renderer2,
     public dialog: MatDialog
   ) {}
+  ngOnInit(): void {
+    this.nbSlide$.pipe(takeUntil(this._destroy$)).subscribe((nb) => this.slides$.next(new Array(nb)));
+    this.calculateFrame();
+  }
+  ngAfterViewInit(): void {
+    this.init();
+  }
+  ngOnDestroy(): void {}
   openCardDetails(card: Card) {
     this.dialog.closeAll();
     this.dialog.open(CardDetailsComponent, {
@@ -48,37 +62,42 @@ export class CardsListComponent implements AfterViewInit {
       panelClass: '!mt-[28px]'
     });
   }
+  calculateFrame() {
+    let windowWidth = window.innerWidth;
+    this.controlsWidth = Math.round(4 * windowWidth) / 100;
 
-  ngAfterViewInit(): void {
-    this.init();
+    if (windowWidth < 768) {
+      this.showCount = 2;
+    } else if (windowWidth < 950) {
+      this.showCount = 3;
+    } else if (windowWidth < 1200) {
+      this.showCount = 4;
+    } else if (windowWidth < 1500) {
+      this.showCount = 5;
+    } else {
+      this.showCount = 6;
+    }
+    this.nbSlide$.next(Math.ceil(this.cards.length / this.showCount));
   }
   @HostListener('window:resize')
   init() {
-    let win = window;
-    let windowWidth = win.innerWidth;
+    this.calculateFrame();
 
-    if (windowWidth > 1500) {
-      this.showCount = 6;
-    } else if (windowWidth > 1200) {
-      this.showCount = 5;
-    } else if (windowWidth > 950) {
-      this.showCount = 4;
-    } else if (windowWidth > 768) {
-      this.showCount = 3;
-    } else {
-      this.showCount = 2;
-    }
+    let windowWidth = window.innerWidth;
 
     if (this.showCount >= this.cards.length) {
       this.renderer.addClass(this.sliderFrame.nativeElement.firstElementChild, 'disabled');
       this.renderer.addClass(this.sliderFrame.nativeElement.children[1], 'disabled');
+      this.renderer.addClass(this.sliderFrame.nativeElement.children[2], 'disabled');
+    } else {
+      this.renderer.removeClass(this.sliderFrame.nativeElement.firstElementChild, 'disabled');
+      this.renderer.removeClass(this.sliderFrame.nativeElement.children[1], 'disabled');
+      this.renderer.removeClass(this.sliderFrame.nativeElement.children[2], 'disabled');
     }
     this.hideLeftBtn();
 
     let videoWidth = (windowWidth - this.controlsWidth * 2) / this.showCount;
-    if (this.isTop) {
-      // videoWidth = videoWidth / 2;
-    }
+    videoWidth = Math.round(videoWidth * 10) / 10;
     let videoHeight = this.isTop ? Math.round(videoWidth / (9 / 16) / 2.6) : Math.round(videoWidth / (16 / 9));
 
     // let videoWidthDiff = videoWidth * this.scaling - videoWidth;
@@ -99,15 +118,13 @@ export class CardsListComponent implements AfterViewInit {
   }
 
   next() {
-    console.log(this.currentSliderCount, this.cards.length / this.showCount - 1);
-    console.log(this.scollWidth);
     this.scollWidth = this.scollWidth + window.innerWidth - this.controlsWidth * 2;
 
-    const nbSlide = this.cards.length / this.showCount;
-    if (this.currentSliderCount >= nbSlide - 1) {
+    if (this.currentSliderCount >= this.nbSlide$.value - 1) {
       this.renderer.setStyle(this.sliderContainer.nativeElement, 'left', 0);
       this.currentSliderCount = 0;
       this.scollWidth = 0;
+      this.hasFullyScroll = true;
     } else {
       this.currentSliderCount++;
     }
@@ -115,16 +132,12 @@ export class CardsListComponent implements AfterViewInit {
     this.hideLeftBtn();
   }
   prev() {
-    console.log(this.currentSliderCount, this.cards.length / this.showCount - 1);
-    console.log(this.scollWidth);
-
-    const nbSlide = this.cards.length / this.showCount;
     if (this.currentSliderCount <= 0) {
-      this.currentSliderCount = Math.ceil(nbSlide - 1);
-      this.scollWidth = (window.innerWidth - this.controlsWidth * 2) * Math.ceil(nbSlide - 1);
+      this.scollWidth = (window.innerWidth - this.controlsWidth * 2) * (this.nbSlide$.value - 1);
+      this.currentSliderCount = this.nbSlide$.value - 1;
     } else {
       this.currentSliderCount--;
-      this.scollWidth = this.scollWidth - window.innerWidth + this.controlsWidth * 2;
+      this.scollWidth -= this.scollWidth;
     }
     this.animate();
     this.hideLeftBtn();
@@ -143,7 +156,7 @@ export class CardsListComponent implements AfterViewInit {
     );
   }
   hideLeftBtn() {
-    if (this.currentSliderCount === 0) {
+    if ((this.currentSliderCount === 0 && !this.hasFullyScroll) || this.showCount >= this.cards.length) {
       this.renderer.addClass(this.sliderFrame.nativeElement.firstElementChild, 'disabled');
     } else {
       this.renderer.removeClass(this.sliderFrame.nativeElement.firstElementChild, 'disabled');

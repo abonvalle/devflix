@@ -5,9 +5,7 @@
   overflow-x: clip;
   padding: 0;
 }
-.slider-frame .btn.disabled {
-  visibility: hidden;
-}
+
 .slider-frame .btn:hover {
   background: rgba(0, 0, 0, 0.3);
 }
@@ -17,10 +15,18 @@
 .slider-frame:hover .btn i {
   color: white;
 }
+.slider-frame:hover .slides-hint {
+  visibility: visible;
+}
+.slider-frame .btn.disabled,
+.slider-frame .slides-hint,
+.slider-frame .slides-hint.disabled {
+  visibility: hidden;
+}
 .slider-frame .btn {
   margin: 0;
   padding: 0;
-  width: 55px;
+  width: 4%;
   height: 100%;
   position: absolute;
   top: 0;

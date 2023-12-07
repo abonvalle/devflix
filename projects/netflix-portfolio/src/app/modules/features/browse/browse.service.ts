@@ -88,6 +88,11 @@ export class BrowseService implements OnDestroy {
     sessionStorage.clear();
     this._router.navigateByUrl('/login');
   }
+  editProfiles() {
+    this.currentProfile$.next(null);
+    sessionStorage.clear();
+    this._router.navigateByUrl('/ManageProfiles');
+  }
   updateProfile(guid: string) {
     const profilesjson = profilesJSON;
     const profiles = profilesjson.profiles;
