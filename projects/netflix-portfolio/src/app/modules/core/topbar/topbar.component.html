@@ -1,34 +1,27 @@
 <div
   [ngClass]="{ 'bg-[#141414]': (isBgDark$ | async) === true }"
-  class="fixed top-0 z-10 flex h-[41px] w-full items-center justify-between bg-gradient-to-b from-[#000000b3] from-[10%] to-transparent to-100% px-[4%] transition-all duration-700 ease-out sm:h-[68px]">
+  class="topbar-bg-gradient fixed top-0 z-10 flex h-[41px] w-full items-center justify-between px-[4%] transition-all duration-700 ease-out sm:h-[68px]">
   <!-- <ng-container *ngIf="(profile$ | async) !== null"> -->
   <img src="assets/devflix.svg" width="100px" />
-  <app-mat-menu-hover #customMenu *ngIf="(profile$ | async) !== null">
+  <app-mat-menu-hover #customMenu *ngIf="(currentProfile$ | async) !== null">
     <div trigger class="z-[999] flex cursor-pointer items-center justify-center gap-2">
-      <img [src]="(profile$ | async)?.thumbnailPath" alt="" width="32" height="32" class="rounded-[4px]" />
+      <img [src]="(currentProfile$ | async)?.thumbnailPath" alt="" width="32" height="32" class="rounded-[4px]" />
       <i
         [ngClass]="{ 'rotate-180': customMenu.isMenuOpen }"
         class="icon icon-down_arrow w-4 text-[14px] font-bold transition-all duration-300 ease-out"></i>
     </div>
     <div content>
-      <button
-        (click)="changeProfil('df03f9f5-c18f-4c18-9874-554b0b2a6543')"
-        mat-menu-item
-        *ngIf="(profile$ | async)?.guid !== 'df03f9f5-c18f-4c18-9874-554b0b2a6543'">
-        <div class="flex flex-row items-center justify-center gap-[10px] !text-[13px] !text-white hover:underline">
-          <img src="assets/images/profiles/dev.svg" alt="" width="32" height="32" class="rounded-[4px]" />
-          <span>Dev</span>
-        </div>
-      </button>
-      <button
-        (click)="changeProfil('7bfad4e5-9d8f-426a-8f29-46e22fae3aee')"
-        mat-menu-item
-        *ngIf="(profile$ | async)?.guid !== '7bfad4e5-9d8f-426a-8f29-46e22fae3aee'">
-        <div class="flex flex-row items-center justify-center gap-[10px] !text-[13px] !text-white hover:underline">
-          <img src="assets/images/profiles/recruteur.svg" alt="" width="32" height="32" class="rounded-[4px]" />
-          <span>Recruteur</span>
-        </div>
-      </button>
+      <ng-container *ngFor="let profile of profiles$ | async">
+        <button
+          *ngIf="(currentProfile$ | async)?.guid !== profile.guid && !profile.hidden"
+          (click)="changeProfil(profile.guid)"
+          mat-menu-item>
+          <div class="flex flex-row items-center justify-center gap-[10px] !text-[13px] !text-white hover:underline">
+            <img [src]="profile.thumbnailPath" alt="" width="32" height="32" class="rounded-[4px]" />
+            <span>{{ profile.name }}</span>
+          </div>
+        </button>
+      </ng-container>
       <button (click)="editProfiles()" mat-menu-item>
         <div class="flex flex-row items-center justify-center gap-[10px] !text-[13px] !text-white">
           <i class="icon icon-edit px-[5px] text-[22px] text-white/70 hover:no-underline"></i>

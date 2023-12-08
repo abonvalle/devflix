@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { ButtonComponent } from '@modules/shared/button/button.component';
-import { CardsComponent } from '@modules/shared/cards/cards.component';
+import { ButtonComponent } from '@modules/shared/components/button/button.component';
+import { CardsComponent } from '@modules/shared/components/cards/cards.component';
 import { CardDetailsHeaderComponent } from './components/card-details-header/card-details-header.component';
 import { CardDetailsComponent } from './components/card-details/card-details.component';
 import { DetailModalComponent } from './components/detail-modal/detail-modal.component';

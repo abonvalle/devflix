@@ -1,6 +1,5 @@
 import { Injectable, OnDestroy } from '@angular/core';
-import { Router } from '@angular/router';
-import * as profilesJSON from '@assets/jsons/profiles.json';
+import { ProfilesService } from '@modules/shared/services';
 import axios from 'axios';
 import { BehaviorSubject, Subscription } from 'rxjs';
 import { BrowseLayout, Card } from '../../../models';
@@ -9,31 +8,22 @@ import { Profile } from '../../../models/profile.interface';
 
 @Injectable({ providedIn: 'root' })
 export class BrowseService implements OnDestroy {
-  readonly currentProfile$: BehaviorSubject<Profile | null> = new BehaviorSubject<Profile | null>(null);
   readonly currentProfileLayout$: BehaviorSubject<BrowseLayout | null> = new BehaviorSubject<BrowseLayout | null>(null);
   currentProfileSubscription: Subscription;
-  constructor(private _router: Router) {
-    this.currentProfileSubscription = this.currentProfile$.subscribe(async (profile) => {
+  constructor(private _profilesService: ProfilesService) {
+    this.currentProfileSubscription = this._profilesService.currentProfile$.subscribe(async (profile) => {
       let profileLayout = null;
       if (profile !== null) {
         profileLayout = await this.getBrowseLayout(profile);
       }
-      console.warn(profileLayout, this.currentProfile$.value);
+      console.warn(profileLayout, this._profilesService.currentProfile$.value);
       this.currentProfileLayout$.next(profileLayout);
     });
-    const profile = sessionStorage.getItem('profile');
-    if (profile) {
-      this.setCurrentProfile(JSON.parse(profile));
-    }
   }
   ngOnDestroy(): void {
     this.currentProfileSubscription.unsubscribe();
   }
 
-  async setCurrentProfile(profile: Profile): Promise<void> {
-    this.currentProfile$.next(profile);
-    sessionStorage.setItem('profile', JSON.stringify(profile));
-  }
   async getBrowseLayout(profile: Profile): Promise<BrowseLayout> {
     const APIProfileLayout = (
       await axios.get(
@@ -82,23 +72,5 @@ export class BrowseService implements OnDestroy {
         .filter((card) => !!card) as Card[]
     };
     return profileLayout;
-  }
-  disconnect() {
-    this.currentProfile$.next(null);
-    sessionStorage.clear();
-    this._router.navigateByUrl('/login');
-  }
-  editProfiles() {
-    this.currentProfile$.next(null);
-    sessionStorage.clear();
-    this._router.navigateByUrl('/ManageProfiles');
-  }
-  updateProfile(guid: string) {
-    const profilesjson = profilesJSON;
-    const profiles = profilesjson.profiles;
-    const selectedProfile = profiles.find((p) => p.guid === guid);
-    if (selectedProfile) {
-      this.setCurrentProfile(selectedProfile);
-    }
   }
 }

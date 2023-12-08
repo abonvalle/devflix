@@ -1,12 +1,10 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import * as profilesJSON from '@assets/jsons/profiles.json';
-import { BrowseService } from '@features/browse/browse.service';
+import { ProfilesService } from '@modules/shared/services';
 import { Subject, distinctUntilChanged, takeUntil, timeout } from 'rxjs';
 import { Profile } from '../../../models/profile.interface';
 import { HidedProfilesSelectionDialogComponent } from './components/hided-profiles-selection-dialog/hided-profiles-selection-dialog.component';
-import { ProfileSelectionService } from './profile-selection.service';
 @Component({
   selector: 'app-profile-selection',
   templateUrl: './profile-selection.component.html',
@@ -14,18 +12,15 @@ import { ProfileSelectionService } from './profile-selection.service';
 })
 export class ProfileSelectionComponent implements OnInit, OnDestroy {
   @Input() editor: boolean = false;
-  readonly profiles$ = this._profileSelection.profiles$;
+  readonly profiles$ = this._profilesService.profiles$;
   private _destroy$: Subject<void> = new Subject();
   constructor(
-    private _browseService: BrowseService,
     private _snackBar: MatSnackBar,
     public dialog: MatDialog,
-    private _profileSelection: ProfileSelectionService
+    private _profilesService: ProfilesService
   ) {}
   ngOnInit(): void {
-    const profiles = profilesJSON;
-    this._profileSelection.profiles$.next(profiles.profiles);
-    this._profileSelection.profiles$
+    this._profilesService.profiles$
       .pipe(takeUntil(this._destroy$), distinctUntilChanged())
       .subscribe((hiddenProfiles) => {
         const profiles = this.profiles$.value;
@@ -35,8 +30,8 @@ export class ProfileSelectionComponent implements OnInit, OnDestroy {
             profile.hidden = !hiddenProfiles[profile.guid as keyof typeof hiddenProfiles];
           }
         });
-        this._profileSelection.profiles$.next(profiles);
-        console.warn(this._profileSelection.profiles$.value);
+        this._profilesService.profiles$.next(profiles);
+        console.warn(this._profilesService.profiles$.value);
       });
   }
   ngOnDestroy(): void {
@@ -48,7 +43,7 @@ export class ProfileSelectionComponent implements OnInit, OnDestroy {
     if (this.editor) {
       this.alertEdit();
     } else {
-      this._browseService.setCurrentProfile(profile);
+      this._profilesService.setCurrentProfile(profile);
     }
   }
   alertEdit() {
@@ -60,7 +55,7 @@ export class ProfileSelectionComponent implements OnInit, OnDestroy {
   }
   alert() {
     const snackbarRef = this._snackBar.open(
-      'Vous devez choisir parmis les profils préparamétrés pour le moment',
+      'Vous devez choisir parmis les profils préparamétrés pour le moment.',
       'choisir',
       {
         duration: 3000,

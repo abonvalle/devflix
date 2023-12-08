@@ -8,7 +8,7 @@
       "@config/*": ["projects/netflix-portfolio/src/environments/*"],
       "@core/*": ["projects/netflix-portfolio/src/app/modules/core/*"],
       "@features/*": ["projects/netflix-portfolio/src/app/modules/features/*"],
-      "@models/*": ["projects/netflix-portfolio/src/app/models"],
+      "@models/*": ["projects/netflix-portfolio/src/app/models/*"],
       "@modules/*": ["projects/netflix-portfolio/src/app/modules/*"],
       "@shared/*": ["projects/netflix-portfolio/src/app/modules/shared/*"],
       "@assets/*": ["projects/netflix-portfolio/src/assets/*"]

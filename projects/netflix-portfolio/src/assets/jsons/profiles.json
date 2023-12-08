@@ -9,6 +9,13 @@
     },
     {
       "guid": "7bfad4e5-9d8f-426a-8f29-46e22fae3aee",
+      "name": "Tech",
+      "layoutsGuids": ["tech"],
+      "thumbnailPath": "assets/images/profiles/tech.svg",
+      "hidden": false
+    },
+    {
+      "guid": "7bfad4e5-5g6v-426a-8f29-46e22fae3aee",
       "name": "Recruteur",
       "layoutsGuids": ["recruteur"],
       "thumbnailPath": "assets/images/profiles/recruteur.svg",
@@ -26,13 +33,6 @@
       "name": "GOTLover3",
       "layoutsGuids": ["serieslover"],
       "thumbnailPath": "assets/images/profiles/serie.svg",
-      "hidden": true
-    },
-    {
-      "guid": "7bfad4e5-9d8f-426a-8f29-46e22fae3aeg",
-      "name": "Totoro4ever",
-      "layoutsGuids": ["6003d1f4-fda1-46fe-9fcb-1f25bcf0eca9"],
-      "thumbnailPath": "assets/images/profiles/anime.svg",
       "hidden": true
     }
   ]

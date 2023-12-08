@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CardDetailsComponent } from '@features/modal/components/card-details/card-details.component';
-import { Card } from '@models/*';
+import { Card } from '@models/card.type';
 
 @Component({
   selector: 'app-header',

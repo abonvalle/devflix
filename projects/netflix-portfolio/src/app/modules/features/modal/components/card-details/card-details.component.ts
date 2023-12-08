@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { Card, MovieCard, SerieCard } from '@models/*';
+import { MovieCard, SerieCard } from '@models/card.interface';
+import { Card } from '@models/card.type';
 import axios from 'axios';
 import { BehaviorSubject } from 'rxjs';
 @Component({

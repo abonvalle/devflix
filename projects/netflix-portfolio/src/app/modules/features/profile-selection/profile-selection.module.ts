@@ -4,7 +4,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { RouterModule } from '@angular/router';
 import { AddProfileTriggerComponent } from '@features/profile-selection/components/add-profile-trigger/add-profile-trigger.component';
-import { ButtonComponent } from '@modules/shared/button/button.component';
+import { ButtonComponent } from '@modules/shared/components/button/button.component';
 import { ProfileThumbnailComponent } from './components/profile-thumbnail/profile-thumbnail.component';
 import { ProfileSelectionComponent } from './profile-selection.component';
 @NgModule({

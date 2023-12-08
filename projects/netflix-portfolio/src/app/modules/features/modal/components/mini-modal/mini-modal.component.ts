@@ -1,5 +1,5 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { Card } from '@models/*';
+import { Card } from '@models/card.type';
 import { Subject } from 'rxjs';
 
 @Component({

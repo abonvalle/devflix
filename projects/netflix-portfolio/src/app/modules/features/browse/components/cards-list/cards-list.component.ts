@@ -13,7 +13,8 @@ import {
 } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CardDetailsComponent } from '@features/modal/components/card-details/card-details.component';
-import { Card, ListsType } from '@models/*';
+import { Card } from '@models/card.type';
+import { ListsType } from '@models/lists.type';
 import { BehaviorSubject, Subject, takeUntil } from 'rxjs';
 
 @Component({
@@ -66,13 +67,13 @@ export class CardsListComponent implements OnInit, AfterViewInit, OnDestroy {
     let windowWidth = window.innerWidth;
     this.controlsWidth = Math.round(4 * windowWidth) / 100;
 
-    if (windowWidth < 768) {
+    if (windowWidth < 500) {
       this.showCount = 2;
-    } else if (windowWidth < 950) {
+    } else if (windowWidth < 800) {
       this.showCount = 3;
-    } else if (windowWidth < 1200) {
+    } else if (windowWidth < 1100) {
       this.showCount = 4;
-    } else if (windowWidth < 1500) {
+    } else if (windowWidth < 1400) {
       this.showCount = 5;
     } else {
       this.showCount = 6;

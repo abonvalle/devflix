@@ -5,7 +5,7 @@ import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { ProfileSelectionService } from '@features/profile-selection/profile-selection.service';
+import { ProfilesService } from '@modules/shared/services';
 import { Subject, takeUntil } from 'rxjs';
 @Component({
   selector: 'app-hided-profiles-selection-dialog',
@@ -25,10 +25,10 @@ export class HidedProfilesSelectionDialogComponent implements OnInit, OnDestroy 
   private _destroy$: Subject<void> = new Subject();
   constructor(
     public dialogRef: MatDialogRef<HidedProfilesSelectionDialogComponent>,
-    private _profileSelection: ProfileSelectionService
+    private _profilesService: ProfilesService
   ) {}
   ngOnInit(): void {
-    this._profileSelection.profiles$.pipe(takeUntil(this._destroy$)).subscribe((profiles) => {
+    this._profilesService.profiles$.pipe(takeUntil(this._destroy$)).subscribe((profiles) => {
       profiles.forEach((profile) => {
         const dataGuid = Object.keys(this.data).find((guid) => guid === profile.guid) as
           | '7bfad4e5-9d8f-426a-8f29-46e22fae3aez'
@@ -45,7 +45,7 @@ export class HidedProfilesSelectionDialogComponent implements OnInit, OnDestroy 
     this.dialogRef.close();
   }
   save() {
-    const profiles = this._profileSelection.profiles$.value;
+    const profiles = this._profilesService.profiles$.value;
     profiles.map((profile) => {
       const dataGuid = Object.keys(this.data).find((guid) => guid === profile.guid) as
         | '7bfad4e5-9d8f-426a-8f29-46e22fae3aez'
@@ -54,7 +54,7 @@ export class HidedProfilesSelectionDialogComponent implements OnInit, OnDestroy 
         profile.hidden = !this.data[dataGuid];
       }
     });
-    this._profileSelection.profiles$.next(profiles);
+    this._profilesService.profiles$.next(profiles);
     this.dialogRef.close();
   }
 }

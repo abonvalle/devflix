@@ -1,6 +1,6 @@
 import { Component, HostListener, ViewChild } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material/menu';
-import { BrowseService } from '@features/browse/browse.service';
+import { ProfilesService } from '@modules/shared/services';
 import { BehaviorSubject } from 'rxjs';
 
 @Component({
@@ -11,8 +11,9 @@ import { BehaviorSubject } from 'rxjs';
 export class TopbarComponent {
   @ViewChild('menuTrigger') menuTrigger!: MatMenuTrigger;
   isBgDark$: BehaviorSubject<boolean> = new BehaviorSubject(false);
-  profile$ = this._browseService.currentProfile$;
-  constructor(private _browseService: BrowseService) {
+  currentProfile$ = this._profilesService.currentProfile$;
+  profiles$ = this._profilesService.profiles$;
+  constructor(private _profilesService: ProfilesService) {
     this.setIsBgDark();
   }
   @HostListener('window:scroll') setIsBgDark(): void {
@@ -20,12 +21,12 @@ export class TopbarComponent {
   }
 
   changeProfil(guid: string) {
-    this._browseService.updateProfile(guid);
+    this._profilesService.updateProfile(guid);
   }
   editProfiles() {
-    this._browseService.editProfiles();
+    this._profilesService.editProfiles();
   }
   disconnect() {
-    this._browseService.disconnect();
+    this._profilesService.disconnect();
   }
 }
