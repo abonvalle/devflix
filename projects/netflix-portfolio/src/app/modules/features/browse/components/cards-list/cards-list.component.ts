@@ -137,8 +137,8 @@ export class CardsListComponent implements OnInit, AfterViewInit, OnDestroy {
       this.scollWidth = (window.innerWidth - this.controlsWidth * 2) * (this.nbSlide$.value - 1);
       this.currentSliderCount = this.nbSlide$.value - 1;
     } else {
+      this.scollWidth -= this.scollWidth / this.currentSliderCount;
       this.currentSliderCount--;
-      this.scollWidth -= this.scollWidth;
     }
     this.animate();
     this.hideLeftBtn();

@@ -4,7 +4,7 @@
   (mouseleave)="setIsHover(false)">
   <div class="h-full w-full overflow-hidden rounded-[0.2vw] px-[0]">
     <span *ngIf="isTop; else classicTpl" class="relative bottom-0 left-0 right-0 top-0 flex h-full w-full flex-row">
-      <app-svg-icon icon="rank{{ index + 1 }}" height="100%" width="50%" class="mr-[-3%]"></app-svg-icon>
+      <app-svg-icon icon="rank{{ index + 1 }}" height="100%" width="50%" class="mr-[-1%]"></app-svg-icon>
       <img class="relative bottom-0 left-0 right-0 top-0 h-full w-1/2" [src]="card.thumbnailPath" alt="" />
     </span>
     <ng-template #classicTpl>
@@ -17,7 +17,7 @@
   <div
     #cardMiniModal
     class="absolute left-0 top-0 mx-[0.2vw] hidden w-full overflow-visible whitespace-normal align-top shadow-[0px_3px_10px_0px] shadow-[rgba(0,0,0,0.75)]">
-    <div [ngClass]="{ 'h-[82%]': isTop }" class="h-full w-full overflow-hidden px-[0]">
+    <div [ngClass]="{ 'h-[82%]': isTop, 'h-full': !isTop }" class="w-full overflow-hidden px-[0]">
       <video
         *ngIf="card.clipPath; else imgTpl"
         class="relative bottom-0 left-0 right-0 top-0 h-full w-full rounded-t-[4px]"
