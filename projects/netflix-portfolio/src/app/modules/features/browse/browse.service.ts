@@ -46,7 +46,7 @@ export class BrowseService implements OnDestroy {
     let cards = await Promise.all(
       cardsGuids.map(
         (cardGuid) =>
-          axios.get(`/assets/jsons/cards/${cardGuid}.json`).then(
+          axios.get(`./assets/jsons/cards/${cardGuid}.json`).then(
             (a) => a.data,
             () => null
           ) as Promise<Card | null>

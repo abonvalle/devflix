@@ -45,7 +45,7 @@ export class CardDetailsComponent implements OnInit {
     let cards = await Promise.all(
       this.card.related.map(
         (cardGuid) =>
-          axios.get(`/assets/jsons/cards/${cardGuid}.json`).then(
+          axios.get(`./assets/jsons/cards/${cardGuid}.json`).then(
             (a) => a.data,
             () => null
           ) as Promise<Card | null>
