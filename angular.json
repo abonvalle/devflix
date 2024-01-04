@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/netflix-portfolio",
+            "outputPath": "dist/",
             "index": "projects/netflix-portfolio/src/index.html",
             "main": "projects/netflix-portfolio/src/main.ts",
             "polyfills": "projects/netflix-portfolio/src/polyfills.ts",
