@@ -7,6 +7,7 @@
   "type": "movie",
   "duration": "25 ans",
   "thumbnailPath": "assets/cards/thumbnails/gaming.webp",
+  "producedByDevflix": true,
   "clipPath": "assets/cards/clips/gaming.mp4",
   "recommended": 97,
   "related": [],

@@ -7,6 +7,7 @@
   "type": "serie",
   "seasons": "25 ans",
   "thumbnailPath": "assets/cards/thumbnails/recruteur.webp",
+  "producedByDevflix": true,
   "clipPath": "assets/cards/clips/recruteur.mp4",
   "recommended": 99,
   "related": [

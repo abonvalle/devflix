@@ -1,5 +1,5 @@
 {
-  "guid": "df03f9f5-c18f-4c18-9874-554b0b2a6543",
+  "guid": "tech",
   "headerCardsGuids": [
     "bonvalle-dev"
   ],
@@ -26,24 +26,32 @@
         "expateo",
         "wanao",
         "radiofive",
-        "nameguessr",
-        "emmalarragueta",
-        "oliviertaylor",
-        "sitesvitrines"
+        "nameguessr"
       ]
     },
     {
       "guid": "83dd6e48-b997-4ef2-9180-18e65f0136g6",
-      "name": "Top 6 de mes frameworks & libs",
+      "name": "Top 5 de mes compétences",
       "order": 2,
       "type": "top",
       "cardsGuids": [
-        "angular",
-        "rxjs",
-        "nodejs",
-        "tailwind",
-        "react",
-        "d3"
+        "wanao",
+        "expateo",
+        "bonvalle-dev",
+        "bonvalle-recruteur",
+        "gojo"
+      ]
+    },
+    {
+      "guid": "83dd6e48-b997-4ef2-9180-18e65f0136g2",
+      "name": "Projets",
+      "order": 3,
+      "type": "classic",
+      "cardsGuids": [
+        "bonvalle-dev",
+        "bonvalle-dev",
+        "bonvalle-dev",
+        "bonvalle-dev"
       ]
     }
   ]
