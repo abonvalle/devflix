@@ -27,7 +27,7 @@ export class BrowseService implements OnDestroy {
   async getBrowseLayout(profile: Profile): Promise<BrowseLayout> {
     const APIProfileLayout = (
       await axios.get(
-        `/assets/jsons/layouts/${profile.layoutsGuids[Math.floor(Math.random() * profile.layoutsGuids.length)]}.json`
+        `assets/jsons/layouts/${profile.layoutsGuids[Math.floor(Math.random() * profile.layoutsGuids.length)]}.json`
       )
     ).data as APIBrowseLayout;
     console.warn(APIProfileLayout);
@@ -46,7 +46,7 @@ export class BrowseService implements OnDestroy {
     let cards = await Promise.all(
       cardsGuids.map(
         (cardGuid) =>
-          axios.get(`./assets/jsons/cards/${cardGuid}.json`).then(
+          axios.get(`assets/jsons/cards/${cardGuid}.json`).then(
             (a) => a.data,
             () => null
           ) as Promise<Card | null>
