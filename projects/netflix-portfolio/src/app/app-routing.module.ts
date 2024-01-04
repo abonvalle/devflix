@@ -4,7 +4,6 @@ import { CoreLayoutComponent } from '@core/core-layout/core-layout.component';
 
 const routes: Routes = [
   { path: 'login', loadChildren: () => import('@features/sign-in/sign-in.module').then((m) => m.SignInModule) },
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
   {
     path: '',
     component: CoreLayoutComponent,
@@ -14,10 +13,11 @@ const routes: Routes = [
         path: 'ManageProfiles',
         loadChildren: () =>
           import('@features/manage-profiles/manage-profiles.module').then((m) => m.ManageProfilesModule)
-      }
+      },
+      { path: '**', redirectTo: '/browse', pathMatch: 'full' }
     ]
   },
-  { path: '**', redirectTo: '/login', pathMatch: 'full' }
+  { path: '**', redirectTo: '/browse', pathMatch: 'full' }
 ];
 
 @NgModule({

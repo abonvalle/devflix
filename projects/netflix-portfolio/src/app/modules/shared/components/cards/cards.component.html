@@ -5,10 +5,18 @@
   <div class="h-full w-full overflow-hidden rounded-[0.2vw] px-[0]">
     <span *ngIf="isTop; else classicTpl" class="relative bottom-0 left-0 right-0 top-0 flex h-full w-full flex-row">
       <app-svg-icon icon="rank{{ index + 1 }}" height="100%" width="50%" class="mr-[-1%]"></app-svg-icon>
-      <img class="relative bottom-0 left-0 right-0 top-0 h-full w-1/2" [src]="card.thumbnailPath" alt="" />
+      <img class="relative bottom-0 left-0 right-0 top-0 h-full w-1/2" [src]="card.thumbnailPathPortrait" alt="" />
+      <img
+        *ngIf="card.producedByDevflix"
+        src="assets/images/svg/d-trademark.svg"
+        class="absolute left-1/2 top-[5px] h-[22.5%]" />
     </span>
     <ng-template #classicTpl>
       <img class="relative bottom-0 left-0 right-0 top-0 h-full w-full" [src]="card.thumbnailPath" alt="" />
+      <img
+        *ngIf="card.producedByDevflix"
+        src="assets/images/svg/d-trademark.svg"
+        class="absolute left-[2.5px] top-[5px] h-[22.5%]" />
     </ng-template>
   </div>
   <div *ngIf="isPending" class="px-[18%] py-[8px]">
@@ -31,6 +39,10 @@
           class="relative bottom-0 left-0 right-0 top-0 h-full w-full rounded-t-[4px]"
           [src]="card.thumbnailPath"
           alt="" />
+        <img
+          *ngIf="card.producedByDevflix"
+          src="assets/images/svg/d-trademark.svg"
+          class="absolute left-[2.5px] top-[5px] h-[22.5%]" />
       </ng-template>
     </div>
     <div

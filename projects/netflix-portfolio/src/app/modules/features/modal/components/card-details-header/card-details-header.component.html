@@ -16,10 +16,14 @@
     [muted]="mute"></video>
   <ng-template #imgTpl>
     <img class="h-[56vw] max-h-[506px] w-full max-w-[unset]" [src]="card.thumbnailPath" />
+    <img
+      *ngIf="card.producedByDevflix"
+      src="assets/images/svg/d-trademark.svg"
+      class="absolute left-[30px] top-[40px] h-[10%]" />
   </ng-template>
 
   <div
-    class="fading-bg-mini absolute -bottom-px top-auto z-0 h-[10vw] w-full bg-transparent bg-[0_top] bg-repeat-x opacity-100">
+    class="fading-bg-mini absolute -bottom-px top-auto z-0 h-[10vw] max-h-[80px] w-full bg-transparent bg-[0_top] bg-repeat-x opacity-100">
     <!--  css={css`
             background: linear-gradient(
               180deg,

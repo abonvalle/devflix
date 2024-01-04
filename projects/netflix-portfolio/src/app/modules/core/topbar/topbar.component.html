@@ -2,7 +2,15 @@
   [ngClass]="{ 'bg-[#141414]': (isBgDark$ | async) === true }"
   class="topbar-bg-gradient fixed top-0 z-10 flex h-[41px] w-full items-center justify-between px-[4%] transition-all duration-700 ease-out sm:h-[68px]">
   <!-- <ng-container *ngIf="(profile$ | async) !== null"> -->
-  <img src="assets/devflix.svg" width="100px" />
+  <div class="flex items-end justify-center gap-[30px]">
+    <img src="assets/devflix.svg" width="100px" />
+    <a href="https://cv.abvdev.fr" class="text-[12px] hover:underline">Curriculum vitae</a>
+    <ng-container *ngIf="hasProfileSelected$ | async">
+      <a href="https://www.linkedin.com/in/abonvalle/" class="text-[12px] hover:underline">Linkedin</a>
+      <a href="https://www.malt.fr/profile/abonvalle" class="text-[12px] hover:underline">Malt.fr</a>
+    </ng-container>
+  </div>
+
   <app-mat-menu-hover #customMenu *ngIf="(currentProfile$ | async) !== null">
     <div trigger class="z-[999] flex cursor-pointer items-center justify-center gap-2">
       <img [src]="(currentProfile$ | async)?.thumbnailPath" alt="" width="32" height="32" class="rounded-[4px]" />

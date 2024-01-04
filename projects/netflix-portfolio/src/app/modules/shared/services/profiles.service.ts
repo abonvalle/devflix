@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import * as profilesJSON from '@assets/jsons/profiles.json';
-import { localStorageKeys } from '@models/local-storage-keys.enum';
 import { Profile } from '@models/profile.interface';
+import { sessionStorageKeys } from '@models/session-storage-keys.enum';
 import { BehaviorSubject } from 'rxjs';
 import { SessionStorageService } from './session-storage.service';
 
@@ -20,7 +20,7 @@ export class ProfilesService {
     const profilesObj = profilesJSON;
     const profiles = profilesObj.profiles;
     try {
-      const hiddenProfilesStrg = this._sessStrgService.read(localStorageKeys.hiddenProfiles);
+      const hiddenProfilesStrg = this._sessStrgService.read(sessionStorageKeys.hiddenProfiles);
       if (hiddenProfilesStrg) {
         const hiddenProfiles = JSON.parse(hiddenProfilesStrg) as { [guid: string]: boolean }[];
         hiddenProfiles.forEach((hp) => {
@@ -37,21 +37,21 @@ export class ProfilesService {
     }
     this.profiles$.next(profiles);
 
-    const profile = this._sessStrgService.read(localStorageKeys.currentProfile);
+    const profile = this._sessStrgService.read(sessionStorageKeys.currentProfile);
     if (profile) {
       this.setCurrentProfile(JSON.parse(profile));
     }
 
     this.profiles$.subscribe((profiles) => {
       this._sessStrgService.update(
-        localStorageKeys.hiddenProfiles,
+        sessionStorageKeys.hiddenProfiles,
         JSON.stringify(profiles.map((p) => ({ [p.guid]: p.hidden })))
       );
     });
   }
   async setCurrentProfile(profile: Profile): Promise<void> {
     this.currentProfile$.next(profile);
-    this._sessStrgService.update(localStorageKeys.currentProfile, JSON.stringify(profile));
+    this._sessStrgService.update(sessionStorageKeys.currentProfile, JSON.stringify(profile));
   }
   disconnect() {
     this.currentProfile$.next(null);
@@ -60,7 +60,7 @@ export class ProfilesService {
   }
   editProfiles() {
     this.currentProfile$.next(null);
-    this._sessStrgService.delete(localStorageKeys.currentProfile);
+    this._sessStrgService.delete(sessionStorageKeys.currentProfile);
     this._router.navigateByUrl('/ManageProfiles');
   }
   updateProfile(guid: string) {

@@ -1,19 +1,21 @@
-import { Component, HostListener, ViewChild } from '@angular/core';
+import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material/menu';
 import { ProfilesService } from '@modules/shared/services';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, map } from 'rxjs';
 
 @Component({
   selector: 'app-topbar',
   templateUrl: './topbar.component.html',
   styleUrls: ['./topbar.component.scss']
 })
-export class TopbarComponent {
+export class TopbarComponent implements OnInit {
   @ViewChild('menuTrigger') menuTrigger!: MatMenuTrigger;
   isBgDark$: BehaviorSubject<boolean> = new BehaviorSubject(false);
   currentProfile$ = this._profilesService.currentProfile$;
   profiles$ = this._profilesService.profiles$;
-  constructor(private _profilesService: ProfilesService) {
+  hasProfileSelected$ = this._profilesService.currentProfile$.pipe(map((v) => v !== null));
+  constructor(private _profilesService: ProfilesService) {}
+  ngOnInit(): void {
     this.setIsBgDark();
   }
   @HostListener('window:scroll') setIsBgDark(): void {

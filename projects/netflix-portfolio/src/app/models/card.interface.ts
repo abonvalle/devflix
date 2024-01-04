@@ -11,6 +11,8 @@ export interface GlobalCard {
   stack: { name: string; version?: string }[];
   year: number;
   thumbnailPath: string;
+  thumbnailPathPortrait: string;
+  producedByDevflix: boolean;
   clipPath: string;
   related: string[];
   recommended: number;
