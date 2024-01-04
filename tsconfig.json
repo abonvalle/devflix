@@ -13,7 +13,7 @@
       "@shared/*": ["projects/netflix-portfolio/src/app/modules/shared/*"],
       "@assets/*": ["projects/netflix-portfolio/src/assets/*"]
     },
-    "outDir": "./dist/out-tsc",
+    "outDir": "./dist",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,
