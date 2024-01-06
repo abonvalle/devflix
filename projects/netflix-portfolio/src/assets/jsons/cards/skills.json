@@ -1,0 +1,60 @@
+{
+  "guid": "skills",
+  "title": "Développeur Front-end : Les débuts",
+  "tagline": "Wanao, Bidart",
+  "description": "Réalisation d'interfaces pour la version Web d’un logiciel. Développement d'une petite app Android native.",
+  "year": 2018,
+  "type": "serie",
+  "seasons": "1 année",
+  "thumbnailPath": "assets/cards/thumbnails/skills.png",
+  "producedByDevflix": true,
+  "clipPath": "",
+  "related": [],
+  "recommended": 98,
+  "tags": [
+    "Expériences professionelles"
+  ],
+  "attributes": [
+    {
+      "imgPath": "",
+      "label": "Javascript"
+    },
+    {
+      "imgPath": "",
+      "label": "Edition de logiciel"
+    }
+  ],
+  "stack": [
+    {
+      "name": "HTML",
+      "version": "5"
+    },
+    {
+      "name": "D3.js"
+    },
+    {
+      "name": "JQuery"
+    },
+    {
+      "name": "Bootstrap",
+      "version": "4"
+    },
+    {
+      "name": "Java"
+    }
+  ],
+  "episods": [
+    {
+      "title": "Réalisation d'interfaces web",
+      "description": "Echanges avec l'API, reproduction d'interfaces natives en versions Web. Filtres et tris des données."
+    },
+    {
+      "title": "Réalisation d'interfaces web (Interne)",
+      "description": "Gestion de filtrage avancé via une interface graphique (D3.js). Création de l'arborescence de filtre via l'import d'une requête SQL et export de l'objet filtre en requête SQL."
+    },
+    {
+      "title": "Développement Android Natif",
+      "description": "Gestion des autorisations de Caméra, édition des métadonnées & sauvegarde des photos."
+    }
+  ]
+}

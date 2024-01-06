@@ -18,7 +18,7 @@
       ]
     },
     {
-      "guid": "83dd6e48-b997-4ef2-9180-18e65f0136g8",
+      "guid": "b5fc4eda-413b-445a-9d04-cc1e05b9bd5f",
       "name": "Expériences & Projets",
       "order": 1,
       "type": "classic",
@@ -33,8 +33,8 @@
       ]
     },
     {
-      "guid": "83dd6e48-b997-4ef2-9180-18e65f0136g6",
-      "name": "Top 6 de mes frameworks & libs",
+      "guid": "545ebd52-13b2-4106-ad66-ffb8cbdf233e",
+      "name": "Top 6 de mes frameworks & libs préférés",
       "order": 2,
       "type": "top",
       "cardsGuids": [
