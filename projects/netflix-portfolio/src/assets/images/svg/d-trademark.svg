@@ -1,16 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 340 340">
-  <defs>
-    <style>
-      .cls-1 {
-        fill: url(#Dégradé_sans_nom_4);
-        stroke-width: 0px;
-      }
-    </style>
-    <linearGradient id="Dégradé_sans_nom_4" data-name="Dégradé sans nom 4" x1="110.24" y1="119.33" x2="259.19" y2="281.02" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#e50914"/>
-      <stop offset="1" stop-color="#a20914"/>
-    </linearGradient>
-  </defs>
-  <path class="cls-1" d="M102.97,308.17l76.3-8.67c63.88-7.26,57.7-23.18,57.53-78.43l-.41-134.15c-.12-44.21-21.31-55.08-64.73-55.08h-68.69v276.33ZM170.87,71.31c13.82,0,22.1,7.1,22.1,26.84v143.69c0,19.74-8.28,26.84-22.1,26.84h-24.47V71.31h24.48Z"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 340" xmlns:v="https://vecta.io/nano"><defs><linearGradient id="A" x1="110.24" y1="119.33" x2="259.19" y2="281.02" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#e50914"/><stop offset="1" stop-color="#a20914"/></linearGradient></defs><path d="M102.97 308.17l76.3-8.67c63.88-7.26 57.7-23.18 57.53-78.43l-.41-134.15c-.12-44.21-21.31-55.08-64.73-55.08h-68.69v276.33zm67.9-236.86c13.82 0 22.1 7.1 22.1 26.84v143.69c0 19.74-8.28 26.84-22.1 26.84H146.4V71.31h24.48z" fill="url(#A)"/></svg>

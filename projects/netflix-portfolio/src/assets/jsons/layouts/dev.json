@@ -34,6 +34,17 @@
     },
     {
       "guid": "545ebd52-13b2-4106-ad66-ffb8cbdf233e",
+      "name": "A propos de moi",
+      "order": 1,
+      "type": "classic",
+      "cardsGuids": [
+        "stack",
+        "skills",
+        "diplomas"
+      ]
+    },
+    {
+      "guid": "545ebd52-13b2-4106-ad66-ffb8cbdf233e",
       "name": "Top 6 de mes frameworks & libs préférés",
       "order": 2,
       "type": "top",
