@@ -1,5 +1,5 @@
 const fs = require('fs');
-const { execSync } = require('child_process');
+const path = require('path');
 
 function minifyAndReplace(filePath) {
   try {
@@ -28,7 +28,7 @@ function processFilesInFolder(folderPath) {
 }
 
 // Specify the path to your assets folder
-const assetsFolderPath = '../netflix-portfolio/src/assets/jsons';
+const assetsFolderPath = './projects/netflix-portfolio/src/assets/jsons';
 
 // Start processing files in the assets folder and its subdirectories
 processFilesInFolder(assetsFolderPath);
