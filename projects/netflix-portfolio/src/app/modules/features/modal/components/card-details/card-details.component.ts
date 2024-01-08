@@ -20,7 +20,9 @@ export class CardDetailsComponent implements OnInit {
     return this.card.type === 'serie';
   }
   get stackToString(): string {
-    return this.card.stack.map((stack) => (stack.version ? `${stack.name} ${stack.version}` : stack.name)).join(', ');
+    return (
+      this.card.stack?.map((stack) => (stack.version ? `${stack.name} ${stack.version}` : stack.name)).join(', ') ?? ''
+    );
   }
 
   get tags(): string {

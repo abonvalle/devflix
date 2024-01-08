@@ -17,11 +17,11 @@
         <p class="text-[14px] text-white">{{ card.description }}</p>
       </div>
       <div class="flex w-1/3 flex-col gap-[14px]">
-        <p class="text-[14px]">
+        <p *ngIf="tags" class="text-[14px]">
           <span class="text-[#777777]"> Genre : </span>
           {{ tags }}
         </p>
-        <p class="text-[14px]">
+        <p *ngIf="stackToString" class="text-[14px]">
           <span class="text-[#777777]"> Stack : </span>
           {{ stackToString }}
         </p>
@@ -41,24 +41,26 @@
         </div>
       </div>
     </ng-container>
-    <h2 class="mb-[20px] mt-[48px] text-[24px] font-[500]">Titres similaires</h2>
-    <div class="grid grid-cols-3 gap-[16px] pb-[50px]">
-      <div class="relative" *ngFor="let similarCards of relatedCards$ | async">
-        <p class="absolute right-[8px] top-[4px] z-20 text-[16px] font-[500]">{{ durationInfo(similarCards) }}</p>
-        <div
-          class="flex h-full w-full flex-col rounded-[4px] bg-[#2f2f2f] before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:bg-vignette">
-          <img class="h-[56vw] max-h-[150px] w-full max-w-[unset] rounded-[4px]" [src]="similarCards.thumbnailPath" />
-          <div class="flex flex-col gap-[8px] p-[16px]">
-            <div class="flex gap-[8px]">
-              <p class="text-[16px] font-[500] text-recommended">Recommandé à {{ similarCards?.recommended }}%</p>
-              <p class="text-[16px] text-[#BCBCBC]">{{ similarCards?.year }}</p>
+    <ng-container *ngIf="(relatedCards$ | async)?.length ?? 0 > 0">
+      <h2 class="mb-[20px] mt-[48px] text-[24px] font-[500]">Titres similaires</h2>
+      <div class="grid grid-cols-3 gap-[16px] pb-[50px]">
+        <div *ngFor="let similarCards of relatedCards$ | async" class="relative">
+          <p class="absolute right-[8px] top-[4px] z-20 text-[16px] font-[500]">{{ durationInfo(similarCards) }}</p>
+          <div
+            class="flex h-full w-full flex-col rounded-[4px] bg-[#2f2f2f] before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:bg-vignette">
+            <img class="h-[56vw] max-h-[150px] w-full max-w-[unset] rounded-[4px]" [src]="similarCards.thumbnailPath" />
+            <div class="flex flex-col gap-[8px] p-[16px]">
+              <div class="flex gap-[8px]">
+                <p class="text-[16px] font-[500] text-recommended">Recommandé à {{ similarCards?.recommended }}%</p>
+                <p class="text-[16px] text-[#BCBCBC]">{{ similarCards?.year }}</p>
+              </div>
+              <p class="truncate-overflow max-h-[140px] overflow-hidden text-[14px] text-white">
+                {{ similarCards?.description }}
+              </p>
             </div>
-            <p class="truncate-overflow max-h-[140px] overflow-hidden text-[14px] text-white">
-              {{ similarCards?.description }}
-            </p>
           </div>
         </div>
       </div>
-    </div>
+    </ng-container>
   </div>
 </div>
