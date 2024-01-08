@@ -9,7 +9,11 @@
   "thumbnailPath": "assets/cards/thumbnails/expateo.png",
   "producedByDevflix": true,
   "clipPath": "",
-  "related": [],
+  "related": [
+    "wanao",
+    "nameguessr",
+    "radiofive"
+  ],
   "recommended": 98,
   "tags": [
     "Expériences professionelles"
@@ -39,16 +43,20 @@
   ],
   "episods": [
     {
+      "title": "Conception, développement & maintenance",
+      "description": "Développement de nouvelles fonctionalités, corrections de bugs & implémentation client."
+    },
+    {
+      "title": "Migration des appels API",
+      "description": "Intégration d'une nouvelle API suite à une Migration Back de PHP vers Node.js"
+    },
+    {
       "title": "Collaboration continue",
-      "description": "Travail au sein d'une équipe technique de 6/8 personnes avec des méthodes SCRUM. Participation à la conception, implémentation client, réalisation de nouvelles fonctionnalités, correction de bugs."
+      "description": "Travail au sein d'une équipe technique (6/8 personnes) en collaboration continue avec UX/UI designer et équipe CSM"
     },
     {
-      "title": "",
-      "description": ""
-    },
-    {
-      "title": "",
-      "description": ""
+      "title": "Conception & développement",
+      "description": "Conception & développement d’une app responsive from scratch."
     }
   ]
 }

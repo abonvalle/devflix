@@ -1,54 +1,34 @@
 {
   "guid": "emmalarragueta",
-  "title": "Développeur Front-end : La suite",
-  "tagline": "Expateo, Bidart",
-  "description": "Développement de nouvelles fonctionalités, corrections de bugs & implémentation client. Mise à jour des appels API suite à une Migration Back de PHP vers Node.js. Travail au sein d'une équipe technique (6/8 personnes) en collaboration continue avec UX/UI designer et équipe CSM. Conception & développement d’une app responsive.",
-  "year": 2020,
-  "type": "serie",
-  "seasons": "4 ans",
+  "title": "Portfolio Web Designer",
+  "tagline": "Portfolio d'une alterante en web design",
+  "description": "Conception et développement de la page d'accueil dynamique et installation de wordpress.",
+  "year": 2023,
+  "type": "movie",
+  "duration": "2 h",
   "thumbnailPath": "assets/cards/thumbnails/emmalarragueta.png",
   "producedByDevflix": true,
   "clipPath": "",
-  "related": [],
-  "recommended": 98,
+  "related": [
+    "oliviertaylor",
+    "nameguessr",
+    "sitesvitrines"
+  ],
+  "recommended": 96,
   "tags": [
-    "Expériences professionelles"
+    "Réalisation pour un tiers"
   ],
-  "attributes": [
-    {
-      "imgPath": "",
-      "label": "Angular"
-    },
-    {
-      "imgPath": "",
-      "label": "Edition de logiciel"
-    }
-  ],
+  "attributes": [],
   "stack": [
     {
-      "name": "Angular",
-      "version": "7-15"
+      "name": "JavaScript"
     },
     {
-      "name": "Typescript",
-      "version": "5.3"
+      "name": "HTML",
+      "version": "5"
     },
     {
-      "name": "Sass"
-    }
-  ],
-  "episods": [
-    {
-      "title": "Collaboration continue",
-      "description": "Travail au sein d'une équipe technique de 6/8 personnes avec des méthodes SCRUM. Participation à la conception, implémentation client, réalisation de nouvelles fonctionnalités, correction de bugs."
-    },
-    {
-      "title": "",
-      "description": ""
-    },
-    {
-      "title": "",
-      "description": ""
+      "name": "CSS"
     }
   ]
 }

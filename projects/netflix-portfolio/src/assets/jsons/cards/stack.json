@@ -1,60 +1,44 @@
 {
   "guid": "stack",
-  "title": "Développeur Front-end : Les débuts",
-  "tagline": "Wanao, Bidart",
-  "description": "Réalisation d'interfaces pour la version Web d’un logiciel. Développement d'une petite app Android native.",
-  "year": 2018,
+  "title": "Favourite Stack",
+  "tagline": "Ma stack préférée",
+  "description": "Pour le développement Web, je préfère utiliser Angular et Tailwind CSS pour tous types de projets. J'ai aussi utilisé React et Vue.js pour des projets personnels. J'ai des connaissances en Python que j'aimerais approfondir et je m'intéresses à Rust et Dart.",
+  "year": 2017,
   "type": "serie",
-  "seasons": "1 année",
+  "seasons": "8 année",
   "thumbnailPath": "assets/cards/thumbnails/stack.png",
   "producedByDevflix": true,
   "clipPath": "",
-  "related": [],
+  "related": [
+    "skills",
+    "diplomas",
+    "nameguessr"
+  ],
   "recommended": 98,
   "tags": [
-    "Expériences professionelles"
+    "Stack"
   ],
-  "attributes": [
-    {
-      "imgPath": "",
-      "label": "Javascript"
-    },
-    {
-      "imgPath": "",
-      "label": "Edition de logiciel"
-    }
-  ],
+  "attributes": [],
   "stack": [
     {
-      "name": "HTML",
-      "version": "5"
+      "name": "Angular"
     },
     {
-      "name": "D3.js"
-    },
-    {
-      "name": "JQuery"
-    },
-    {
-      "name": "Bootstrap",
-      "version": "4"
-    },
-    {
-      "name": "Java"
+      "name": "Tailwind CSS"
     }
   ],
   "episods": [
     {
-      "title": "Réalisation d'interfaces web",
-      "description": "Echanges avec l'API, reproduction d'interfaces natives en versions Web. Filtres et tris des données."
+      "title": "Mastered",
+      "description": "Angular, TypeScript, JavaScript"
     },
     {
-      "title": "Réalisation d'interfaces web (Interne)",
-      "description": "Gestion de filtrage avancé via une interface graphique (D3.js). Création de l'arborescence de filtre via l'import d'une requête SQL et export de l'objet filtre en requête SQL."
+      "title": "Have expertise in",
+      "description": "React, Vue.js, Python"
     },
     {
-      "title": "Développement Android Natif",
-      "description": "Gestion des autorisations de Caméra, édition des métadonnées & sauvegarde des photos."
+      "title": "Wishing list",
+      "description": "Rust, Dart"
     }
   ]
 }

@@ -1,18 +1,22 @@
 {
   "guid": "radiofive",
-  "title": "Développeur Front-end : La suite",
-  "tagline": "Expateo, Bidart",
-  "description": "Développement de nouvelles fonctionalités, corrections de bugs & implémentation client. Mise à jour des appels API suite à une Migration Back de PHP vers Node.js. Travail au sein d'une équipe technique (6/8 personnes) en collaboration continue avec UX/UI designer et équipe CSM. Conception & développement d’une app responsive.",
+  "title": "RadioFive",
+  "tagline": "Fusion entre une Web radio et spotify",
+  "description": "Web radio diffusant une playlist gérée par un groupe d'amis.",
   "year": 2020,
   "type": "serie",
-  "seasons": "4 ans",
+  "seasons": "1 ans",
   "thumbnailPath": "assets/cards/thumbnails/radio5.png",
   "producedByDevflix": true,
   "clipPath": "",
-  "related": [],
+  "related": [
+    "nameguessr",
+    "expateo",
+    "wanao"
+  ],
   "recommended": 98,
   "tags": [
-    "Expériences professionelles"
+    "Side projects"
   ],
   "attributes": [
     {
@@ -26,29 +30,26 @@
   ],
   "stack": [
     {
-      "name": "Angular",
-      "version": "7-15"
+      "name": "React"
     },
     {
-      "name": "Typescript",
-      "version": "5.3"
+      "name": "JSX"
     },
     {
-      "name": "Sass"
+      "name": "Node.js"
+    },
+    {
+      "name": "Express"
     }
   ],
   "episods": [
     {
-      "title": "Collaboration continue",
-      "description": "Travail au sein d'une équipe technique de 6/8 personnes avec des méthodes SCRUM. Participation à la conception, implémentation client, réalisation de nouvelles fonctionnalités, correction de bugs."
+      "title": "Conception & développement",
+      "description": "Conception & développement de l’interface utilisateur."
     },
     {
-      "title": "",
-      "description": ""
-    },
-    {
-      "title": "",
-      "description": ""
+      "title": "Développement backend",
+      "description": "Développement du moteur de diffusion en broadcast et API de gestion de la playlist."
     }
   ]
 }

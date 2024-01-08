@@ -1,7 +1,7 @@
 {
   "guid": "nameguessr",
   "title": "Nameguessr",
-  "tagline": "Expateo, Bidart",
+  "tagline": "Le Wordle des séries",
   "description": "Application reprenant le principe du jeu Wordle sur le thème des personnages de séries.",
   "year": 2022,
   "type": "serie",
@@ -9,8 +9,12 @@
   "thumbnailPath": "assets/cards/thumbnails/nameguessr.png",
   "producedByDevflix": true,
   "clipPath": "",
-  "related": [],
-  "recommended": 98,
+  "related": [
+    "radiofive",
+    "expateo",
+    "wanao"
+  ],
+  "recommended": 99,
   "tags": [
     "Side projects"
   ],
