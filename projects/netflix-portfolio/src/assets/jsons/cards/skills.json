@@ -1,60 +1,49 @@
 {
   "guid": "skills",
-  "title": "Développeur Front-end : Les débuts",
-  "tagline": "Wanao, Bidart",
-  "description": "Réalisation d'interfaces pour la version Web d’un logiciel. Développement d'une petite app Android native.",
+  "title": "Mes skills",
+  "tagline": "",
+  "description": "Dans les années à venir, je souhaite continuer à développer mes compétences dans le domaine du développement web. Je souhaite également me former à l'intelligence artificielle et à la data science.",
   "year": 2018,
   "type": "serie",
   "seasons": "1 année",
   "thumbnailPath": "assets/cards/thumbnails/skills.png",
   "producedByDevflix": true,
   "clipPath": "",
-  "related": [],
+  "related": [
+    "stack",
+    "diplomas",
+    "nameguessr"
+  ],
   "recommended": 98,
   "tags": [
-    "Expériences professionelles"
+    "Stack"
   ],
-  "attributes": [
-    {
-      "imgPath": "",
-      "label": "Javascript"
-    },
-    {
-      "imgPath": "",
-      "label": "Edition de logiciel"
-    }
-  ],
-  "stack": [
-    {
-      "name": "HTML",
-      "version": "5"
-    },
-    {
-      "name": "D3.js"
-    },
-    {
-      "name": "JQuery"
-    },
-    {
-      "name": "Bootstrap",
-      "version": "4"
-    },
-    {
-      "name": "Java"
-    }
-  ],
+  "attributes": [],
+  "stack": [],
   "episods": [
     {
-      "title": "Réalisation d'interfaces web",
-      "description": "Echanges avec l'API, reproduction d'interfaces natives en versions Web. Filtres et tris des données."
+      "title": "Design system",
+      "description": "Création et l’évolution de composants s’intégrant dans un design system."
     },
     {
-      "title": "Réalisation d'interfaces web (Interne)",
-      "description": "Gestion de filtrage avancé via une interface graphique (D3.js). Création de l'arborescence de filtre via l'import d'une requête SQL et export de l'objet filtre en requête SQL."
+      "title": "Interfaces utilisateurs",
+      "description": "Réalisation d’interfaces utilisateurs complexes et dynamiques à partir de maquettes et de prototypes."
     },
     {
-      "title": "Développement Android Natif",
-      "description": "Gestion des autorisations de Caméra, édition des métadonnées & sauvegarde des photos."
+      "title": "Gestion de l'état",
+      "description": "Gestion de l'état avec RxJS ou les React Hooks."
+    },
+    {
+      "title": "API RESTful",
+      "description": "Intégration et le développement d'API RESTful."
+    },
+    {
+      "title": "Tests",
+      "description": "Mise en œuvre de tests unitaires et end-to-end pour garantir la stabilité de l'application."
+    },
+    {
+      "title": "Méthodes agiles",
+      "description": "Application des méthodes agiles et les appoches Scrum, Extreme Programming ou encore Kanban."
     }
   ]
 }
