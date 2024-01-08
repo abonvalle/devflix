@@ -8,6 +8,8 @@ const routes: Routes = [
     path: '',
     component: CoreLayoutComponent,
     children: [
+      { path: 'privacy', loadChildren: () => import('@features/privacy/privacy.module').then((m) => m.PrivacyModule) },
+      { path: 'terms', loadChildren: () => import('@features/terms/terms.module').then((m) => m.TermsModule) },
       { path: 'browse', loadChildren: () => import('@features/browse/browse.module').then((m) => m.BrowseModule) },
       {
         path: 'ManageProfiles',
