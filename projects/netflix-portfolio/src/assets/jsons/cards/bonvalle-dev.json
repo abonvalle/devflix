@@ -2,7 +2,7 @@
   "guid": "bonvalle-dev",
   "title": "Alexandre Bonvalle",
   "tagline": "Développeur Front-end",
-  "description": "Un récit captivant qui suit la vie d'un développeur passionné. Plongez dans son monde créatif et découvrez les défis et triomphes de cette aventure.",
+  "description": "Un récit captivant qui suit la vie d'un développeur passionné, depuis ses modestes débuts dans le monde du développement jusqu'à son émancipation en tant que freelance accompli. Le film dépeint son parcours jalonné de défis, d'apprentissages et de moments de doute, tout en mettant en lumière sa détermination à réaliser ses rêves.",
   "year": 1998,
   "type": "serie",
   "seasons": "25 ans",
@@ -10,10 +10,10 @@
   "producedByDevflix": true,
   "clipPath": "assets/cards/clips/dev.mp4",
   "related": [
-    "wanao",
-    "expateo",
     "nameguessr",
-    "radiofive"
+    "expateo",
+    "radiofive",
+    "wanao"
   ],
   "recommended": 98,
   "tags": [

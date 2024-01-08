@@ -1,18 +1,18 @@
 {
   "guid": "nameguessr",
-  "title": "Développeur Front-end : La suite",
+  "title": "Nameguessr",
   "tagline": "Expateo, Bidart",
-  "description": "Développement de nouvelles fonctionalités, corrections de bugs & implémentation client. Mise à jour des appels API suite à une Migration Back de PHP vers Node.js. Travail au sein d'une équipe technique (6/8 personnes) en collaboration continue avec UX/UI designer et équipe CSM. Conception & développement d’une app responsive.",
-  "year": 2020,
+  "description": "Application reprenant le principe du jeu Wordle sur le thème des personnages de séries.",
+  "year": 2022,
   "type": "serie",
-  "seasons": "4 ans",
+  "seasons": "2 ans",
   "thumbnailPath": "assets/cards/thumbnails/nameguessr.png",
   "producedByDevflix": true,
   "clipPath": "",
   "related": [],
   "recommended": 98,
   "tags": [
-    "Expériences professionelles"
+    "Side projects"
   ],
   "attributes": [
     {
@@ -27,7 +27,7 @@
   "stack": [
     {
       "name": "Angular",
-      "version": "7-15"
+      "version": "14-16"
     },
     {
       "name": "Typescript",
@@ -35,20 +35,23 @@
     },
     {
       "name": "Sass"
+    },
+    {
+      "name": "Tailwind CSS"
     }
   ],
   "episods": [
     {
-      "title": "Collaboration continue",
-      "description": "Travail au sein d'une équipe technique de 6/8 personnes avec des méthodes SCRUM. Participation à la conception, implémentation client, réalisation de nouvelles fonctionnalités, correction de bugs."
+      "title": "Conception & développement",
+      "description": "Conception & développement de l’application et du moteur de jeu."
     },
     {
-      "title": "",
-      "description": ""
+      "title": "Développement natif",
+      "description": "Création d’une apk Android avec Ionic."
     },
     {
-      "title": "",
-      "description": ""
+      "title": "Backoffice",
+      "description": "Interface de gestion des fichiers Jsons."
     }
   ]
 }
