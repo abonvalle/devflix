@@ -1,54 +1,27 @@
 {
   "guid": "meme-recr-10",
-  "title": "Développeur Front-end : La suite",
-  "tagline": "Expateo, Bidart",
-  "description": "Développement de nouvelles fonctionalités, corrections de bugs & implémentation client. Mise à jour des appels API suite à une Migration Back de PHP vers Node.js. Travail au sein d'une équipe technique (6/8 personnes) en collaboration continue avec UX/UI designer et équipe CSM. Conception & développement d’une app responsive.",
-  "year": 2020,
-  "type": "serie",
-  "seasons": "4 ans",
+  "title": "",
+  "tagline": "",
+  "description": "",
+  "year": 2024,
+  "type": "movie",
+  "duration": "2 sec",
   "thumbnailPath": "assets/cards/thumbnails/meme-recr-10.png",
   "thumbnailPathPortrait": "assets/cards/thumbnails/meme-recr-10p.png",
   "clipPath": "",
-  "related": [],
-  "recommended": 98,
+  "recommended": 97,
   "tags": [
-    "Expériences professionelles"
+    "Humour"
   ],
-  "attributes": [
-    {
-      "imgPath": "",
-      "label": "Angular"
-    },
-    {
-      "imgPath": "",
-      "label": "Edition de logiciel"
-    }
-  ],
-  "stack": [
-    {
-      "name": "Angular",
-      "version": "7-15"
-    },
-    {
-      "name": "Typescript",
-      "version": "5.3"
-    },
-    {
-      "name": "Sass"
-    }
-  ],
-  "episods": [
-    {
-      "title": "Collaboration continue",
-      "description": "Travail au sein d'une équipe technique de 6/8 personnes avec des méthodes SCRUM. Participation à la conception, implémentation client, réalisation de nouvelles fonctionnalités, correction de bugs."
-    },
-    {
-      "title": "",
-      "description": ""
-    },
-    {
-      "title": "",
-      "description": ""
-    }
+  "related": [
+    "meme-recr-1",
+    "meme-recr-7",
+    "meme-recr-4",
+    "meme-recr-5",
+    "meme-recr-2",
+    "meme-recr-6",
+    "meme-recr-9",
+    "meme-recr-8",
+    "meme-recr-3"
   ]
 }
