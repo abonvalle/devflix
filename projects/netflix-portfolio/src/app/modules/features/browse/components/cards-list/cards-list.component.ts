@@ -60,7 +60,7 @@ export class CardsListComponent implements OnInit, AfterViewInit, OnDestroy {
       data: { card },
       maxWidth: '100vw',
       height: '100%',
-      panelClass: '!mt-[28px]'
+      panelClass: ['!mt-0', 'sm:!mt-[28px]']
     });
   }
   calculateFrame() {
