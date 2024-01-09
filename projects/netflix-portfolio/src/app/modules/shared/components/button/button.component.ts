@@ -19,7 +19,7 @@ export class ButtonComponent {
     return buttonVariant[this.variant];
   }
   get complementaryClasses() {
-    return `${this.variantClasses} ${this.rounded ? 'w-fit rounded-full !p-2 !m-[4px]' : ''} ${
+    return `${this.variantClasses} ${this.rounded ? '!w-fit rounded-full !p-2 !m-[4px]' : ''} ${
       this.disabled ? 'cursor-not-allowed opacity-50 hover:border-[unset]' : ''
     }`;
   }
