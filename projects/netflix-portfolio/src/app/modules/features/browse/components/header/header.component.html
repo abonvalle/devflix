@@ -12,7 +12,7 @@
     playsInline
     [muted]="mute"></video>
   <ng-template #imgTpl>
-    <img class="h-[66.25vw] max-h-[unset] min-h-[40vh] max-w-[unset]" [src]="card.thumbnailPath" />
+    <img class="h-[66.25vw] max-h-[unset] min-h-[40vh] max-w-[unset]" [src]="card.thumbnailPath" [alt]="card.title" />
   </ng-template>
   <div
     class="fading-bg absolute -bottom-px top-auto z-0 h-[14.7vw] w-full bg-transparent bg-[0_top] bg-repeat-x opacity-100">

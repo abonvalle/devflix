@@ -44,20 +44,23 @@
     <ng-container *ngIf="(relatedCards$ | async)?.length ?? 0 > 0">
       <h2 class="mb-[20px] mt-[48px] text-[24px] font-[500]">Titres similaires</h2>
       <div class="grid grid-cols-1 gap-[16px] pb-[50px] xs:grid-cols-2 sm:grid-cols-3">
-        <div *ngFor="let similarCards of relatedCards$ | async" class="relative">
-          <p class="absolute right-[8px] top-[4px] z-20 text-[16px] font-[500]">{{ durationInfo(similarCards) }}</p>
+        <div *ngFor="let similarCard of relatedCards$ | async" class="relative">
+          <p class="absolute right-[8px] top-[4px] z-20 text-[16px] font-[500]">{{ durationInfo(similarCard) }}</p>
           <div
             class="flex h-full w-full flex-col rounded-[4px] bg-[#2f2f2f] before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:bg-vignette">
-            <img class="h-[56vw] max-h-[150px] w-full max-w-[unset] rounded-[4px]" [src]="similarCards.thumbnailPath" />
+            <img
+              class="h-[56vw] max-h-[150px] w-full max-w-[unset] rounded-[4px]"
+              [src]="similarCard.thumbnailPath"
+              [alt]="similarCard.title" />
             <div class="flex flex-col gap-[8px] p-[16px]">
               <div class="flex gap-[8px]">
-                <p class="text-[16px] font-[500] text-recommended">Recommandé à {{ similarCards?.recommended }}%</p>
-                <p class="text-[16px] text-[#BCBCBC]">{{ similarCards?.year }}</p>
+                <p class="text-[16px] font-[500] text-recommended">Recommandé à {{ similarCard?.recommended }}%</p>
+                <p class="text-[16px] text-[#BCBCBC]">{{ similarCard?.year }}</p>
               </div>
               <p
-                [ngClass]="{ 'truncate-overflow': (similarCards?.description?.length ?? 0) > 30 }"
+                [ngClass]="{ 'truncate-overflow': (similarCard?.description?.length ?? 0) > 30 }"
                 class="max-h-[140px] overflow-hidden text-[14px] text-white">
-                {{ similarCards?.description }}
+                {{ similarCard?.description }}
               </p>
             </div>
           </div>

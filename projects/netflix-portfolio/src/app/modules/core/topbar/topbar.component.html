@@ -4,7 +4,7 @@
   <!-- <ng-container *ngIf="(profile$ | async) !== null"> -->
   <div class="flex items-end justify-center gap-[30px]">
     <a routerLink="/browse" class="cursor-pointer">
-      <img src="assets/devflix.svg" width="100px" />
+      <img src="assets/devflix.svg" width="100px" alt="logo devflix" />
     </a>
     <a href="https://cv.abvdev.fr" class="text-[12px] hover:underline">Curriculum vitae</a>
     <ng-container *ngIf="(hasProfileSelected$ | async) && !isMobile">
@@ -15,7 +15,12 @@
 
   <app-mat-menu-hover #customMenu *ngIf="(currentProfile$ | async) !== null">
     <div trigger class="z-[999] flex cursor-pointer items-center justify-center gap-2">
-      <img [src]="(currentProfile$ | async)?.thumbnailPath" alt="" width="32" height="32" class="rounded-[4px]" />
+      <img
+        [src]="(currentProfile$ | async)?.thumbnailPath"
+        alt="Profile actuel"
+        width="32"
+        height="32"
+        class="rounded-[4px]" />
       <i
         [ngClass]="{ 'rotate-180': customMenu.isMenuOpen }"
         class="icon icon-down_arrow w-4 text-[14px] font-bold transition-all duration-300 ease-out"></i>
@@ -27,7 +32,7 @@
           (click)="changeProfil(profile.guid)"
           mat-menu-item>
           <div class="flex flex-row items-center justify-center gap-[10px] !text-[13px] !text-white hover:underline">
-            <img [src]="profile.thumbnailPath" alt="" width="32" height="32" class="rounded-[4px]" />
+            <img [src]="profile.thumbnailPath" [alt]="profile.name" width="32" height="32" class="rounded-[4px]" />
             <span>{{ profile.name }}</span>
           </div>
         </button>
