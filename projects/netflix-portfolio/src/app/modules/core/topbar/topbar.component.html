@@ -1,13 +1,13 @@
 <div
   [ngClass]="{ 'bg-[#141414]': (isBgDark$ | async) === true }"
-  class="topbar-bg-gradient fixed top-0 z-10 flex h-[41px] w-full items-center justify-between px-[4%] transition-all duration-700 ease-out sm:h-[68px]">
+  class="topbar-bg-gradient fixed top-0 z-10 flex h-[45px] w-full items-center justify-between px-[4%] transition-all duration-700 ease-out sm:h-[68px]">
   <!-- <ng-container *ngIf="(profile$ | async) !== null"> -->
   <div class="flex items-end justify-center gap-[30px]">
     <a routerLink="/browse" class="cursor-pointer">
       <img src="assets/devflix.svg" width="100px" />
     </a>
     <a href="https://cv.abvdev.fr" class="text-[12px] hover:underline">Curriculum vitae</a>
-    <ng-container *ngIf="hasProfileSelected$ | async">
+    <ng-container *ngIf="(hasProfileSelected$ | async) && !isMobile">
       <a href="https://www.linkedin.com/in/abonvalle/" class="text-[12px] hover:underline">Linkedin</a>
       <a href="https://www.malt.fr/profile/abonvalle" class="text-[12px] hover:underline">Malt.fr</a>
     </ng-container>

@@ -5,19 +5,6 @@
   ],
   "lists": [
     {
-      "guid": "83dd6e48-b997-4ef2-9180-18e65f0966g8",
-      "name": "Reprendre avec le profil de Dev",
-      "order": 0,
-      "type": "pending",
-      "cardsGuids": [
-        "mrrobot",
-        "interstellar",
-        "blackmirror",
-        "levoyagedechihiro",
-        "breakingbad"
-      ]
-    },
-    {
       "guid": "b5fc4eda-413b-445a-9d04-cc1e05b9bd5f",
       "name": "Expériences & Projets",
       "order": 1,
@@ -44,9 +31,22 @@
       ]
     },
     {
+      "guid": "83dd6e48-b997-4ef2-9180-18e65f0966g8",
+      "name": "Reprendre avec le profil de Dev",
+      "order": 2,
+      "type": "pending",
+      "cardsGuids": [
+        "mrrobot",
+        "interstellar",
+        "blackmirror",
+        "levoyagedechihiro",
+        "breakingbad"
+      ]
+    },
+    {
       "guid": "545ebd52-13b2-4106-ad66-ffb8cbdf233e",
       "name": "Top 10 de mes memes préférés ce mois-ci",
-      "order": 2,
+      "order": 3,
       "type": "top",
       "cardsGuids": [
         "meme-dev-1",

@@ -14,6 +14,9 @@ export class TopbarComponent implements OnInit {
   currentProfile$ = this._profilesService.currentProfile$;
   profiles$ = this._profilesService.profiles$;
   hasProfileSelected$ = this._profilesService.currentProfile$.pipe(map((v) => v !== null));
+  get isMobile(): boolean {
+    return window.innerWidth < 768;
+  }
   constructor(private _profilesService: ProfilesService) {}
   ngOnInit(): void {
     this.setIsBgDark();

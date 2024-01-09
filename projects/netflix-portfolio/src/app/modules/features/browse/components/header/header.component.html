@@ -1,10 +1,10 @@
-<div class="relative mb-[-20vw] h-[66.25vw] overflow-hidden bg-cover">
+<div class="relative mb-[-12vh] h-[66.25vw] min-h-[40vh] overflow-hidden bg-cover sm:mb-[-20vw]">
   <!--  css={css`
           ;
         `} -->
   <video
     *ngIf="card.clipPath; else imgTpl"
-    class="h-[66.25vw] max-h-[unset] max-w-[unset]"
+    class="h-[66.25vw] max-h-[unset] min-h-[40vh] max-w-[unset]"
     [src]="card.clipPath"
     [autoplay]="true"
     [loop]="true"
@@ -12,7 +12,7 @@
     playsInline
     [muted]="mute"></video>
   <ng-template #imgTpl>
-    <img class="h-[66.25vw] max-h-[unset] max-w-[unset]" [src]="card.thumbnailPath" />
+    <img class="h-[66.25vw] max-h-[unset] min-h-[40vh] max-w-[unset]" [src]="card.thumbnailPath" />
   </ng-template>
   <div
     class="fading-bg absolute -bottom-px top-auto z-0 h-[14.7vw] w-full bg-transparent bg-[0_top] bg-repeat-x opacity-100">
@@ -29,13 +29,13 @@
           `} -->
   </div>
   <div
-    class="full-width-without-padding absolute left-0 top-0 z-0 flex h-[45vw] max-h-screen flex-col justify-end p-[4%]">
+    class="full-width-without-padding absolute left-0 top-0 z-0 flex h-[45vw] max-h-screen min-h-[30vh] flex-col justify-end p-[4%]">
     <!--  css={css`
             width: calc(100% - 8rem);
           `} -->
     <h1 class="mb-2 text-[3vw] font-bold">{{ card.title }}</h1>
-    <h2 class="mb-1.5 text-[1.75vw] font-bold">{{ card.tagline }}</h2>
-    <p class="mb-4 w-[45rem] max-w-[550px] text-[1.2vw] font-medium leading-normal">
+    <h2 class="mb-1.5 text-[2vw] font-bold sm:text-[1.75vw]">{{ card.tagline }}</h2>
+    <p class="mb-2 max-w-[550px] text-[2vw] font-medium leading-normal sm:mb-4 sm:text-[1.2vw]">
       {{ card.description }}
     </p>
     <app-button variant="tertiary" (click)="openDetail()">
