@@ -6,24 +6,38 @@
     <span *ngIf="isTop; else classicTpl" class="relative bottom-0 left-0 right-0 top-0 flex h-full w-full flex-row">
       <app-svg-icon icon="rank{{ index + 1 }}" height="100%" width="50%" class="mr-[-1%]"></app-svg-icon>
       <img
+        loading="lazy"
         class="relative bottom-0 left-0 right-0 top-0 h-full w-1/2"
         [src]="card.thumbnailPathPortrait"
         [alt]="card.title" />
       <img
         *ngIf="card.producedByDevflix"
+        loading="lazy"
         src="assets/images/svg/d-trademark.svg"
-        class="absolute left-1/2 top-[5px] h-[18%]" />
+        class="absolute left-1/2 top-[5px] h-[18%]"
+        alt="Devflix™" />
     </span>
     <ng-template #classicTpl>
-      <img class="relative bottom-0 left-0 right-0 top-0 h-full w-full" [src]="card.thumbnailPath" [alt]="card.title" />
+      <img
+        loading="lazy"
+        class="relative bottom-0 left-0 right-0 top-0 h-full w-full"
+        [src]="card.thumbnailPath"
+        [alt]="card.title" />
       <img
         *ngIf="card.producedByDevflix"
+        loading="lazy"
         src="assets/images/svg/d-trademark.svg"
-        class="absolute left-[2.5px] top-[5px] h-[22.5%]" />
+        class="absolute left-[2.5px] top-[5px] h-[22.5%]"
+        alt="Devflix™" />
     </ng-template>
   </div>
   <div *ngIf="isPending" class="px-[18%] py-[8px]">
-    <mat-progress-bar mode="determinate" [value]="progress" color="warn" ngClass=""></mat-progress-bar>
+    <mat-progress-bar
+      mode="determinate"
+      [value]="progress"
+      color="warn"
+      ngClass=""
+      aria-label="Progression"></mat-progress-bar>
   </div>
   <div
     #cardMiniModal
@@ -36,15 +50,18 @@
         [autoplay]="true"
         [loop]="true"
         [controls]="false"
-        playsInline></video>
+        playsInline
+        loading="lazy"></video>
       <ng-template #imgTpl>
         <img
           class="relative bottom-0 left-0 right-0 top-0 h-full w-full rounded-t-[4px]"
+          loading="lazy"
           [src]="card.thumbnailPath"
           [alt]="card.title" />
         <img
           *ngIf="card.producedByDevflix"
           src="assets/images/svg/d-trademark.svg"
+          loading="lazy"
           class="absolute left-[2.5px] top-[5px] h-[22.5%]"
           alt="Devflix™" />
       </ng-template>
