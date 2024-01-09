@@ -2,7 +2,7 @@
   "guid": "nameguessr",
   "title": "Nameguessr",
   "tagline": "Le Wordle des séries",
-  "description": "Application reprenant le principe du jeu Wordle sur le thème des personnages de séries.",
+  "description": "https://nameguessr.abvdev.fr : Application reprenant le principe du jeu Wordle sur le thème des personnages de séries.",
   "year": 2022,
   "type": "serie",
   "seasons": "2 ans",
