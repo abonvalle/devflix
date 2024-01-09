@@ -1,11 +1,11 @@
 {
   "name": "netflix-portfolio",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build-prod": "npm run minify-jsons && ng build --configuration production --base-href=/portfolio.abvdev.fr/",
+    "build-prod": "npm run minify-jsons && ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "minify-jsons": "node ./projects/scripts/minify-jsons.js"
