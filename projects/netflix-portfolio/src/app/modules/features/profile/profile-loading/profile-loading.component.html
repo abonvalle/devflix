@@ -1,0 +1,11 @@
+<div class="absolute z-50 flex h-screen w-screen items-center justify-center bg-dark-gray duration-300">
+  <div class="loader animate-profile-loading flex flex-col items-center justify-center gap-1 text-[9.41667px]">
+    <div class="relative h-[5vw] min-h-[90px] w-[5vw] min-w-[90px] rounded">
+      <div class="absolute left-0 top-0 z-0 h-full w-full rounded border-[3px] border-solid border-transparent"></div>
+      <img
+        [src]="profile.thumbnailPath"
+        [alt]="'thumbnail profile ' + profile.name"
+        class="top-0 h-[5vw] min-h-[90px] w-[5vw] min-w-[90px] max-w-[unset] rounded" />
+    </div>
+  </div>
+</div>

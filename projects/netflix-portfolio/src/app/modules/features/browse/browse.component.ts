@@ -17,6 +17,7 @@ export class BrowseComponent implements OnInit {
     map((profile) => profile?.mainCards[Math.floor(Math.random() * profile?.mainCards.length)] ?? null)
   );
   currentProfileCardsLists$ = this.currentProfileLayout$.pipe(map((profile) => profile?.lists ?? null));
+  profileLoading = this._browseService.profileLoading;
   constructor(
     private _browseService: BrowseService,
     private _profilesService: ProfilesService,

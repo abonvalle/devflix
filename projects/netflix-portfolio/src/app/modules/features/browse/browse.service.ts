@@ -1,4 +1,4 @@
-import { Injectable, OnDestroy } from '@angular/core';
+import { Injectable, OnDestroy, signal } from '@angular/core';
 import { ProfilesService } from '@modules/shared/services';
 import axios from 'axios';
 import { BehaviorSubject, Subscription } from 'rxjs';
@@ -9,15 +9,20 @@ import { Profile } from '../../../models/profile.interface';
 @Injectable({ providedIn: 'root' })
 export class BrowseService implements OnDestroy {
   readonly currentProfileLayout$: BehaviorSubject<BrowseLayout | null> = new BehaviorSubject<BrowseLayout | null>(null);
+  profileLoading = signal<Profile | null>(null);
   currentProfileSubscription: Subscription;
   constructor(private _profilesService: ProfilesService) {
     this.currentProfileSubscription = this._profilesService.currentProfile$.subscribe(async (profile) => {
       let profileLayout = null;
       if (profile !== null) {
+        this.profileLoading.set(profile);
         profileLayout = await this.getBrowseLayout(profile);
       }
       console.warn(profileLayout, this._profilesService.currentProfile$.value);
       this.currentProfileLayout$.next(profileLayout);
+      setTimeout(() => {
+        this.profileLoading.set(null);
+      }, 1000);
     });
   }
   ngOnDestroy(): void {

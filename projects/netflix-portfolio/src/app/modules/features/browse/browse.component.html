@@ -1,3 +1,7 @@
+@if(profileLoading(); as profile){
+<app-profile-loading [profile]="profile"></app-profile-loading>
+}@else {
+
 <ng-container *ngIf="(browseServiceCurrentProfile$ | async) !== null; else profileSelectionTpl">
   <ng-container *ngIf="currentProfileMainCard$ | async; let currentProfileMainCard">
     <app-header *ngIf="currentProfileMainCard !== null" [card]="currentProfileMainCard"></app-header>
@@ -17,3 +21,4 @@
 <ng-template #profileSelectionTpl>
   <app-profile-selection [editor]="false"></app-profile-selection>
 </ng-template>
+}
