@@ -31,14 +31,14 @@
           *ngIf="(currentProfile$ | async)?.guid !== profile.guid && !profile.hidden"
           (click)="changeProfil(profile.guid)"
           mat-menu-item>
-          <div class="flex flex-row items-center justify-center gap-[10px] !text-[13px] !text-white hover:underline">
+          <div class="flex flex-row items-center justify-start gap-[10px] !text-[13px] !text-white hover:underline">
             <img [src]="profile.thumbnailPath" [alt]="profile.name" width="32" height="32" class="rounded-[4px]" />
             <span>{{ profile.name }}</span>
           </div>
         </button>
       </ng-container>
       <button (click)="editProfiles()" mat-menu-item>
-        <div class="flex flex-row items-center justify-center gap-[10px] !text-[13px] !text-white">
+        <div class="flex flex-row items-center justify-start gap-[10px] !text-[13px] !text-white">
           <i class="icon icon-edit px-[5px] text-[22px] text-white/70 hover:no-underline"></i>
           <span class="hover:underline">Gérer les profils</span>
         </div>
