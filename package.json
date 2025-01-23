@@ -5,7 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build-prod": "npm run minify-jsons && ng build --configuration production",
+    "prebuild-prod": "npm run minify-jsons",
+    "build-prod": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "minify-jsons": "node ./projects/scripts/minify-jsons.js"
