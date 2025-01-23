@@ -9,17 +9,9 @@
   "thumbnailPath": "assets/cards/thumbnails/dev.webp",
   "producedByDevflix": true,
   "clipPath": "assets/cards/clips/dev.mp4",
-  "related": [
-    "nameguessr",
-    "expateo",
-    "radiofive",
-    "wanao"
-  ],
+  "related": ["nameguessr", "expateo", "radiofive", "wanao"],
   "recommended": 98,
-  "tags": [
-    "Profile",
-    "Tiré d'une histoire vraie"
-  ],
+  "tags": ["Généré par IA", "Profile", "Tiré d'une histoire vraie"],
   "attributes": [],
   "stack": [
     {

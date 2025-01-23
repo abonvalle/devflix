@@ -9,22 +9,12 @@
   "thumbnailPath": "assets/cards/thumbnails/diplomas.png",
   "producedByDevflix": true,
   "clipPath": "",
-  "related": [
-    "skills",
-    "stack",
-    "nameguessr"
-  ],
+  "related": ["skills", "stack", "nameguessr"],
   "recommended": 95,
-  "tags": [
-    "Diplômes"
-  ],
+  "tags": ["Diplômes"],
   "attributes": [],
   "stack": [],
   "episods": [
-    {
-      "title": "VAE (en cours)",
-      "description": "Je prépare actuellement une VAE pour obtenir un titre bac+3 de développeur d'application web et mobile."
-    },
     {
       "title": "BTS SIO option SLAM"
     },

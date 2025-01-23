@@ -10,16 +10,8 @@
   "producedByDevflix": true,
   "clipPath": "assets/cards/clips/recruteur.mp4",
   "recommended": 99,
-  "related": [
-    "wanao",
-    "expateo",
-    "nameguessr",
-    "radiofive"
-  ],
-  "tags": [
-    "Profile",
-    "Tiré d'une histoire vraie"
-  ],
+  "related": ["wanao", "expateo", "nameguessr", "radiofive"],
+  "tags": ["Généré par IA", "Profile", "Tiré d'une histoire vraie"],
   "attributes": [],
   "stack": [
     {
