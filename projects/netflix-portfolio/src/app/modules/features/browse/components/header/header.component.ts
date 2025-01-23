@@ -2,12 +2,14 @@ import { Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CardDetailsComponent } from '@features/modal/components/card-details/card-details.component';
 import { Card } from '@models/card.type';
+import { NgIf } from '@angular/common';
+import { ButtonComponent } from '../../../../shared/components/button/button.component';
 
 @Component({
     selector: 'app-header',
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.scss'],
-    standalone: false
+    imports: [NgIf, ButtonComponent]
 })
 export class HeaderComponent {
   @Input({ required: true }) card!: Card;

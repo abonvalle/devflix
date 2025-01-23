@@ -20,16 +20,16 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [BrowseComponent, HeaderComponent, CardsListComponent, FooterComponent],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-    ButtonComponent,
-    ProfileSelectionModule,
-    MatDialogModule,
-    ModalModule,
-    CardsComponent,
-    ProfileLoadingComponent
-  ]
+    imports: [
+        CommonModule,
+        RouterModule.forChild(routes),
+        ButtonComponent,
+        ProfileSelectionModule,
+        MatDialogModule,
+        ModalModule,
+        CardsComponent,
+        ProfileLoadingComponent,
+        BrowseComponent, HeaderComponent, CardsListComponent, FooterComponent
+    ]
 })
 export class BrowseModule {}

@@ -1,11 +1,11 @@
 import { Component, ViewChild } from '@angular/core';
-import { MatMenuTrigger } from '@angular/material/menu';
+import { MatMenuTrigger, MatMenu } from '@angular/material/menu';
 
 @Component({
     selector: 'app-mat-menu-hover',
     templateUrl: './mat-menu-hover.component.html',
     styleUrls: ['./mat-menu-hover.component.scss'],
-    standalone: false
+    imports: [MatMenuTrigger, MatMenu]
 })
 export class MatMenuHoverComponent {
   @ViewChild('menuTrigger') menuTrigger!: MatMenuTrigger;

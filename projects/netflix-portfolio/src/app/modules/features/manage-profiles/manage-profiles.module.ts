@@ -13,7 +13,6 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [ManageProfilesComponent],
-  imports: [CommonModule, RouterModule.forChild(routes), ButtonComponent, ProfileSelectionModule]
+    imports: [CommonModule, RouterModule.forChild(routes), ButtonComponent, ProfileSelectionModule, ManageProfilesComponent]
 })
 export class ManageProfilesModule {}

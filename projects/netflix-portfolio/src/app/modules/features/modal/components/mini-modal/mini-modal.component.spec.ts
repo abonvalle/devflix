@@ -8,8 +8,8 @@ describe('MiniModalComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [MiniModalComponent]
-    });
+    imports: [MiniModalComponent]
+});
     fixture = TestBed.createComponent(MiniModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

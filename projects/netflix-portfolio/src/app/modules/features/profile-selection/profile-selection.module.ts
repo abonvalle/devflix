@@ -8,8 +8,7 @@ import { ButtonComponent } from '@modules/shared/components/button/button.compon
 import { ProfileThumbnailComponent } from './components/profile-thumbnail/profile-thumbnail.component';
 import { ProfileSelectionComponent } from './profile-selection.component';
 @NgModule({
-  declarations: [ProfileSelectionComponent, AddProfileTriggerComponent],
-  imports: [CommonModule, RouterModule, ButtonComponent, MatSnackBarModule, MatDialogModule, ProfileThumbnailComponent],
-  exports: [ProfileSelectionComponent]
+    imports: [CommonModule, RouterModule, ButtonComponent, MatSnackBarModule, MatDialogModule, ProfileThumbnailComponent, ProfileSelectionComponent, AddProfileTriggerComponent],
+    exports: [ProfileSelectionComponent]
 })
 export class ProfileSelectionModule {}

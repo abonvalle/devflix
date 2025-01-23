@@ -8,8 +8,8 @@ describe('MatMenuHoverComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [MatMenuHoverComponent]
-    });
+    imports: [MatMenuHoverComponent]
+});
     fixture = TestBed.createComponent(MatMenuHoverComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

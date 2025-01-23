@@ -8,8 +8,8 @@ describe('ProfileSelectionComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ProfileSelectionComponent]
-    });
+    imports: [ProfileSelectionComponent]
+});
     fixture = TestBed.createComponent(ProfileSelectionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

@@ -8,8 +8,8 @@ describe('HidedProfilesSelectionDialogComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [HidedProfilesSelectionDialogComponent]
-    });
+    imports: [HidedProfilesSelectionDialogComponent]
+});
     fixture = TestBed.createComponent(HidedProfilesSelectionDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

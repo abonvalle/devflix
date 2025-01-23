@@ -1,13 +1,16 @@
 import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
-import { MatMenuTrigger } from '@angular/material/menu';
+import { MatMenuTrigger, MatMenuItem } from '@angular/material/menu';
 import { ProfilesService } from '@modules/shared/services';
 import { BehaviorSubject, map } from 'rxjs';
+import { NgClass, NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { MatMenuHoverComponent } from './components/mat-menu-hover/mat-menu-hover.component';
 
 @Component({
     selector: 'app-topbar',
     templateUrl: './topbar.component.html',
     styleUrls: ['./topbar.component.scss'],
-    standalone: false
+    imports: [NgClass, RouterLink, NgIf, MatMenuHoverComponent, NgFor, MatMenuItem, AsyncPipe]
 })
 export class TopbarComponent implements OnInit {
   @ViewChild('menuTrigger') menuTrigger!: MatMenuTrigger;

@@ -2,12 +2,14 @@ import { Component } from '@angular/core';
 import { BehaviorSubject, Subject, takeUntil } from 'rxjs';
 import { Card } from '../../../models/card.type';
 import { ModalService } from './modal.service';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { MiniModalComponent } from './components/mini-modal/mini-modal.component';
 
 @Component({
     selector: 'app-modal',
     templateUrl: './modal.component.html',
     styleUrls: ['./modal.component.scss'],
-    standalone: false
+    imports: [NgIf, MiniModalComponent, AsyncPipe]
 })
 export class ModalComponent {
   private _destroy$: Subject<void> = new Subject();

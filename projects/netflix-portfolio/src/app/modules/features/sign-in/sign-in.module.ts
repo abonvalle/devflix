@@ -14,7 +14,6 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [SignInComponent],
-  imports: [CommonModule, RouterModule.forChild(routes), TitleComponent, InputComponent, ButtonComponent]
+    imports: [CommonModule, RouterModule.forChild(routes), TitleComponent, InputComponent, ButtonComponent, SignInComponent]
 })
 export class SignInModule {}

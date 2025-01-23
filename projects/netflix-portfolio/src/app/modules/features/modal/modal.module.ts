@@ -9,14 +9,11 @@ import { MiniModalComponent } from './components/mini-modal/mini-modal.component
 import { ModalComponent } from './modal.component';
 
 @NgModule({
-  declarations: [
-    ModalComponent,
-    MiniModalComponent,
-    DetailModalComponent,
-    CardDetailsComponent,
-    CardDetailsHeaderComponent
-  ],
-  imports: [CommonModule, ButtonComponent, CardsComponent],
-  exports: [ModalComponent]
+    imports: [CommonModule, ButtonComponent, CardsComponent, ModalComponent,
+        MiniModalComponent,
+        DetailModalComponent,
+        CardDetailsComponent,
+        CardDetailsHeaderComponent],
+    exports: [ModalComponent]
 })
 export class ModalModule {}

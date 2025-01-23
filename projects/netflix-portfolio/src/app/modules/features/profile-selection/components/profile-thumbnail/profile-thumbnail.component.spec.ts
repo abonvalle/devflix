@@ -8,8 +8,8 @@ describe('ProfileThumbnailComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ProfileThumbnailComponent]
-    });
+    imports: [ProfileThumbnailComponent]
+});
     fixture = TestBed.createComponent(ProfileThumbnailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

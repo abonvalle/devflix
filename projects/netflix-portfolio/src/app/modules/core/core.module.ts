@@ -7,8 +7,7 @@ import { CoreLayoutComponent } from './core-layout/core-layout.component';
 import { TopbarComponent } from './topbar/topbar.component';
 import { MatMenuHoverComponent } from './topbar/components/mat-menu-hover/mat-menu-hover.component';
 @NgModule({
-  declarations: [TopbarComponent, CoreLayoutComponent, MatMenuHoverComponent],
-  imports: [CommonModule, RouterModule, MatMenuModule, BrowserAnimationsModule],
-  exports: [TopbarComponent]
+    imports: [CommonModule, RouterModule, MatMenuModule, BrowserAnimationsModule, TopbarComponent, CoreLayoutComponent, MatMenuHoverComponent],
+    exports: [TopbarComponent]
 })
 export class CoreModule {}

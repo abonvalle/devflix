@@ -8,8 +8,8 @@ describe('CoreLayoutComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [CoreLayoutComponent]
-    });
+    imports: [CoreLayoutComponent]
+});
     fixture = TestBed.createComponent(CoreLayoutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
