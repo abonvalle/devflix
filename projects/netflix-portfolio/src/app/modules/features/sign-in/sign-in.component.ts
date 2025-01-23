@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import { TitleComponent } from '../../shared/components/title/title.component';
 import { InputComponent } from '../../shared/components/input/input.component';
 import { RouterLink } from '@angular/router';
-import { NgClass, NgIf } from '@angular/common';
+import { NgClass } from '@angular/common';
 
 @Component({
     selector: 'app-sign-in',
     templateUrl: './sign-in.component.html',
     styleUrls: ['./sign-in.component.scss'],
-    imports: [TitleComponent, InputComponent, RouterLink, NgClass, NgIf]
+    imports: [TitleComponent, InputComponent, RouterLink, NgClass]
 })
 export class SignInComponent {
   hideFooter: boolean = false;

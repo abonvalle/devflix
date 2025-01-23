@@ -5,7 +5,7 @@ import { ProfilesService } from '@modules/shared/services';
 import { Subject, distinctUntilChanged, takeUntil, timeout } from 'rxjs';
 import { Profile } from '../../../models/profile.interface';
 import { HidedProfilesSelectionDialogComponent } from './components/hided-profiles-selection-dialog/hided-profiles-selection-dialog.component';
-import { NgFor, NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { ProfileThumbnailComponent } from './components/profile-thumbnail/profile-thumbnail.component';
 import { AddProfileTriggerComponent } from './components/add-profile-trigger/add-profile-trigger.component';
 import { ButtonComponent } from '../../shared/components/button/button.component';
@@ -13,7 +13,7 @@ import { ButtonComponent } from '../../shared/components/button/button.component
     selector: 'app-profile-selection',
     templateUrl: './profile-selection.component.html',
     styleUrls: ['./profile-selection.component.scss'],
-    imports: [NgFor, NgIf, ProfileThumbnailComponent, AddProfileTriggerComponent, ButtonComponent, AsyncPipe]
+    imports: [ProfileThumbnailComponent, AddProfileTriggerComponent, ButtonComponent, AsyncPipe]
 })
 export class ProfileSelectionComponent implements OnInit, OnDestroy {
   readonly editor = input<boolean>(false);

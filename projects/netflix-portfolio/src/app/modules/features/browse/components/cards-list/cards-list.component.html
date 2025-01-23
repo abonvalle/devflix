@@ -10,20 +10,23 @@
       <i class="icon icon-chevron-right text-[40px]"></i>
     </div>
     <div class="slides-hint absolute right-0 top-[-15%] flex flex-row items-center gap-[2px] pr-[4%]">
-      <div
-        *ngFor="let i of slides$ | async; let index = index"
-        [ngClass]="{ 'bg-white/60': index === currentSliderCount }"
+      @for (i of slides$ | async; track i; let index = $index) {
+        <div
+          [ngClass]="{ 'bg-white/60': index === currentSliderCount }"
         class="h-[2px] w-[13px] bg-white/20"></div>
+      }
     </div>
     <div #sliderContainer class="slider-container select-none">
-      <div #slides class="slide select-none" *ngFor="let card of cards(); let index = index">
-        <app-cards
-          [card]="card"
-          [index]="index"
-          [type]="type()"
-          class="block h-full w-full"
+      @for (card of cards(); track card; let index = $index) {
+        <div #slides class="slide select-none">
+          <app-cards
+            [card]="card"
+            [index]="index"
+            [type]="type()"
+            class="block h-full w-full"
           (click)="openCardDetails(card)"></app-cards>
-      </div>
+        </div>
+      }
     </div>
   </div>
 </div>

@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, input } from '@angular/core';
 import { Profile } from '@models/profile.interface';
 
@@ -6,7 +6,7 @@ import { Profile } from '@models/profile.interface';
   selector: 'app-profile-thumbnail',
   templateUrl: './profile-thumbnail.component.html',
   styleUrls: ['./profile-thumbnail.component.scss'],
-  imports: [CommonModule],
+  imports: [],
   standalone: true
 })
 export class ProfileThumbnailComponent {

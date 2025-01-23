@@ -1,9 +1,9 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, OnInit, input, model } from '@angular/core';
 
 @Component({
   selector: 'app-svg-icon',
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './svg-icon.component.html',
   styleUrls: ['./svg-icon.component.scss']
 })

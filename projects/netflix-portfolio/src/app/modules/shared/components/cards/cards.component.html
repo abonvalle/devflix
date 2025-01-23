@@ -3,68 +3,74 @@
   (mouseenter)="setIsHover(true)"
   (mouseleave)="setIsHover(false)">
   <div class="h-full w-full overflow-hidden rounded-[0.2vw] px-[0]">
-    <span *ngIf="isTop; else classicTpl" class="relative bottom-0 left-0 right-0 top-0 flex h-full w-full flex-row">
-      <app-svg-icon icon="rank{{ index() + 1 }}" height="100%" width="50%" class="mr-[-1%]"></app-svg-icon>
-      <img
-        loading="lazy"
-        class="relative bottom-0 left-0 right-0 top-0 h-full w-1/2"
-        [src]="card().thumbnailPathPortrait"
-        [alt]="card().title" />
-      <img
-        *ngIf="card().producedByDevflix"
-        loading="lazy"
-        src="assets/images/svg/d-trademark.svg"
-        class="absolute left-1/2 top-[5px] h-[18%]"
-        alt="Devflix™" />
-    </span>
-    <ng-template #classicTpl>
+    @if (isTop) {
+      <span class="relative bottom-0 left-0 right-0 top-0 flex h-full w-full flex-row">
+        <app-svg-icon icon="rank{{ index() + 1 }}" height="100%" width="50%" class="mr-[-1%]"></app-svg-icon>
+        <img
+          loading="lazy"
+          class="relative bottom-0 left-0 right-0 top-0 h-full w-1/2"
+          [src]="card().thumbnailPathPortrait"
+          [alt]="card().title" />
+        @if (card().producedByDevflix) {
+          <img
+            loading="lazy"
+            src="assets/images/svg/d-trademark.svg"
+            class="absolute left-1/2 top-[5px] h-[18%]"
+            alt="Devflix™" />
+        }
+      </span>
+    } @else {
       <img
         loading="lazy"
         class="relative bottom-0 left-0 right-0 top-0 h-full w-full"
         [src]="card().thumbnailPath"
         [alt]="card().title" />
-      <img
-        *ngIf="card().producedByDevflix"
-        loading="lazy"
-        src="assets/images/svg/d-trademark.svg"
-        class="absolute left-[2.5px] top-[5px] h-[22.5%]"
-        alt="Devflix™" />
-    </ng-template>
+      @if (card().producedByDevflix) {
+        <img
+          loading="lazy"
+          src="assets/images/svg/d-trademark.svg"
+          class="absolute left-[2.5px] top-[5px] h-[22.5%]"
+          alt="Devflix™" />
+      }
+    }
   </div>
-  <div *ngIf="isPending" class="px-[18%] py-[8px]">
-    <mat-progress-bar
-      mode="determinate"
-      [value]="progress"
-      color="warn"
-      ngClass=""
+  @if (isPending) {
+    <div class="px-[18%] py-[8px]">
+      <mat-progress-bar
+        mode="determinate"
+        [value]="progress"
+        color="warn"
+        ngClass=""
       aria-label="Progression"></mat-progress-bar>
-  </div>
+    </div>
+  }
   <div
     #cardMiniModal
     class="absolute left-0 top-0 mx-[0.2vw] hidden w-full overflow-visible whitespace-normal align-top shadow-[0px_3px_10px_0px] shadow-[rgba(0,0,0,0.75)]">
     <div [ngClass]="{ 'h-[82%]': isTop, 'h-full': !isTop }" class="w-full overflow-hidden px-[0]">
-      <video
-        *ngIf="card().clipPath; else imgTpl"
-        class="relative bottom-0 left-0 right-0 top-0 h-full w-full rounded-t-[4px]"
-        [src]="card().clipPath"
-        [autoplay]="true"
-        [loop]="true"
-        [controls]="false"
-        playsInline
+      @if (card().clipPath) {
+        <video
+          class="relative bottom-0 left-0 right-0 top-0 h-full w-full rounded-t-[4px]"
+          [src]="card().clipPath"
+          [autoplay]="true"
+          [loop]="true"
+          [controls]="false"
+          playsInline
         loading="lazy"></video>
-      <ng-template #imgTpl>
+      } @else {
         <img
           class="relative bottom-0 left-0 right-0 top-0 h-full w-full rounded-t-[4px]"
           loading="lazy"
           [src]="card().thumbnailPath"
           [alt]="card().title" />
-        <img
-          *ngIf="card().producedByDevflix"
-          src="assets/images/svg/d-trademark.svg"
-          loading="lazy"
-          class="absolute left-[2.5px] top-[5px] h-[22.5%]"
-          alt="Devflix™" />
-      </ng-template>
+        @if (card().producedByDevflix) {
+          <img
+            src="assets/images/svg/d-trademark.svg"
+            loading="lazy"
+            class="absolute left-[2.5px] top-[5px] h-[22.5%]"
+            alt="Devflix™" />
+        }
+      }
     </div>
     <div
       #cardMiniModalDetails
@@ -82,19 +88,20 @@
           <i ngClass="icon icon-chevron"></i>
         </app-button>
       </div>
-      <ng-container *ngIf="!isPending; else pendingTpl">
+      @if (!isPending) {
         <div class="my-[12px] flex flex-col">
           <p class="text-[16px] font-[500] text-recommended">Recommandé à {{ card().recommended }}%</p>
           <p class="text-[16px] text-[#BCBCBC]">{{ card().year }}</p>
         </div>
         <p class="text-[16px] text-white">{{ tags }}</p>
-      </ng-container>
-      <ng-template #pendingTpl>
-        <div *ngIf="isPending" class="flex flex-row items-center justify-center gap-[8px] py-[8px]">
-          <mat-progress-bar mode="determinate" [value]="progress" color="warn" [ngClass]="''"></mat-progress-bar>
-          <p class="whitespace-nowrap font-[500] text-white/70">{{ timing }} sur {{ duration }} min</p>
-        </div>
-      </ng-template>
+      } @else {
+        @if (isPending) {
+          <div class="flex flex-row items-center justify-center gap-[8px] py-[8px]">
+            <mat-progress-bar mode="determinate" [value]="progress" color="warn" [ngClass]="''"></mat-progress-bar>
+            <p class="whitespace-nowrap font-[500] text-white/70">{{ timing }} sur {{ duration }} min</p>
+          </div>
+        }
+      }
     </div>
   </div>
 </div>

@@ -1,10 +1,10 @@
-<ng-container *ngIf="(card$ | async) !== null">
-  <ng-container *ngIf="card$ | async; let card">
+@if ((card$ | async) !== null) {
+  @if (card$ | async; as card) {
     <!-- <div
-      class="absolute bottom-0 left-0 right-0 top-0 z-50 h-screen w-screen overflow-hidden"
-      (mouseenter)="setFocus(true)"
-      (mouseleave)="setFocus(false)"> -->
+    class="absolute bottom-0 left-0 right-0 top-0 z-50 h-screen w-screen overflow-hidden"
+    (mouseenter)="setFocus(true)"
+    (mouseleave)="setFocus(false)"> -->
     <app-mini-modal [card]="card"></app-mini-modal>
-    <!-- </div> -->
-  </ng-container>
-</ng-container>
+  <!-- </div> -->
+}
+}

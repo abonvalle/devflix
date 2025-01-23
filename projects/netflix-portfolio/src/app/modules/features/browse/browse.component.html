@@ -1,24 +1,26 @@
 @if(profileLoading(); as profile){
-<app-profile-loading [profile]="profile"></app-profile-loading>
-}@else {
+  <app-profile-loading [profile]="profile"></app-profile-loading>
+  }@else {
 
-<ng-container *ngIf="(browseServiceCurrentProfile$ | async) !== null; else profileSelectionTpl">
-  <ng-container *ngIf="currentProfileMainCard$ | async; let currentProfileMainCard">
-    <app-header *ngIf="currentProfileMainCard !== null" [card]="currentProfileMainCard"></app-header>
-  </ng-container>
-  <ng-container *ngIf="currentProfileCardsLists$ | async; let cardLists">
-    <ng-container *ngFor="let cardList of cardLists">
-      <app-cards-list
-        *ngIf="cardList !== null"
-        [name]="cardList.name"
-        [cards]="cardList.cards"
-        [type]="cardList.type"></app-cards-list>
-    </ng-container>
-    <app-footer></app-footer>
-  </ng-container>
-</ng-container>
+  @if ((browseServiceCurrentProfile$ | async) !== null) {
+    @if (currentProfileMainCard$ | async; as currentProfileMainCard) {
+      @if (currentProfileMainCard !== null) {
+        <app-header [card]="currentProfileMainCard"></app-header>
+      }
+    }
+    @if (currentProfileCardsLists$ | async; as cardLists) {
+      @for (cardList of cardLists; track cardList) {
+        @if (cardList !== null) {
+          <app-cards-list
+            [name]="cardList.name"
+            [cards]="cardList.cards"
+          [type]="cardList.type"></app-cards-list>
+        }
+      }
+      <app-footer></app-footer>
+    }
+  } @else {
+    <app-profile-selection [editor]="false"></app-profile-selection>
+  }
 
-<ng-template #profileSelectionTpl>
-  <app-profile-selection [editor]="false"></app-profile-selection>
-</ng-template>
 }

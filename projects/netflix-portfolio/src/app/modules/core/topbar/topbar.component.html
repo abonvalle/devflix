@@ -7,46 +7,49 @@
       <img src="assets/devflix.svg" width="100" alt="logo devflix" />
     </a>
     <a href="https://cv.abvdev.fr" class="text-[12px] hover:underline">Curriculum vitae</a>
-    <ng-container *ngIf="(hasProfileSelected$ | async) && !isMobile">
+    @if ((hasProfileSelected$ | async) && !isMobile) {
       <a href="https://www.linkedin.com/in/abonvalle/" class="text-[12px] hover:underline">Linkedin</a>
       <a href="https://www.malt.fr/profile/abonvalle" class="text-[12px] hover:underline">Malt.fr</a>
-    </ng-container>
+    }
   </div>
 
-  <app-mat-menu-hover #customMenu *ngIf="(currentProfile$ | async) !== null">
-    <div trigger class="z-[999] flex cursor-pointer items-center justify-center gap-2">
-      <img
-        [src]="(currentProfile$ | async)?.thumbnailPath"
-        alt="Profile actuel"
-        width="32"
-        height="32"
-        class="rounded-[4px]" />
-      <i
-        [ngClass]="{ 'rotate-180': customMenu.isMenuOpen }"
+  @if ((currentProfile$ | async) !== null) {
+    <app-mat-menu-hover #customMenu>
+      <div trigger class="z-[999] flex cursor-pointer items-center justify-center gap-2">
+        <img
+          [src]="(currentProfile$ | async)?.thumbnailPath"
+          alt="Profile actuel"
+          width="32"
+          height="32"
+          class="rounded-[4px]" />
+        <i
+          [ngClass]="{ 'rotate-180': customMenu.isMenuOpen }"
         class="icon icon-down_arrow w-4 text-[14px] font-bold transition-all duration-300 ease-out"></i>
-    </div>
-    <div content>
-      <ng-container *ngFor="let profile of profiles$ | async">
-        <button
-          *ngIf="(currentProfile$ | async)?.guid !== profile.guid && !profile.hidden"
-          (click)="changeProfil(profile.guid)"
-          mat-menu-item>
-          <div class="flex flex-row items-center justify-start gap-[10px] !text-[13px] !text-white hover:underline">
-            <img [src]="profile.thumbnailPath" [alt]="profile.name" width="32" height="32" class="rounded-[4px]" />
-            <span>{{ profile.name }}</span>
+      </div>
+      <div content>
+        @for (profile of profiles$ | async; track profile) {
+          @if ((currentProfile$ | async)?.guid !== profile.guid && !profile.hidden) {
+            <button
+              (click)="changeProfil(profile.guid)"
+              mat-menu-item>
+              <div class="flex flex-row items-center justify-start gap-[10px] !text-[13px] !text-white hover:underline">
+                <img [src]="profile.thumbnailPath" [alt]="profile.name" width="32" height="32" class="rounded-[4px]" />
+                <span>{{ profile.name }}</span>
+              </div>
+            </button>
+          }
+        }
+        <button (click)="editProfiles()" mat-menu-item>
+          <div class="flex flex-row items-center justify-start gap-[10px] !text-[13px] !text-white">
+            <i class="icon icon-edit px-[5px] text-[22px] text-white/70 hover:no-underline"></i>
+            <span class="hover:underline">Gérer les profils</span>
           </div>
         </button>
-      </ng-container>
-      <button (click)="editProfiles()" mat-menu-item>
-        <div class="flex flex-row items-center justify-start gap-[10px] !text-[13px] !text-white">
-          <i class="icon icon-edit px-[5px] text-[22px] text-white/70 hover:no-underline"></i>
-          <span class="hover:underline">Gérer les profils</span>
-        </div>
-      </button>
-      <button (click)="disconnect()" class="w-full !border-t-[1px] !border-white/25 py-[8px] !text-center">
-        <span class="!text-[13px] !text-white hover:underline">Se déconnecter</span>
-      </button>
-    </div>
-  </app-mat-menu-hover>
-  <!-- </ng-container> -->
+        <button (click)="disconnect()" class="w-full !border-t-[1px] !border-white/25 py-[8px] !text-center">
+          <span class="!text-[13px] !text-white hover:underline">Se déconnecter</span>
+        </button>
+      </div>
+    </app-mat-menu-hover>
+  }
+<!-- </ng-container> -->
 </div>

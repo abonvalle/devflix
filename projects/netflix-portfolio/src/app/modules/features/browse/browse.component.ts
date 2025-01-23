@@ -6,7 +6,7 @@ import { map } from 'rxjs';
 import { BrowseService } from './browse.service';
 import { WelcomeDialogComponent } from './components/welcome-dialog/welcome-dialog.component';
 import { ProfileLoadingComponent } from '../profile/profile-loading/profile-loading.component';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { CardsListComponent } from './components/cards-list/cards-list.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -15,7 +15,7 @@ import { ProfileSelectionComponent } from '../profile-selection/profile-selectio
     selector: 'app-browse',
     templateUrl: './browse.component.html',
     styleUrls: ['./browse.component.scss'],
-    imports: [ProfileLoadingComponent, NgIf, HeaderComponent, NgFor, CardsListComponent, FooterComponent, ProfileSelectionComponent, AsyncPipe]
+    imports: [ProfileLoadingComponent, HeaderComponent, CardsListComponent, FooterComponent, ProfileSelectionComponent, AsyncPipe]
 })
 export class BrowseComponent implements OnInit {
   browseServiceCurrentProfile$ = this._profilesService.currentProfile$;

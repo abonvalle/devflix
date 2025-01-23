@@ -1,47 +1,48 @@
 <div class="relative min-h-full overflow-hidden bg-cover">
   <!--  css={css`
-          ;
-        `} -->
+  ;
+  `} -->
 
-  <video
-    *ngIf="card().clipPath; else imgTpl"
-    class="h-[56vw] max-h-[506px] w-full max-w-[unset]"
-    [src]="card().clipPath"
-    [autoplay]="true"
-    [loop]="true"
-    [controls]="false"
-    playsInline
+  @if (card().clipPath) {
+    <video
+      class="h-[56vw] max-h-[506px] w-full max-w-[unset]"
+      [src]="card().clipPath"
+      [autoplay]="true"
+      [loop]="true"
+      [controls]="false"
+      playsInline
     [muted]="mute"></video>
-  <ng-template #imgTpl>
+  } @else {
     <img class="h-[56vw] max-h-[506px] w-full max-w-[unset]" [src]="card().thumbnailPath" [alt]="card().title" />
-    <img
-      *ngIf="card().producedByDevflix"
-      src="assets/images/svg/d-trademark.svg"
-      class="absolute left-[10px] top-[20px] h-[10%]" />
-  </ng-template>
+    @if (card().producedByDevflix) {
+      <img
+        src="assets/images/svg/d-trademark.svg"
+        class="absolute left-[10px] top-[20px] h-[10%]" />
+    }
+  }
 
   <div
     class="fading-bg-mini absolute -bottom-px top-auto z-0 h-[10vw] max-h-[80px] w-full bg-transparent bg-[0_top] bg-repeat-x opacity-100">
     <!--  css={css`
-            background: linear-gradient(
-              180deg,
-              hsla(0, 0%, 8%, 0) 0,
-              hsla(0, 0%, 8%, 0.15) 15%,
-              hsla(0, 0%, 8%, 0.35) 29%,
-              hsla(0, 0%, 8%, 0.58) 44%,
-              #141414 68%,
-              #141414
-            );
-          `} -->
+    background: linear-gradient(
+    180deg,
+    hsla(0, 0%, 8%, 0) 0,
+    hsla(0, 0%, 8%, 0.15) 15%,
+    hsla(0, 0%, 8%, 0.35) 29%,
+    hsla(0, 0%, 8%, 0.58) 44%,
+    #141414 68%,
+    #141414
+    );
+    `} -->
   </div>
   <!-- <div class="absolute bottom-0 left-0 z-0 -mt-[50px] flex flex-col justify-end p-[55px]"> -->
   <!--  css={css`
-            width: calc(100% - 8rem);
-          `} -->
+  width: calc(100% - 8rem);
+  `} -->
   <!-- <h1 class="mb-2 text-[2rem] font-bold lg:text-[3vw] 3xl:text-[4rem]">{{ card.title }}</h1> -->
 
   <!-- <app-button [variant]="mute ? 'tertiary' : 'tertiary-active'" [rounded]="true">
-      <i [ngClass]="mute ? 'icon icon-mute' : 'icon icon-sound'"></i>
-    </app-button> -->
-  <!-- </div> -->
+  <i [ngClass]="mute ? 'icon icon-mute' : 'icon icon-sound'"></i>
+</app-button> -->
+<!-- </div> -->
 </div>

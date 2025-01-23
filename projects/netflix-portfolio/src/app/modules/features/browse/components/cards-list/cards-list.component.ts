@@ -16,14 +16,14 @@ import { CardDetailsComponent } from '@features/modal/components/card-details/ca
 import { Card } from '@models/card.type';
 import { ListsType } from '@models/lists.type';
 import { BehaviorSubject, Subject, takeUntil } from 'rxjs';
-import { NgFor, NgClass, AsyncPipe } from '@angular/common';
+import { NgClass, AsyncPipe } from '@angular/common';
 import { CardsComponent } from '../../../../shared/components/cards/cards.component';
 
 @Component({
     selector: 'app-cards-list',
     templateUrl: './cards-list.component.html',
     styleUrls: ['./cards-list.component.scss'],
-    imports: [NgFor, NgClass, CardsComponent, AsyncPipe]
+    imports: [NgClass, CardsComponent, AsyncPipe]
 })
 export class CardsListComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChildren('slides') slides!: QueryList<ElementRef<HTMLElement>>;

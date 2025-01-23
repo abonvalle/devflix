@@ -5,12 +5,12 @@ import { Card } from '@models/card.type';
 import axios from 'axios';
 import { BehaviorSubject } from 'rxjs';
 import { CardDetailsHeaderComponent } from '../card-details-header/card-details-header.component';
-import { NgIf, NgFor, NgClass, AsyncPipe } from '@angular/common';
+import { NgClass, AsyncPipe } from '@angular/common';
 @Component({
     selector: 'app-card-details',
     templateUrl: './card-details.component.html',
     styleUrls: ['./card-details.component.scss'],
-    imports: [CardDetailsHeaderComponent, NgIf, NgFor, NgClass, AsyncPipe]
+    imports: [CardDetailsHeaderComponent, NgClass, AsyncPipe]
 })
 export class CardDetailsComponent implements OnInit {
   get card() {
