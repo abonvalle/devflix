@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { Profile } from '@models/profile.interface';
 
 @Component({
@@ -8,5 +8,5 @@ import { Profile } from '@models/profile.interface';
   standalone: true
 })
 export class ProfileLoadingComponent {
-  @Input({ required: true }) profile!: Profile;
+  readonly profile = input.required<Profile>();
 }

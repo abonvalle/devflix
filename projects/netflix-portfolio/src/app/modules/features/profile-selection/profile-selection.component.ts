@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ProfilesService } from '@modules/shared/services';
@@ -16,7 +16,7 @@ import { ButtonComponent } from '../../shared/components/button/button.component
     imports: [NgFor, NgIf, ProfileThumbnailComponent, AddProfileTriggerComponent, ButtonComponent, AsyncPipe]
 })
 export class ProfileSelectionComponent implements OnInit, OnDestroy {
-  @Input() editor: boolean = false;
+  readonly editor = input<boolean>(false);
   readonly profiles$ = this._profilesService.profiles$;
   private _destroy$: Subject<void> = new Subject();
   constructor(
@@ -45,7 +45,7 @@ export class ProfileSelectionComponent implements OnInit, OnDestroy {
   }
 
   onProfileClick(profile: Profile): void {
-    if (this.editor) {
+    if (this.editor()) {
       this.alertEdit();
     } else {
       this._profilesService.setCurrentProfile(profile);

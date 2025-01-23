@@ -5,12 +5,12 @@
       <app-profile-thumbnail
         *ngIf="!profile.hidden"
         [profile]="profile"
-        [editor]="editor"
+        [editor]="editor()"
         (click)="onProfileClick(profile)"></app-profile-thumbnail>
     </ng-container>
     <app-add-profile-trigger (click)="alert()"></app-add-profile-trigger>
   </ul>
-  <ng-container *ngIf="!editor; else editorTpl">
+  <ng-container *ngIf="!editor(); else editorTpl">
     <app-button variant="primary" [href]="['/ManageProfiles']"> Gérer les profils </app-button>
   </ng-container>
   <ng-template #editorTpl>

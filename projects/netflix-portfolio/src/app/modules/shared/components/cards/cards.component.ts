@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, Input, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, Renderer2, ViewChild, input } from '@angular/core';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { ModalService } from '@features/modal/modal.service';
 import { Card } from '@models/card.type';
@@ -17,9 +17,9 @@ import { SvgIconComponent } from '../svg-icon/svg-icon.component';
 export class CardsComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('cardMiniModal') cardMiniModal!: ElementRef<HTMLElement>;
   @ViewChild('cardMiniModalDetails') cardMiniModalDetails!: ElementRef<HTMLElement>;
-  @Input({ required: true }) card!: Card;
-  @Input({ required: true }) type!: ListsType;
-  @Input({ required: true }) index!: number;
+  readonly card = input.required<Card>();
+  readonly type = input.required<ListsType>();
+  readonly index = input.required<number>();
   isHovered$: BehaviorSubject<boolean> = new BehaviorSubject(false);
   isCurrentOpenedCard$: BehaviorSubject<boolean> = new BehaviorSubject(false);
   progress: number = 0;
@@ -28,13 +28,13 @@ export class CardsComponent implements OnInit, AfterViewInit, OnDestroy {
   private _destroy$: Subject<void> = new Subject();
 
   get tags(): string {
-    return this.card?.tags?.join(', ');
+    return this.card()?.tags?.join(', ');
   }
   get isPending(): boolean {
-    return this.type === 'pending';
+    return this.type() === 'pending';
   }
   get isTop(): boolean {
-    return this.type === 'top';
+    return this.type() === 'top';
   }
   constructor(
     private _modalService: ModalService,
@@ -44,15 +44,16 @@ export class CardsComponent implements OnInit, AfterViewInit, OnDestroy {
   ngOnInit(): void {
     this.progress = Math.floor(Math.random() * 90);
     this.duration =
-      Math.floor(Math.random() * (this.card?.type === 'movie' ? 60 : 30)) + (this.card?.type === 'movie' ? 90 : 20);
+      Math.floor(Math.random() * (this.card()?.type === 'movie' ? 60 : 30)) + (this.card()?.type === 'movie' ? 90 : 20);
     this.timing = Math.floor((this.duration * this.progress) / 100);
   }
 
   ngAfterViewInit(): void {
     this.isHovered$.pipe(takeUntil(this._destroy$), debounceTime(100)).subscribe((state) => {
-      this._modalService.currentFocusCard$.next(state ? this.card : null);
+      const card = this.card();
+      this._modalService.currentFocusCard$.next(state ? card : null);
       if (this._modalService.currentOpenedCard$.value === null) {
-        this._modalService.currentOpenedCard$.next(state ? this.card : null);
+        this._modalService.currentOpenedCard$.next(state ? card : null);
       }
       if (!state) {
         this.animate(false);
@@ -63,7 +64,7 @@ export class CardsComponent implements OnInit, AfterViewInit, OnDestroy {
       }
     });
     this._modalService.currentOpenedCard$.pipe(takeUntil(this._destroy$), debounceTime(100)).subscribe((card) => {
-      this.isCurrentOpenedCard$.next(this.isHovered$.value && card?.guid === this.card.guid);
+      this.isCurrentOpenedCard$.next(this.isHovered$.value && card?.guid === this.card().guid);
     });
     this.isCurrentOpenedCard$.pipe(takeUntil(this._destroy$), debounceTime(100)).subscribe((state) => {
       if (state) {

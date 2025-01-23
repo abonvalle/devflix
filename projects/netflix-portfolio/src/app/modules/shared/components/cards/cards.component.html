@@ -4,14 +4,14 @@
   (mouseleave)="setIsHover(false)">
   <div class="h-full w-full overflow-hidden rounded-[0.2vw] px-[0]">
     <span *ngIf="isTop; else classicTpl" class="relative bottom-0 left-0 right-0 top-0 flex h-full w-full flex-row">
-      <app-svg-icon icon="rank{{ index + 1 }}" height="100%" width="50%" class="mr-[-1%]"></app-svg-icon>
+      <app-svg-icon icon="rank{{ index() + 1 }}" height="100%" width="50%" class="mr-[-1%]"></app-svg-icon>
       <img
         loading="lazy"
         class="relative bottom-0 left-0 right-0 top-0 h-full w-1/2"
-        [src]="card.thumbnailPathPortrait"
-        [alt]="card.title" />
+        [src]="card().thumbnailPathPortrait"
+        [alt]="card().title" />
       <img
-        *ngIf="card.producedByDevflix"
+        *ngIf="card().producedByDevflix"
         loading="lazy"
         src="assets/images/svg/d-trademark.svg"
         class="absolute left-1/2 top-[5px] h-[18%]"
@@ -21,10 +21,10 @@
       <img
         loading="lazy"
         class="relative bottom-0 left-0 right-0 top-0 h-full w-full"
-        [src]="card.thumbnailPath"
-        [alt]="card.title" />
+        [src]="card().thumbnailPath"
+        [alt]="card().title" />
       <img
-        *ngIf="card.producedByDevflix"
+        *ngIf="card().producedByDevflix"
         loading="lazy"
         src="assets/images/svg/d-trademark.svg"
         class="absolute left-[2.5px] top-[5px] h-[22.5%]"
@@ -44,9 +44,9 @@
     class="absolute left-0 top-0 mx-[0.2vw] hidden w-full overflow-visible whitespace-normal align-top shadow-[0px_3px_10px_0px] shadow-[rgba(0,0,0,0.75)]">
     <div [ngClass]="{ 'h-[82%]': isTop, 'h-full': !isTop }" class="w-full overflow-hidden px-[0]">
       <video
-        *ngIf="card.clipPath; else imgTpl"
+        *ngIf="card().clipPath; else imgTpl"
         class="relative bottom-0 left-0 right-0 top-0 h-full w-full rounded-t-[4px]"
-        [src]="card.clipPath"
+        [src]="card().clipPath"
         [autoplay]="true"
         [loop]="true"
         [controls]="false"
@@ -56,10 +56,10 @@
         <img
           class="relative bottom-0 left-0 right-0 top-0 h-full w-full rounded-t-[4px]"
           loading="lazy"
-          [src]="card.thumbnailPath"
-          [alt]="card.title" />
+          [src]="card().thumbnailPath"
+          [alt]="card().title" />
         <img
-          *ngIf="card.producedByDevflix"
+          *ngIf="card().producedByDevflix"
           src="assets/images/svg/d-trademark.svg"
           loading="lazy"
           class="absolute left-[2.5px] top-[5px] h-[22.5%]"
@@ -84,8 +84,8 @@
       </div>
       <ng-container *ngIf="!isPending; else pendingTpl">
         <div class="my-[12px] flex flex-col">
-          <p class="text-[16px] font-[500] text-recommended">Recommandé à {{ card.recommended }}%</p>
-          <p class="text-[16px] text-[#BCBCBC]">{{ card.year }}</p>
+          <p class="text-[16px] font-[500] text-recommended">Recommandé à {{ card().recommended }}%</p>
+          <p class="text-[16px] text-[#BCBCBC]">{{ card().year }}</p>
         </div>
         <p class="text-[16px] text-white">{{ tags }}</p>
       </ng-container>

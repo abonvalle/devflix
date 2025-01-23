@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { Profile } from '@models/profile.interface';
 
 @Component({
@@ -10,6 +10,6 @@ import { Profile } from '@models/profile.interface';
   standalone: true
 })
 export class ProfileThumbnailComponent {
-  @Input({ required: true }) profile!: Profile;
-  @Input() editor: boolean = false;
+  readonly profile = input.required<Profile>();
+  readonly editor = input<boolean>(false);
 }

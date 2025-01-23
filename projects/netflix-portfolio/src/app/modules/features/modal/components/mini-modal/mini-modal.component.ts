@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, input } from '@angular/core';
 import { Card } from '@models/card.type';
 import { Subject } from 'rxjs';
 
@@ -9,7 +9,7 @@ import { Subject } from 'rxjs';
 })
 export class MiniModalComponent implements OnInit, OnDestroy {
   private _destroy$: Subject<void> = new Subject();
-  @Input({ required: true }) card!: Card;
+  readonly card = input.required<Card>();
   constructor() {}
   ngOnInit(): void {}
   ngOnDestroy(): void {

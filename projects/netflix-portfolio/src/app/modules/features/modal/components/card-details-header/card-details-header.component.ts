@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { Card } from '@models/card.type';
 import { NgIf } from '@angular/common';
 @Component({
@@ -8,7 +8,7 @@ import { NgIf } from '@angular/common';
     imports: [NgIf]
 })
 export class CardDetailsHeaderComponent {
-  @Input({ required: true }) card!: Card;
+  readonly card = input.required<Card>();
   mute: boolean = true;
   constructor() {}
 }

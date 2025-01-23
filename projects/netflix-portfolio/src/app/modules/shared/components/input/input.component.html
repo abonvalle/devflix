@@ -3,13 +3,13 @@
     <div class="relative rounded-[4px] border-0">
       <label>
         <input
-          [type]="type"
-          [value]="value"
-          [disabled]="disabled"
+          [type]="type()"
+          [value]="value()"
+          [disabled]="disabled()"
           class="m-0 box-border block h-[50px] w-full appearance-none rounded border-0 bg-[#333] px-[20px] pb-0 pt-[16px] text-[16px] leading-[50px] text-white" />
         <label
           class="ease absolute left-[20px] top-[7px] translate-y-0 text-[11px] text-[#8c8c8c] transition-all duration-100">
-          {{ placeholder }}
+          {{ placeholder() }}
         </label>
       </label>
     </div>

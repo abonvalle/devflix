@@ -4,18 +4,18 @@
         `} -->
 
   <video
-    *ngIf="card.clipPath; else imgTpl"
+    *ngIf="card().clipPath; else imgTpl"
     class="h-[56vw] max-h-[506px] w-full max-w-[unset]"
-    [src]="card.clipPath"
+    [src]="card().clipPath"
     [autoplay]="true"
     [loop]="true"
     [controls]="false"
     playsInline
     [muted]="mute"></video>
   <ng-template #imgTpl>
-    <img class="h-[56vw] max-h-[506px] w-full max-w-[unset]" [src]="card.thumbnailPath" [alt]="card.title" />
+    <img class="h-[56vw] max-h-[506px] w-full max-w-[unset]" [src]="card().thumbnailPath" [alt]="card().title" />
     <img
-      *ngIf="card.producedByDevflix"
+      *ngIf="card().producedByDevflix"
       src="assets/images/svg/d-trademark.svg"
       class="absolute left-[10px] top-[20px] h-[10%]" />
   </ng-template>

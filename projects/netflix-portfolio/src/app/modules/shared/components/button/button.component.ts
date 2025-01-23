@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { buttonVariant } from './button-variant.interface';
 
@@ -10,16 +10,16 @@ import { buttonVariant } from './button-variant.interface';
     imports: [CommonModule, RouterModule]
 })
 export class ButtonComponent {
-  @Input() variant: keyof typeof buttonVariant = 'primary';
-  @Input() rounded: boolean = false;
-  @Input() href: string[] | null = null;
-  @Input() disabled: boolean = false;
+  readonly variant = input<keyof typeof buttonVariant>('primary');
+  readonly rounded = input<boolean>(false);
+  readonly href = input<string[] | null>(null);
+  readonly disabled = input<boolean>(false);
   get variantClasses(): string {
-    return buttonVariant[this.variant];
+    return buttonVariant[this.variant()];
   }
   get complementaryClasses() {
-    return `${this.variantClasses} ${this.rounded ? '!w-fit rounded-full !p-2 !m-[4px]' : ''} ${
-      this.disabled ? 'cursor-not-allowed opacity-50 hover:border-[unset]' : ''
+    return `${this.variantClasses} ${this.rounded() ? '!w-fit rounded-full !p-2 !m-[4px]' : ''} ${
+      this.disabled() ? 'cursor-not-allowed opacity-50 hover:border-[unset]' : ''
     }`;
   }
 }

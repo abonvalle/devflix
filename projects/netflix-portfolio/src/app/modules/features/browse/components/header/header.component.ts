@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CardDetailsComponent } from '@features/modal/components/card-details/card-details.component';
 import { Card } from '@models/card.type';
@@ -12,13 +12,13 @@ import { ButtonComponent } from '../../../../shared/components/button/button.com
     imports: [NgIf, ButtonComponent]
 })
 export class HeaderComponent {
-  @Input({ required: true }) card!: Card;
+  readonly card = input.required<Card>();
   mute: boolean = true;
   constructor(public dialog: MatDialog) {}
   openDetail() {
     this.dialog.closeAll();
     this.dialog.open(CardDetailsComponent, {
-      data: { card: this.card },
+      data: { card: this.card() },
       maxWidth: '100vw',
       height: '100%',
       panelClass: '!mt-[28px]'

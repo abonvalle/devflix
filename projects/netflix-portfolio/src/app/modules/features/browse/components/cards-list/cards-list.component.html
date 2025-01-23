@@ -1,6 +1,6 @@
 <div class="my-[4%]">
   <h2 class="relative mb-[10px] ml-[4%] select-none text-[1.4vw] text-white max-md:text-[12px]">
-    {{ name }}
+    {{ name() }}
   </h2>
   <div #sliderFrame class="slider-frame">
     <div class="btn prev flex select-none items-center justify-center" (click)="prev()">
@@ -16,11 +16,11 @@
         class="h-[2px] w-[13px] bg-white/20"></div>
     </div>
     <div #sliderContainer class="slider-container select-none">
-      <div #slides class="slide select-none" *ngFor="let card of cards; let index = index">
+      <div #slides class="slide select-none" *ngFor="let card of cards(); let index = index">
         <app-cards
           [card]="card"
           [index]="index"
-          [type]="type"
+          [type]="type()"
           class="block h-full w-full"
           (click)="openCardDetails(card)"></app-cards>
       </div>

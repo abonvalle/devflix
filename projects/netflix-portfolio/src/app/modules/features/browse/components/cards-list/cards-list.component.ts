@@ -3,13 +3,13 @@ import {
   Component,
   ElementRef,
   HostListener,
-  Input,
   OnDestroy,
   OnInit,
   QueryList,
   Renderer2,
   ViewChild,
-  ViewChildren
+  ViewChildren,
+  input
 } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CardDetailsComponent } from '@features/modal/components/card-details/card-details.component';
@@ -29,9 +29,9 @@ export class CardsListComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChildren('slides') slides!: QueryList<ElementRef<HTMLElement>>;
   @ViewChild('sliderFrame') sliderFrame!: ElementRef<HTMLElement>;
   @ViewChild('sliderContainer') sliderContainer!: ElementRef<HTMLElement>;
-  @Input({ required: true }) cards: Card[] = [];
-  @Input({ required: true }) type!: ListsType;
-  @Input({ required: true }) name: string = '';
+  readonly cards = input.required<Card[]>();
+  readonly type = input.required<ListsType>();
+  readonly name = input.required<string>();
   isHover$: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
   currentSliderCount = 0;
@@ -43,7 +43,7 @@ export class CardsListComponent implements OnInit, AfterViewInit, OnDestroy {
   slides$ = new BehaviorSubject<unknown[]>([]);
   private _destroy$ = new Subject();
   get isTop() {
-    return this.type === 'top';
+    return this.type() === 'top';
   }
   constructor(
     private renderer: Renderer2,
@@ -81,7 +81,7 @@ export class CardsListComponent implements OnInit, AfterViewInit, OnDestroy {
     } else {
       this.showCount = 6;
     }
-    this.nbSlide$.next(Math.ceil(this.cards.length / this.showCount));
+    this.nbSlide$.next(Math.ceil(this.cards().length / this.showCount));
   }
   @HostListener('window:resize')
   init() {
@@ -89,7 +89,7 @@ export class CardsListComponent implements OnInit, AfterViewInit, OnDestroy {
 
     let windowWidth = window.innerWidth;
 
-    if (this.showCount >= this.cards.length) {
+    if (this.showCount >= this.cards().length) {
       this.renderer.addClass(this.sliderFrame.nativeElement.firstElementChild, 'disabled');
       this.renderer.addClass(this.sliderFrame.nativeElement.children[1], 'disabled');
       this.renderer.addClass(this.sliderFrame.nativeElement.children[2], 'disabled');
@@ -111,7 +111,7 @@ export class CardsListComponent implements OnInit, AfterViewInit, OnDestroy {
     this.renderer.setStyle(this.sliderFrame.nativeElement, 'height', `${videoHeight}px`);
 
     this.renderer.setStyle(this.sliderContainer.nativeElement, 'height', `${videoHeight}px`);
-    this.renderer.setStyle(this.sliderContainer.nativeElement, 'width', `${videoWidth * this.cards.length}px`);
+    this.renderer.setStyle(this.sliderContainer.nativeElement, 'width', `${videoWidth * this.cards().length}px`);
     // this.renderer.setStyle(this.sliderContainer.nativeElement, 'top', `${videoHeightDiff / 2}px`);
     this.renderer.setStyle(this.sliderContainer.nativeElement, 'margin-left', `${this.controlsWidth}px`);
 
@@ -160,7 +160,7 @@ export class CardsListComponent implements OnInit, AfterViewInit, OnDestroy {
     );
   }
   hideLeftBtn() {
-    if ((this.currentSliderCount === 0 && !this.hasFullyScroll) || this.showCount >= this.cards.length) {
+    if ((this.currentSliderCount === 0 && !this.hasFullyScroll) || this.showCount >= this.cards().length) {
       this.renderer.addClass(this.sliderFrame.nativeElement.firstElementChild, 'disabled');
     } else {
       this.renderer.removeClass(this.sliderFrame.nativeElement.firstElementChild, 'disabled');

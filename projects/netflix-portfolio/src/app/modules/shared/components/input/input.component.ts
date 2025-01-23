@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-input',
@@ -7,8 +7,8 @@ import { Component, Input } from '@angular/core';
   standalone: true
 })
 export class InputComponent {
-  @Input() placeholder: string = '';
-  @Input() disabled: boolean = false;
-  @Input() value: string = '';
-  @Input() type: string = 'text';
+  readonly placeholder = input<string>('');
+  readonly disabled = input<boolean>(false);
+  readonly value = input<string>('');
+  readonly type = input<string>('text');
 }
