@@ -3,9 +3,10 @@ import * as profilesJSON from '@assets/jsons/profiles.json';
 import { Profile } from '../../../models/profile.interface';
 
 @Component({
-  selector: 'app-manage-profiles',
-  templateUrl: './manage-profiles.component.html',
-  styleUrls: ['./manage-profiles.component.scss']
+    selector: 'app-manage-profiles',
+    templateUrl: './manage-profiles.component.html',
+    styleUrls: ['./manage-profiles.component.scss'],
+    standalone: false
 })
 export class ManageProfilesComponent {
   profiles: Profile[];

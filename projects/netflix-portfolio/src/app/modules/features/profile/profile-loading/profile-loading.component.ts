@@ -3,11 +3,10 @@ import { ProfileThumbnailComponent } from '@features/profile-selection/component
 import { Profile } from '@models/profile.interface';
 
 @Component({
-  selector: 'app-profile-loading',
-  standalone: true,
-  imports: [ProfileThumbnailComponent],
-  templateUrl: './profile-loading.component.html',
-  styleUrl: './profile-loading.component.scss'
+    selector: 'app-profile-loading',
+    imports: [ProfileThumbnailComponent],
+    templateUrl: './profile-loading.component.html',
+    styleUrl: './profile-loading.component.scss'
 })
 export class ProfileLoadingComponent {
   @Input({ required: true }) profile!: Profile;

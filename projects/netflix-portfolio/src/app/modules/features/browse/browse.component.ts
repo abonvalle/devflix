@@ -6,9 +6,10 @@ import { map } from 'rxjs';
 import { BrowseService } from './browse.service';
 import { WelcomeDialogComponent } from './components/welcome-dialog/welcome-dialog.component';
 @Component({
-  selector: 'app-browse',
-  templateUrl: './browse.component.html',
-  styleUrls: ['./browse.component.scss']
+    selector: 'app-browse',
+    templateUrl: './browse.component.html',
+    styleUrls: ['./browse.component.scss'],
+    standalone: false
 })
 export class BrowseComponent implements OnInit {
   browseServiceCurrentProfile$ = this._profilesService.currentProfile$;

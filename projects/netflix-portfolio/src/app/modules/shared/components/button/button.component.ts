@@ -4,11 +4,10 @@ import { RouterModule } from '@angular/router';
 import { buttonVariant } from './button-variant.interface';
 
 @Component({
-  selector: 'app-button',
-  templateUrl: './button.component.html',
-  styleUrls: ['./button.component.scss'],
-  standalone: true,
-  imports: [CommonModule, RouterModule]
+    selector: 'app-button',
+    templateUrl: './button.component.html',
+    styleUrls: ['./button.component.scss'],
+    imports: [CommonModule, RouterModule]
 })
 export class ButtonComponent {
   @Input() variant: keyof typeof buttonVariant = 'primary';

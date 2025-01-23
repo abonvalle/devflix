@@ -6,9 +6,10 @@ import { Subject, distinctUntilChanged, takeUntil, timeout } from 'rxjs';
 import { Profile } from '../../../models/profile.interface';
 import { HidedProfilesSelectionDialogComponent } from './components/hided-profiles-selection-dialog/hided-profiles-selection-dialog.component';
 @Component({
-  selector: 'app-profile-selection',
-  templateUrl: './profile-selection.component.html',
-  styleUrls: ['./profile-selection.component.scss']
+    selector: 'app-profile-selection',
+    templateUrl: './profile-selection.component.html',
+    styleUrls: ['./profile-selection.component.scss'],
+    standalone: false
 })
 export class ProfileSelectionComponent implements OnInit, OnDestroy {
   @Input() editor: boolean = false;

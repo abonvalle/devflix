@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-core-layout',
-  templateUrl: './core-layout.component.html',
-  styleUrls: ['./core-layout.component.scss']
+    selector: 'app-core-layout',
+    templateUrl: './core-layout.component.html',
+    styleUrls: ['./core-layout.component.scss'],
+    standalone: false
 })
 export class CoreLayoutComponent {
 

@@ -9,11 +9,10 @@ import { ButtonComponent } from '../button/button.component';
 import { SvgIconComponent } from '../svg-icon/svg-icon.component';
 
 @Component({
-  selector: 'app-cards',
-  templateUrl: './cards.component.html',
-  styleUrls: ['./cards.component.scss'],
-  standalone: true,
-  imports: [CommonModule, ButtonComponent, MatProgressBarModule, SvgIconComponent]
+    selector: 'app-cards',
+    templateUrl: './cards.component.html',
+    styleUrls: ['./cards.component.scss'],
+    imports: [CommonModule, ButtonComponent, MatProgressBarModule, SvgIconComponent]
 })
 export class CardsComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('cardMiniModal') cardMiniModal!: ElementRef<HTMLElement>;

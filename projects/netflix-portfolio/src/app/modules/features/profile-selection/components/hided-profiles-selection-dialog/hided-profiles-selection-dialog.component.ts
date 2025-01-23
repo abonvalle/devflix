@@ -8,11 +8,10 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { ProfilesService } from '@modules/shared/services';
 import { Subject, takeUntil } from 'rxjs';
 @Component({
-  selector: 'app-hided-profiles-selection-dialog',
-  templateUrl: './hided-profiles-selection-dialog.component.html',
-  styleUrls: ['./hided-profiles-selection-dialog.component.scss'],
-  standalone: true,
-  imports: [MatFormFieldModule, MatInputModule, FormsModule, MatButtonModule, MatDialogModule, MatSlideToggleModule]
+    selector: 'app-hided-profiles-selection-dialog',
+    templateUrl: './hided-profiles-selection-dialog.component.html',
+    styleUrls: ['./hided-profiles-selection-dialog.component.scss'],
+    imports: [MatFormFieldModule, MatInputModule, FormsModule, MatButtonModule, MatDialogModule, MatSlideToggleModule]
 })
 export class HidedProfilesSelectionDialogComponent implements OnInit, OnDestroy {
   data: {

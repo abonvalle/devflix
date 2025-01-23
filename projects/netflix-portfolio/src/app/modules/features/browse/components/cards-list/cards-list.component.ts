@@ -18,9 +18,10 @@ import { ListsType } from '@models/lists.type';
 import { BehaviorSubject, Subject, takeUntil } from 'rxjs';
 
 @Component({
-  selector: 'app-cards-list',
-  templateUrl: './cards-list.component.html',
-  styleUrls: ['./cards-list.component.scss']
+    selector: 'app-cards-list',
+    templateUrl: './cards-list.component.html',
+    styleUrls: ['./cards-list.component.scss'],
+    standalone: false
 })
 export class CardsListComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChildren('slides') slides!: QueryList<ElementRef<HTMLElement>>;

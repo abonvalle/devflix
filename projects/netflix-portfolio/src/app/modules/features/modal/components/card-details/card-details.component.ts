@@ -5,9 +5,10 @@ import { Card } from '@models/card.type';
 import axios from 'axios';
 import { BehaviorSubject } from 'rxjs';
 @Component({
-  selector: 'app-card-details',
-  templateUrl: './card-details.component.html',
-  styleUrls: ['./card-details.component.scss']
+    selector: 'app-card-details',
+    templateUrl: './card-details.component.html',
+    styleUrls: ['./card-details.component.scss'],
+    standalone: false
 })
 export class CardDetailsComponent implements OnInit {
   get card() {
