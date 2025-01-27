@@ -21,12 +21,11 @@
               "base": "dist/"
             },
             "index": "projects/netflix-portfolio/src/index.html",
-            "polyfills": [
-              "projects/netflix-portfolio/src/polyfills.ts"
-            ],
+            "polyfills": ["projects/netflix-portfolio/src/polyfills.ts"],
             "tsConfig": "projects/netflix-portfolio/src/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
+              "projects/netflix-portfolio/src/CNAME",
               "projects/netflix-portfolio/src/favicon.ico",
               "projects/netflix-portfolio/src/assets"
             ],
@@ -95,10 +94,7 @@
             "tsConfig": "projects/netflix-portfolio/src/tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "projects/netflix-portfolio/src/favicon.ico",
-              "projects/netflix-portfolio/src/assets"
-            ],
+            "assets": ["CNAME", "projects/netflix-portfolio/src/favicon.ico", "projects/netflix-portfolio/src/assets"],
             "styles": [
               "@angular/material/prebuilt-themes/deeppurple-amber.css",
               "projects/netflix-portfolio/src/styles.scss"

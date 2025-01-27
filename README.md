@@ -1,4 +1,6 @@
-# NetflixPortfolio
+# Netflix Portfolio
+
+[![Build and Deploy](https://github.com/abonvalle/devflix/actions/workflows/build-and-deploy.yml/badge.svg?branch=master)](https://github.com/abonvalle/devflix/actions/workflows/build-and-deploy.yml)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.
 
